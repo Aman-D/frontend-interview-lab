@@ -69,6 +69,21 @@ All returned HTTP 200 on 2026-11-23 (checked with `curl -L`; see methodology).
 | `mdn-try-catch` | MDN — try...catch | https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch |
 | `mdn-addeventlistener` | MDN — EventTarget.addEventListener() | https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener |
 | `tl-fake-timers` | Testing Library — Using fake timers | https://testing-library.com/docs/using-fake-timers/ |
+| `apg-dialog-modal` | WAI-ARIA APG — Dialog (Modal) pattern | https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/ |
+| `apg-carousel` | WAI-ARIA APG — Carousel pattern | https://www.w3.org/WAI/ARIA/apg/patterns/carousel/ |
+| `apg-radio` | WAI-ARIA APG — Radio Group pattern | https://www.w3.org/WAI/ARIA/apg/patterns/radio/ |
+| `apg-sortable-table` | WAI-ARIA APG — Sortable Table example | https://www.w3.org/WAI/ARIA/apg/patterns/table/examples/sortable-table/ |
+| `mdn-live-regions` | MDN — ARIA live regions | https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Guides/Live_regions |
+| `mdn-dialog` | MDN — &lt;dialog&gt; | https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog |
+| `mdn-inert` | MDN — inert attribute | https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/inert |
+| `mdn-reduced-motion` | MDN — prefers-reduced-motion | https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion |
+| `mdn-img` | MDN — &lt;img&gt; (loading, decoding, alt) | https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img |
+| `mdn-array-sort` | MDN — Array.prototype.sort() | https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort |
+| `mdn-intl-collator` | MDN — Intl.Collator | https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Collator |
+| `react-create-portal` | react.dev — createPortal | https://react.dev/reference/react-dom/createPortal |
+| `react-no-effect` | react.dev — You Might Not Need an Effect | https://react.dev/learn/you-might-not-need-an-effect |
+| `react-context` | react.dev — Passing Data Deeply with Context | https://react.dev/learn/passing-data-deeply-with-context |
+| `react-sharing-state` | react.dev — Sharing State Between Components (controlled vs uncontrolled) | https://react.dev/learn/sharing-state-between-components |
 | `webdev-inp` | web.dev — Optimize INP | https://web.dev/articles/optimize-inp |
 
 ## Execution-environment references

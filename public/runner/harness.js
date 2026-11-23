@@ -558,6 +558,19 @@
   Object.keys(TL.fireEvent).forEach(function (k) {
     fireEventProxy[k] = function () { var a = arguments; return withAct(function () { return TL.fireEvent[k].apply(null, a); }); };
   });
+  // Same aliases as @testing-library/react: React's onMouseEnter/onMouseLeave listen to mouseover/mouseout,
+  // and onFocus/onBlur listen to focusin/focusout, so fire both events.
+  [['mouseEnter', 'mouseOver'], ['mouseLeave', 'mouseOut'], ['pointerEnter', 'pointerOver'], ['pointerLeave', 'pointerOut'], ['focus', 'focusIn'], ['blur', 'focusOut']].forEach(function (pair) {
+    var orig = pair[0], also = pair[1];
+    fireEventProxy[orig] = function () {
+      var a = arguments;
+      return withAct(function () {
+        var r = TL.fireEvent[orig].apply(null, a);
+        TL.fireEvent[also].apply(null, a);
+        return r;
+      });
+    };
+  });
 
   var testApi = {
     describe: describe, it: it, test: it, beforeEach: beforeEach, afterEach: afterEach,
