@@ -1,0 +1,176 @@
+{
+  "generatedAt": "2026-11-23T09:04:02.008Z",
+  "browser": "Chromium 157.0.8103.78 (Playwright)",
+  "results": [
+    {
+      "problemId": "react-autocomplete",
+      "solution": {
+        "passed": 12,
+        "total": 12,
+        "allPassed": true,
+        "status": "completed",
+        "failures": []
+      },
+      "starter": {
+        "passed": 0,
+        "total": 12,
+        "failsAtLeastOne": true,
+        "status": "completed"
+      },
+      "ok": true
+    },
+    {
+      "problemId": "react-file-explorer",
+      "solution": {
+        "passed": 18,
+        "total": 18,
+        "allPassed": true,
+        "status": "completed",
+        "failures": []
+      },
+      "starter": {
+        "passed": 2,
+        "total": 18,
+        "failsAtLeastOne": true,
+        "status": "completed"
+      },
+      "ok": true
+    },
+    {
+      "problemId": "vanilla-accordion",
+      "solution": {
+        "passed": 12,
+        "total": 12,
+        "allPassed": true,
+        "status": "completed",
+        "failures": []
+      },
+      "starter": {
+        "passed": 2,
+        "total": 12,
+        "failsAtLeastOne": true,
+        "status": "completed"
+      },
+      "ok": true
+    },
+    {
+      "problemId": "vanilla-event-delegation",
+      "solution": {
+        "passed": 15,
+        "total": 15,
+        "allPassed": true,
+        "status": "completed",
+        "failures": []
+      },
+      "starter": {
+        "passed": 2,
+        "total": 15,
+        "failsAtLeastOne": true,
+        "status": "completed"
+      },
+      "ok": true
+    },
+    {
+      "problemId": "js-debounce",
+      "solution": {
+        "passed": 9,
+        "total": 9,
+        "allPassed": true,
+        "status": "completed",
+        "failures": []
+      },
+      "starter": {
+        "passed": 1,
+        "total": 9,
+        "failsAtLeastOne": true,
+        "status": "completed"
+      },
+      "ok": true
+    },
+    {
+      "problemId": "js-promise-all",
+      "solution": {
+        "passed": 12,
+        "total": 12,
+        "allPassed": true,
+        "status": "completed",
+        "failures": []
+      },
+      "starter": {
+        "passed": 2,
+        "total": 12,
+        "failsAtLeastOne": true,
+        "status": "completed"
+      },
+      "ok": true
+    },
+    {
+      "problemId": "js-curry",
+      "solution": {
+        "passed": 12,
+        "total": 12,
+        "allPassed": true,
+        "status": "completed",
+        "failures": []
+      },
+      "starter": {
+        "passed": 2,
+        "total": 12,
+        "failsAtLeastOne": true,
+        "status": "completed"
+      },
+      "ok": true
+    },
+    {
+      "problemId": "js-event-emitter",
+      "solution": {
+        "passed": 13,
+        "total": 13,
+        "allPassed": true,
+        "status": "completed",
+        "failures": []
+      },
+      "starter": {
+        "passed": 4,
+        "total": 13,
+        "failsAtLeastOne": true,
+        "status": "completed"
+      },
+      "ok": true
+    },
+    {
+      "problemId": "ts-return-type-parameters",
+      "solution": {
+        "passed": 15,
+        "total": 15,
+        "allPassed": true,
+        "status": "completed",
+        "failures": []
+      },
+      "starter": {
+        "passed": 1,
+        "total": 15,
+        "failsAtLeastOne": true,
+        "status": "completed"
+      },
+      "ok": true
+    },
+    {
+      "problemId": "ts-typed-event-emitter",
+      "solution": {
+        "passed": 22,
+        "total": 22,
+        "allPassed": true,
+        "status": "completed",
+        "failures": []
+      },
+      "starter": {
+        "passed": 6,
+        "total": 22,
+        "failsAtLeastOne": true,
+        "status": "completed"
+      },
+      "ok": true
+    }
+  ]
+}

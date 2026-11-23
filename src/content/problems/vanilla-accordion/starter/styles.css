@@ -1,0 +1,90 @@
+:root {
+  --border: #d0d4dc;
+  --text: #1d2330;
+  --muted: #5b6475;
+  --accent: #2f5bd3;
+  --surface: #ffffff;
+  --surface-hover: #f3f5f9;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  color: var(--text);
+  background: var(--surface);
+}
+
+.page {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+}
+
+.accordion {
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+}
+
+.accordion-heading {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.accordion-heading + .accordion-panel,
+.accordion-panel + .accordion-heading {
+  border-top: 1px solid var(--border);
+}
+
+.accordion-trigger {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.875rem 1rem;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+}
+
+.accordion-trigger:hover {
+  background: var(--surface-hover);
+}
+
+.accordion-trigger:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: -3px;
+}
+
+/* The icon is driven by ARIA state, so visual state and announced state can never disagree. */
+.accordion-icon::before {
+  content: '+';
+  display: inline-block;
+  width: 1em;
+  text-align: center;
+}
+
+.accordion-trigger[aria-expanded='true'] .accordion-icon::before {
+  content: '\2212';
+}
+
+/* Do NOT set `display` on .accordion-panel without the [hidden] rule below:
+   an author `display` value overrides the user-agent style for [hidden]. */
+.accordion-panel {
+  padding: 0 1rem 1rem;
+  color: var(--muted);
+}
+
+.accordion-panel[hidden] {
+  display: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .accordion-icon::before {
+    transition: transform 150ms ease;
+  }
+}

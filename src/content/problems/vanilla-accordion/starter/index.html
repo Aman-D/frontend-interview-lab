@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Accordion</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <h1>Help centre</h1>
+
+      <section aria-labelledby="faq-title">
+        <h2 id="faq-title">Orders</h2>
+        <!-- Single-open accordion: opening one section closes the others. -->
+        <div class="accordion" id="faq" data-accordion>
+          <h3 class="accordion-heading">
+            <button type="button" class="accordion-trigger" id="faq-trigger-1" aria-expanded="true" aria-controls="faq-panel-1">
+              <span class="accordion-title">When will my order ship?</span>
+              <span class="accordion-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="accordion-panel" id="faq-panel-1" role="region" aria-labelledby="faq-trigger-1">
+            <p>Most orders leave the warehouse within two working days. You get a tracking link by email as soon as the parcel is scanned.</p>
+          </div>
+
+          <h3 class="accordion-heading">
+            <button type="button" class="accordion-trigger" id="faq-trigger-2" aria-expanded="false" aria-controls="faq-panel-2">
+              <span class="accordion-title">Can I change my delivery address?</span>
+              <span class="accordion-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="accordion-panel" id="faq-panel-2" role="region" aria-labelledby="faq-trigger-2" hidden>
+            <p>Yes, until the order is packed. Open the order in your account and choose <a href="#address">Edit address</a>.</p>
+          </div>
+
+          <h3 class="accordion-heading">
+            <button type="button" class="accordion-trigger" id="faq-trigger-3" aria-expanded="false" aria-controls="faq-panel-3">
+              <span class="accordion-title">How do returns work?</span>
+              <span class="accordion-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="accordion-panel" id="faq-panel-3" role="region" aria-labelledby="faq-trigger-3" hidden>
+            <p>Start a return within 30 days. Print the label, drop the parcel at any partner shop, and the refund follows within five working days of arrival.</p>
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="settings-title">
+        <h2 id="settings-title">Preferences</h2>
+        <!-- Multi-open accordion: any number of sections can be open. -->
+        <div class="accordion" id="settings" data-accordion data-allow-multiple>
+          <h3 class="accordion-heading">
+            <button type="button" class="accordion-trigger" id="settings-trigger-1" aria-expanded="false" aria-controls="settings-panel-1">
+              <span class="accordion-title">Email notifications</span>
+              <span class="accordion-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="accordion-panel" id="settings-panel-1" role="region" aria-labelledby="settings-trigger-1" hidden>
+            <label><input type="checkbox" checked /> Shipping updates</label>
+          </div>
+
+          <h3 class="accordion-heading">
+            <button type="button" class="accordion-trigger" id="settings-trigger-2" aria-expanded="false" aria-controls="settings-panel-2">
+              <span class="accordion-title">Language and region</span>
+              <span class="accordion-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="accordion-panel" id="settings-panel-2" role="region" aria-labelledby="settings-trigger-2" hidden>
+            <label>Language <select><option>English</option><option>Deutsch</option></select></label>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="script.js"></script>
+  </body>
+</html>

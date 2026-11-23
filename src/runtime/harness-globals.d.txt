@@ -1,0 +1,40 @@
+// Globals provided by the Frontend Interview Lab sandbox test harness (public/runner/harness.js).
+interface FilMock<A extends any[] = any[], R = any> {
+  (...args: A): R;
+  mock: { calls: A[]; results: { type: 'return' | 'throw'; value: unknown }[]; contexts: unknown[] };
+  mockImplementation(f: (...args: A) => R): FilMock<A, R>;
+  mockImplementationOnce(f: (...args: A) => R): FilMock<A, R>;
+  mockReturnValue(v: R): FilMock<A, R>;
+  mockResolvedValue(v: unknown): FilMock<A, R>;
+  mockRejectedValue(v: unknown): FilMock<A, R>;
+  mockClear(): FilMock<A, R>;
+}
+interface FilMatchers<R = void> {
+  toBe(v: unknown): R; toEqual(v: unknown): R; toStrictEqual(v: unknown): R;
+  toBeTruthy(): R; toBeFalsy(): R; toBeNull(): R; toBeUndefined(): R; toBeDefined(): R;
+  toBeInstanceOf(c: Function): R; toBeGreaterThan(n: number): R; toBeGreaterThanOrEqual(n: number): R;
+  toBeLessThan(n: number): R; toBeLessThanOrEqual(n: number): R; toContain(v: unknown): R; toHaveLength(n: number): R;
+  toMatch(re: RegExp | string): R; toThrow(e?: string | RegExp | Function): R;
+  toHaveBeenCalled(): R; toHaveBeenCalledTimes(n: number): R; toHaveBeenCalledWith(...args: unknown[]): R; toHaveBeenLastCalledWith(...args: unknown[]): R;
+  toBeInTheDocument(): R; toBeVisible(): R; toHaveTextContent(t: string | RegExp): R; toHaveAttribute(name: string, value?: unknown): R;
+  toHaveFocus(): R; toBeDisabled(): R; toHaveClass(c: string): R; toHaveValue(v: string): R;
+}
+interface FilExpect extends FilMatchers { not: FilMatchers; resolves: FilMatchers<Promise<void>>; rejects: FilMatchers<Promise<void>> }
+declare function describe(name: string, body: () => void): void;
+declare function it(name: string, body: () => unknown): void;
+declare function test(name: string, body: () => unknown): void;
+declare function beforeEach(f: () => unknown): void;
+declare function afterEach(f: () => unknown): void;
+declare function expect(actual: unknown): FilExpect;
+declare function fn<A extends any[] = any[], R = any>(impl?: (...args: A) => R): FilMock<A, R>;
+declare const timers: { useFake(): void; useReal(): void; advance(ms: number): void; runAll(): void; pendingCount(): number };
+declare function flush(): Promise<void>;
+declare function deferred<T = any>(): { promise: Promise<T>; resolve(v: T): void; reject(e: unknown): void };
+declare function render(el: any): { container: HTMLElement; rerender(el: any): void; unmount(): void };
+declare function mount(): HTMLElement;
+declare function act(cb: () => unknown): Promise<void> | void;
+declare const screen: any;
+declare const within: (el: HTMLElement) => any;
+declare const fireEvent: any;
+declare const waitFor: (cb: () => unknown, opts?: { timeout?: number }) => Promise<void>;
+declare function __lg(): void;

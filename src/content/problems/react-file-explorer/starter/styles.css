@@ -1,0 +1,12 @@
+.app { max-width: 480px; margin: 24px auto; font-family: system-ui, sans-serif; }
+.explorer { border: 1px solid #ccc; border-radius: 8px; padding: 8px; }
+.toolbar { display: flex; gap: 6px; margin-bottom: 8px; flex-wrap: wrap; }
+.toolbar button { font: inherit; font-size: 13px; padding: 4px 8px; }
+.toolbar input { font: inherit; font-size: 13px; padding: 3px 6px; }
+.tree, .tree [role='group'] { list-style: none; margin: 0; padding: 0; }
+.tree [role='group'] { padding-left: 16px; }
+.row { display: flex; align-items: center; gap: 6px; padding: 2px 6px; border-radius: 4px; cursor: pointer; user-select: none; }
+[role='treeitem']:focus { outline: none; }
+[role='treeitem']:focus > .row { outline: 2px solid #4f46e5; }
+[role='treeitem'][aria-selected='true'] > .row { background: #e0e7ff; }
+.error { color: #b91c1c; font-size: 13px; }

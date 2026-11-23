@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: 248 248 250;
+  --panel: 255 255 255;
+  --muted: 241 242 246;
+  --border: 222 224 231;
+  --fg: 24 25 31;
+  --subtle: 98 102 117;
+  --accent: 79 70 229;
+  --ok: 22 128 61;
+  --warn: 180 104 0;
+  --bad: 200 30 30;
+  color-scheme: light;
+}
+.dark {
+  --bg: 15 16 20;
+  --panel: 22 23 28;
+  --muted: 32 34 41;
+  --border: 46 49 59;
+  --fg: 232 233 238;
+  --subtle: 150 154 168;
+  --accent: 129 140 248;
+  --ok: 74 200 120;
+  --warn: 240 170 60;
+  --bad: 248 100 100;
+  color-scheme: dark;
+}
+html, body, #root { height: 100%; }
+body { @apply bg-bg text-fg antialiased; font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; font-size: 14px; }
+:focus-visible { outline: 2px solid rgb(var(--accent)); outline-offset: 2px; }
+
+.prose-lab { line-height: 1.6; }
+.prose-lab h1, .prose-lab h2, .prose-lab h3 { font-weight: 600; margin: 1em 0 0.4em; }
+.prose-lab h2 { font-size: 1.1em; }
+.prose-lab h3 { font-size: 1em; }
+.prose-lab p, .prose-lab ul, .prose-lab ol, .prose-lab pre, .prose-lab table { margin: 0.5em 0; }
+.prose-lab ul { list-style: disc; padding-left: 1.3em; }
+.prose-lab ol { list-style: decimal; padding-left: 1.3em; }
+.prose-lab li { margin: 0.15em 0; }
+.prose-lab code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.88em; background: rgb(var(--muted)); padding: 0.1em 0.3em; border-radius: 4px; }
+.prose-lab pre { background: rgb(var(--muted)); padding: 10px 12px; border-radius: 6px; overflow-x: auto; border: 1px solid rgb(var(--border)); }
+.prose-lab pre code { background: none; padding: 0; }
+.prose-lab a { color: rgb(var(--accent)); text-decoration: underline; }
+.prose-lab table { border-collapse: collapse; }
+.prose-lab th, .prose-lab td { border: 1px solid rgb(var(--border)); padding: 4px 8px; text-align: left; }
+.prose-lab blockquote { border-left: 3px solid rgb(var(--border)); padding-left: 10px; color: rgb(var(--subtle)); }
+
+[data-panel-resize-handle-id] { background: rgb(var(--border)); transition: background 0.15s; }
+[data-panel-resize-handle-id]:hover, [data-panel-resize-handle-id][data-resize-handle-active] { background: rgb(var(--accent)); }

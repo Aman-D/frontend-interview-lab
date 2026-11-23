@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Delegated todo list</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <h1>Today</h1>
+
+      <!-- The preview sandbox blocks form submission, so this is a group with an
+           Enter-key handler instead of a <form>. In production, use a <form>. -->
+      <div class="add-row" role="group" aria-label="Add a task">
+        <label for="new-task">New task</label>
+        <input id="new-task" type="text" autocomplete="off" />
+        <button type="button" id="add-task">Add</button>
+      </div>
+
+      <ul id="task-list" class="task-list" aria-label="Tasks">
+        <li class="task" data-id="1">
+          <button type="button" class="task-toggle" aria-pressed="false">Water the plants</button>
+          <button type="button" class="task-delete" aria-label="Delete Water the plants">
+            <span class="icon" aria-hidden="true">&times;</span>
+          </button>
+        </li>
+        <li class="task" data-id="2">
+          <button type="button" class="task-toggle" aria-pressed="false">Reply to Sam</button>
+          <button type="button" class="task-delete" aria-label="Delete Reply to Sam">
+            <span class="icon" aria-hidden="true">&times;</span>
+          </button>
+        </li>
+      </ul>
+
+      <p id="status" class="status" role="status"></p>
+    </main>
+    <script type="module" src="script.js"></script>
+  </body>
+</html>

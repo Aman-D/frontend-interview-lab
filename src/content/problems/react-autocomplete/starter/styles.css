@@ -1,0 +1,11 @@
+.app { max-width: 420px; margin: 32px auto; font-family: system-ui, sans-serif; }
+.hint { color: #555; font-size: 14px; }
+.autocomplete { position: relative; }
+.autocomplete label { display: block; font-weight: 600; margin-bottom: 4px; }
+.autocomplete input { width: 100%; box-sizing: border-box; padding: 8px 10px; font-size: 16px; border: 1px solid #999; border-radius: 6px; }
+.autocomplete input:focus { outline: 2px solid #4f46e5; outline-offset: 1px; }
+.autocomplete [role='listbox'] { list-style: none; margin: 4px 0 0; padding: 4px 0; border: 1px solid #ccc; border-radius: 6px; background: #fff; max-height: 240px; overflow: auto; }
+.autocomplete [role='option'] { padding: 6px 10px; cursor: pointer; }
+.autocomplete [role='option'][aria-selected='true'] { background: #e0e7ff; }
+.autocomplete .status { font-size: 13px; color: #555; min-height: 18px; margin-top: 4px; }
+.autocomplete .error { color: #b91c1c; font-size: 13px; margin-top: 4px; }
