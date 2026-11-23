@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-23T09:45:44.233Z",
+  "generatedAt": "2026-11-23T11:28:17.420Z",
   "browser": "Chromium 157.0.8103.78 (Playwright)",
   "results": [
     {
@@ -133,6 +133,108 @@
       "starter": {
         "passed": 0,
         "total": 15,
+        "failsAtLeastOne": true,
+        "status": "completed"
+      },
+      "ok": true
+    },
+    {
+      "problemId": "react-tooltip-popover",
+      "solution": {
+        "passed": 28,
+        "total": 28,
+        "allPassed": true,
+        "status": "completed",
+        "failures": []
+      },
+      "starter": {
+        "passed": 5,
+        "total": 28,
+        "failsAtLeastOne": true,
+        "status": "completed"
+      },
+      "ok": true
+    },
+    {
+      "problemId": "react-otp-input",
+      "solution": {
+        "passed": 22,
+        "total": 22,
+        "allPassed": true,
+        "status": "completed",
+        "failures": []
+      },
+      "starter": {
+        "passed": 2,
+        "total": 22,
+        "failsAtLeastOne": true,
+        "status": "completed"
+      },
+      "ok": true
+    },
+    {
+      "problemId": "react-infinite-scroll",
+      "solution": {
+        "passed": 15,
+        "total": 15,
+        "allPassed": true,
+        "status": "completed",
+        "failures": []
+      },
+      "starter": {
+        "passed": 0,
+        "total": 15,
+        "failsAtLeastOne": true,
+        "status": "completed"
+      },
+      "ok": true
+    },
+    {
+      "problemId": "react-virtualized-list",
+      "solution": {
+        "passed": 22,
+        "total": 22,
+        "allPassed": true,
+        "status": "completed",
+        "failures": []
+      },
+      "starter": {
+        "passed": 1,
+        "total": 22,
+        "failsAtLeastOne": true,
+        "status": "completed"
+      },
+      "ok": true
+    },
+    {
+      "problemId": "react-kanban-board",
+      "solution": {
+        "passed": 23,
+        "total": 23,
+        "allPassed": true,
+        "status": "completed",
+        "failures": []
+      },
+      "starter": {
+        "passed": 0,
+        "total": 23,
+        "failsAtLeastOne": true,
+        "status": "completed"
+      },
+      "ok": true
+    },
+    {
+      "problemId": "react-date-picker",
+      "solution": {
+        "passed": 24,
+        "total": 24,
+        "allPassed": true,
+        "status": "completed",
+        "failures": []
+      },
+      "starter": {
+        "passed": 1,
+        "total": 24,
         "failsAtLeastOne": true,
         "status": "completed"
       },

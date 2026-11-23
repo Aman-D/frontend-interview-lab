@@ -4,7 +4,7 @@ A local-first, research-backed practice environment for **Senior Frontend / SDE-
 
 - **No backend.** Content is bundled; your progress, code and notes live in your browser's IndexedDB. Export/import from Settings.
 - **Works offline** once loaded: Monaco, the TypeScript compiler and the React runtime are bundled locally (no CDNs).
-- **Isolated execution.** Your code runs in a fresh `<iframe sandbox="allow-scripts">` with an opaque origin — it cannot touch the app's storage.
+- **Isolated execution.** Your code runs in a fresh `<iframe sandbox="allow-scripts allow-forms">` with an opaque origin — it cannot touch the app's storage.
 - **Nothing is invented.** Every question shows its sources and classification; every dashboard number comes from your recorded activity; every "passed" is an actual test execution.
 
 ## Quick start
@@ -36,7 +36,7 @@ Open http://localhost:5173.
 
 | Track | Implemented (full content + verified) | Researched candidates |
 |---|---|---|
-| React machine coding | Autocomplete / Typeahead, File Explorer, Data Table, Modal Dialog, Tabs, Toast, Image Carousel, Star Rating | 30 |
+| React machine coding | Autocomplete / Typeahead, File Explorer, Data Table, Modal Dialog, Tabs, Toast, Image Carousel, Star Rating, Tooltip & Popover, OTP Input, Infinite Scroll, Virtualized List, Kanban Board, Date Picker | 30 |
 | Vanilla JS / DOM | Accessible Accordion, Event Delegation | 20 |
 | JavaScript & polyfills | debounce, Promise.all, curry, Event Emitter | 30 |
 | TypeScript | ReturnType/Parameters (`infer`), Type-safe Event Emitter | 20 |

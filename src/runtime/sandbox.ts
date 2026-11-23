@@ -27,16 +27,18 @@ export const SANDBOX_URL = `${import.meta.env.BASE_URL}runner/index.html`;
  * Creates an isolated iframe for one run.
  *
  * Security model:
- *  - `sandbox="allow-scripts"` WITHOUT `allow-same-origin` gives the frame an opaque origin, so
+ *  - `sandbox="allow-scripts allow-forms"` WITHOUT `allow-same-origin` gives the frame an opaque origin, so
  *    candidate code cannot read the app's IndexedDB/localStorage/cookies or touch the parent DOM.
- *  - No `allow-forms`, `allow-popups`, `allow-modals` or `allow-top-navigation`.
+ *  - `allow-forms` is needed so `<form onSubmit>` fires (Chromium drops the submit event without it); a submit
+ *    that isn't prevented can only navigate the sandbox frame itself.
+ *  - No `allow-popups`, `allow-modals` or `allow-top-navigation`.
  *  - Messages are accepted only when `event.source` is this frame's window.
  *  - Every run gets a fresh frame (no state leaks between runs) and a wall-clock timeout after
  *    which the frame is destroyed.
  */
 export function createSandboxFrame(container: HTMLElement, visible: boolean): HTMLIFrameElement {
   const iframe = document.createElement('iframe');
-  iframe.setAttribute('sandbox', 'allow-scripts');
+  iframe.setAttribute('sandbox', 'allow-scripts allow-forms');
   iframe.setAttribute('title', visible ? 'Preview' : 'Test sandbox');
   iframe.setAttribute('referrerpolicy', 'no-referrer');
   iframe.src = SANDBOX_URL;

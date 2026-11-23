@@ -27,7 +27,7 @@ Frontend Interview Lab is a **local-first single-page app**. There is no backend
 | **Monaco Editor** | Works fully offline when bundled (workers via Vite `?worker`). TS language service gives IntelliSense; React types and harness globals are added as extra libs. | **Used** for editing and diffs (`@monaco-editor/react` with `loader.config({ monaco })`, no CDN). |
 | **TypeScript compiler API** in a Web Worker | `transpileModule` for TS/TSX → CommonJS (fast, per file), `createProgram` with an in-memory host for real type-checking. Lib `.d.ts` files are bundled and lazy-loaded. | **Used** for all compilation and for type-level tests. Candidate code is only parsed/type-checked here, never executed. |
 | **Custom transformer** | Inserts `__lg()` at the start of every loop body. | **Used** as an infinite-loop guard. |
-| **Sandboxed iframe** (`sandbox="allow-scripts"`, no `allow-same-origin`) | Opaque origin → no access to app IndexedDB/localStorage/cookies/DOM. A fresh frame per run, destroyed after 20 s. | **Used** for every execution (preview and tests). |
+| **Sandboxed iframe** (`sandbox="allow-scripts allow-forms"`, no `allow-same-origin`; forms so `onSubmit` fires) | Opaque origin → no access to app IndexedDB/localStorage/cookies/DOM. A fresh frame per run, destroyed after 20 s. | **Used** for every execution (preview and tests). |
 | Web Worker for JS-only problems | Could be terminated on infinite loops, but would not share the test API/DOM; the loop guard already covers sync loops. | Not used in v1. |
 
 ### How a test run works

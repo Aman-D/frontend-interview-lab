@@ -196,7 +196,7 @@ try {
     const frame = page.frameLocator('iframe[title="Preview"]');
     await frame.getByText('Fruit search').waitFor({ timeout: 60000 });
     const sandbox = await page.locator('iframe[title="Preview"]').getAttribute('sandbox');
-    assert(sandbox === 'allow-scripts', `unexpected sandbox attribute: ${sandbox}`);
+    assert(sandbox === 'allow-scripts allow-forms', `unexpected sandbox attribute: ${sandbox}`);
     const f = page.frames().find((x) => x.url().includes('/runner/'));
     const blocked = await f.evaluate(() => {
       try {

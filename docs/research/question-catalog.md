@@ -15,13 +15,13 @@ Legend:
 | 2 | File Explorer | `fih-ui` → "File Explorer"; `fg-mc` → "Tree View / Folder View" | PPP | HIGH | ✅ Implemented (`react-file-explorer`) |
 | 3 | Data Table (sort/filter/paginate) | `fih-ui` → "Data Table (with extensions for sorting and filtering)"; `fih-sd-ui` → "Data table"; `alla-components` → "Design a Data Table" | PPP | HIGH | ✅ Implemented (`react-data-table`) |
 | 4 | Toast Notification System | `fg-mc` → "Toast Notification"; `alla-components` → "Design a Toast / Notification System" | PPP | HIGH | ✅ Implemented (`react-toast`) |
-| 5 | Infinite Scroll | `fg-mc` → "Infinite Scroll" | PPP | MED | Candidate |
+| 5 | Infinite Scroll | `fg-mc` → "Infinite Scroll" | PPP | MED | ✅ Implemented (`react-infinite-scroll`) |
 | 6 | Modal / Dialog | `fih-ui` → "Modal Dialog"; `fih-sd-ui` → "Modal dialog"; `alla-components` → "Design a Modal / Dialog"; `fg-mc` → "Modal Component" | PPP | HIGH | ✅ Implemented (`react-modal-dialog`) |
 | 7 | Multi-Select Dropdown | `fih-sd-ui` → "Dropdown menu"; `alla-components` → "Design a Dropdown Menu"; `fg-mc` → "Chips Input" | OV | MED | Multi-select is a variation of dropdown + chips input |
 | 8 | Nested Comments | `fg-mc` → "Comment View (Multi-level)" | PPP | MED | Overlaps #2 / #15 (recursive tree rendering) |
-| 9 | Virtualized List | `alla-components` → "Design a Virtualized List"; `fg-mc` Infinite Scroll description mentions "Virtualization" | PPP | MED | Candidate |
-| 10 | Drag-and-Drop Kanban | `fih-ui` → "Kanban Board"; `fg-mc` → "Kanban Board" | PPP | HIGH | Candidate |
-| 11 | OTP Input | `fg-mc` → "OTP Input Design" | PPP | MED | Candidate |
+| 9 | Virtualized List | `alla-components` → "Design a Virtualized List"; `fg-mc` Infinite Scroll description mentions "Virtualization" | PPP | MED | ✅ Implemented (`react-virtualized-list`) |
+| 10 | Drag-and-Drop Kanban | `fih-ui` → "Kanban Board"; `fg-mc` → "Kanban Board" | PPP | HIGH | ✅ Implemented (`react-kanban-board`) |
+| 11 | OTP Input | `fg-mc` → "OTP Input Design" | PPP | MED | ✅ Implemented (`react-otp-input`) |
 | 12 | Dynamic Form Builder | `alla-components` → "Design a Config-Driven UI" (adjacent) | OV | LOW | Candidate |
 | 13 | Accordion | `fih-ui` → "Accordion"; `fg-mc` → "Accordion"; `alla-components` → "Design an Accordion" | PPP | HIGH | Implemented in Vanilla track; React version is a duplicate → deprioritised |
 | 14 | Tabs | `fih-ui` → "Tabs"; `fg-mc` → "Tab bar"; `alla-components` → "Design a Tabs Component" | PPP | HIGH | ✅ Implemented (`react-tabs`) |
@@ -29,7 +29,7 @@ Legend:
 | 16 | Multi-Step Form | `fg-mc` → "Step Form", "Multi-Step Form" | PPP | MED | Candidate (one source, two entries) |
 | 17 | Image Carousel | `fih-ui` → "Image Carousel"; `fih-sd-ui` → "Image carousel"; `alla-components` → "Design an Image Carousel"; `fg-mc` → "Image Carousel" | PPP | HIGH | ✅ Implemented (`react-image-carousel`) |
 | 18 | Star Rating | `fih-ui` → "Star Rating"; `fg-mc` → "Star Component" | PPP | HIGH | ✅ Implemented (`react-star-rating`) |
-| 19 | Calendar / Date Picker | `alla-components` → "Design a Date Picker"; `fg-mc` → "Calendar View" | PPP | HIGH | Candidate |
+| 19 | Calendar / Date Picker | `alla-components` → "Design a Date Picker"; `fg-mc` → "Calendar View" | PPP | HIGH | ✅ Implemented (`react-date-picker`) |
 | 20 | Editable Data Grid | Variation of #3 | OV | LOW | Candidate |
 | 21 | Search with Filters | Variation of #3 (filtering) | OV | LOW | Candidate |
 | 22 | Chat Interface | `fg-mc` → "Messaging Interface" | PPP | MED | Candidate |
@@ -42,7 +42,7 @@ Legend:
 | 29 | Multi-Camera Dashboard | No public source found | OV | UNK | Candidate for replacement |
 | 30 | Timeline / Video Scrubber | No public source found | OV | UNK | Candidate for replacement |
 
-**Researched replacements with stronger evidence** (recommended over the `UNK` rows): Progress Bars (`fih-ui`, `fg-mc`), Tooltip/Popover (`fih-sd-ui`, `alla-components`, `fg-mc`), Todo list (`fih-ui`, `fg-mc`), Tic-tac-toe (`fih-ui`, `fg-mc`), Transfer List (`fih-ui`), Stopwatch / Countdown (`fih-ui`, `fg-mc`), Pagination (`fg-mc`), File Uploader (`alla-components`), Poll widget (`fih-sd-ui`, `alla-components`), Seat booking (`fg-mc`), BFE React hooks such as `useDebounce()`, `usePrevious()`, `useSWR()` (`bfe-react`).
+**Researched replacements with stronger evidence** (recommended over the `UNK` rows): Progress Bars (`fih-ui`, `fg-mc`), Tooltip/Popover (`fih-sd-ui`, `alla-components`, `fg-mc`) — ✅ implemented as `react-tooltip-popover`, Todo list (`fih-ui`, `fg-mc`), Tic-tac-toe (`fih-ui`, `fg-mc`), Transfer List (`fih-ui`), Stopwatch / Countdown (`fih-ui`, `fg-mc`), Pagination (`fg-mc`), File Uploader (`alla-components`), Poll widget (`fih-sd-ui`, `alla-components`), Seat booking (`fg-mc`), BFE React hooks such as `useDebounce()`, `usePrevious()`, `useSWR()` (`bfe-react`).
 
 ## Track 2 — Vanilla JavaScript / DOM (20 candidates)
 

@@ -1,0 +1,12 @@
+.app { max-width: 640px; margin: 24px auto; padding: 0 16px; font-family: system-ui, sans-serif; color: #1f2937; }
+.hint { color: #6b7280; font-size: 14px; }
+.toolbar { display: flex; gap: 6px; }
+button { font: inherit; padding: 6px 12px; border-radius: 6px; border: 1px solid #cbd5e1; background: #fff; cursor: pointer; }
+button:focus-visible, input:focus-visible { outline: 2px solid #4f46e5; outline-offset: 2px; }
+.corner { position: fixed; top: 4px; right: 4px; }
+.corner--bottom { top: auto; bottom: 4px; }
+.tooltip { max-width: 240px; padding: 4px 8px; border-radius: 4px; background: #111827; color: #fff; font-size: 13px; line-height: 1.4; }
+.popover { min-width: 160px; max-width: 280px; padding: 12px; border: 1px solid #cbd5e1; border-radius: 8px; background: #fff; box-shadow: 0 8px 24px rgb(0 0 0 / 0.15); }
+.popover:focus { outline: none; }
+.filters { border: 0; margin: 0; padding: 0; display: grid; gap: 4px; }
+.help { margin: 0; font-size: 14px; }

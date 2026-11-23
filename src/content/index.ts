@@ -18,6 +18,12 @@ import reactDataTable from './problems/react-data-table';
 import reactModalDialog from './problems/react-modal-dialog';
 import reactTabs from './problems/react-tabs';
 import reactToast from './problems/react-toast';
+import reactTooltipPopover from './problems/react-tooltip-popover';
+import reactOtpInput from './problems/react-otp-input';
+import reactInfiniteScroll from './problems/react-infinite-scroll';
+import reactVirtualizedList from './problems/react-virtualized-list';
+import reactKanbanBoard from './problems/react-kanban-board';
+import reactDatePicker from './problems/react-date-picker';
 
 /** Every coding problem bundled with the app. Order is the default library order. */
 export const CODING_PROBLEMS: CodingProblem[] = [
@@ -29,6 +35,12 @@ export const CODING_PROBLEMS: CodingProblem[] = [
   reactToast,
   reactImageCarousel,
   reactStarRating,
+  reactTooltipPopover,
+  reactOtpInput,
+  reactInfiniteScroll,
+  reactVirtualizedList,
+  reactKanbanBoard,
+  reactDatePicker,
   vanillaAccordion,
   vanillaEventDelegation,
   jsDebounce,

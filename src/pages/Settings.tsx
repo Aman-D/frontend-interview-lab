@@ -87,7 +87,7 @@ export default function SettingsPage() {
         <Card>
           <CardHeader title="Coding sandbox" />
           <div className="space-y-2 p-4 text-sm text-subtle">
-            <p>Your code runs in a fresh <code>&lt;iframe sandbox="allow-scripts"&gt;</code> without <code>allow-same-origin</code>: it gets an opaque origin and cannot read this app's storage, cookies or DOM. It communicates only via <code>postMessage</code>.</p>
+            <p>Your code runs in a fresh <code>&lt;iframe sandbox="allow-scripts allow-forms"&gt;</code> without <code>allow-same-origin</code>: it gets an opaque origin and cannot read this app's storage, cookies or DOM. It communicates only via <code>postMessage</code>.</p>
             <p>TypeScript/JSX is compiled by the bundled TypeScript compiler in a Web Worker. Loops are instrumented with a guard that aborts code blocking the thread for more than 3 s; each run has a 20 s wall-clock limit after which the sandbox is destroyed.</p>
             <p>Everything (editor, compiler, React runtime) is bundled locally, so practice works offline.</p>
           </div>

@@ -1,0 +1,19 @@
+.app { max-width: 960px; margin: 24px auto; padding: 0 16px; font-family: system-ui, sans-serif; color: #1f2937; }
+.hint { color: #555; font-size: 14px; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.kanban { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; align-items: start; }
+.kanban__column { background: #f3f4f6; border-radius: 8px; padding: 10px; min-height: 120px; }
+.kanban__column[data-full='true'] .kanban__count { color: #b91c1c; }
+.kanban__header { display: flex; align-items: baseline; justify-content: space-between; }
+.kanban__header h2 { font-size: 15px; margin: 0 0 8px; }
+.kanban__count { font-size: 13px; color: #555; }
+.kanban__list { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; min-height: 24px; }
+.kanban__card { background: #fff; border: 1px solid #d1d5db; border-radius: 6px; padding: 6px 8px; display: flex; flex-wrap: wrap; align-items: center; gap: 4px; }
+.kanban__card[data-dragging='true'] { border-color: #4f46e5; box-shadow: 0 2px 8px rgb(0 0 0 / 0.15); }
+.kanban__handle { flex: 1; cursor: grab; touch-action: none; user-select: none; padding: 2px; border-radius: 4px; }
+.kanban__handle[aria-pressed='true'] { cursor: grabbing; outline: 2px dashed #4f46e5; }
+.kanban__card button, .kanban__add button { font: inherit; font-size: 12px; }
+.kanban__menu { flex-basis: 100%; display: flex; flex-wrap: wrap; gap: 4px; padding-top: 4px; }
+.kanban__add { display: flex; gap: 4px; margin-top: 8px; }
+.kanban__add input { flex: 1; min-width: 0; font: inherit; font-size: 13px; }
+:focus-visible { outline: 2px solid #4f46e5; outline-offset: 2px; }

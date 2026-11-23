@@ -1,0 +1,23 @@
+.app { max-width: 560px; margin: 32px auto; padding: 0 16px; font-family: system-ui, sans-serif; color: #1f2937; }
+.hint { color: #555; font-size: 14px; }
+.datepicker { position: relative; display: grid; gap: 4px; margin: 16px 0; max-width: 320px; }
+.datepicker label { font-weight: 600; font-size: 14px; }
+.datepicker__field { display: flex; gap: 4px; }
+.datepicker__field input { flex: 1; min-width: 0; font: inherit; padding: 4px 6px; }
+.datepicker__field input[aria-invalid='true'] { border-color: #b91c1c; }
+.datepicker__button { font: inherit; padding: 4px 8px; }
+.datepicker__hint { font-size: 12px; color: #555; }
+.datepicker__error { font-size: 13px; color: #b91c1c; }
+.datepicker__dialog { position: absolute; top: 100%; left: 0; z-index: 10; margin-top: 4px; padding: 8px; background: #fff; border: 1px solid #d1d5db; border-radius: 8px; box-shadow: 0 6px 20px rgb(0 0 0 / 0.15); }
+.datepicker__header { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.datepicker__header h2 { font-size: 15px; margin: 0; }
+.datepicker__header button { font: inherit; min-width: 32px; }
+.datepicker__grid { border-collapse: collapse; margin-top: 6px; }
+.datepicker__grid th { font-size: 12px; font-weight: 600; color: #555; padding: 4px; }
+.datepicker__grid td { width: 34px; height: 30px; text-align: center; font-size: 14px; border-radius: 4px; cursor: pointer; }
+.datepicker__grid td:not([data-date]) { cursor: default; }
+.datepicker__grid td[aria-current='date'] { font-weight: 700; text-decoration: underline; }
+.datepicker__grid td[aria-selected='true'] { background: #4f46e5; color: #fff; }
+.datepicker__grid td[aria-disabled='true'] { color: #9ca3af; cursor: not-allowed; text-decoration: line-through; }
+.datepicker__grid td[data-date]:hover:not([aria-disabled='true']):not([aria-selected='true']) { background: #eef2ff; }
+:focus-visible { outline: 2px solid #4f46e5; outline-offset: 1px; }
