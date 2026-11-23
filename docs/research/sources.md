@@ -84,6 +84,24 @@ All returned HTTP 200 on 2026-11-23 (checked with `curl -L`; see methodology).
 | `react-no-effect` | react.dev — You Might Not Need an Effect | https://react.dev/learn/you-might-not-need-an-effect |
 | `react-context` | react.dev — Passing Data Deeply with Context | https://react.dev/learn/passing-data-deeply-with-context |
 | `react-sharing-state` | react.dev — Sharing State Between Components (controlled vs uncontrolled) | https://react.dev/learn/sharing-state-between-components |
+| `mdn-drag-drop` | MDN — HTML Drag and Drop API | https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API |
+| `mdn-pointer-events` | MDN — Pointer events | https://developer.mozilla.org/en-US/docs/Web/API/Pointer_events |
+| `mdn-intersection-observer` | MDN — Intersection Observer API | https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API |
+| `mdn-resize-observer` | MDN — ResizeObserver | https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserver |
+| `mdn-intl-datetimeformat` | MDN — Intl.DateTimeFormat | https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat |
+| `mdn-autocomplete-attr` | MDN — HTML autocomplete attribute | https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/autocomplete |
+| `mdn-inputmode` | MDN — inputmode | https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/inputmode |
+| `mdn-paste-event` | MDN — Element: paste event | https://developer.mozilla.org/en-US/docs/Web/API/Element/paste_event |
+| `mdn-popover-api` | MDN — Popover API | https://developer.mozilla.org/en-US/docs/Web/API/Popover_API |
+| `mdn-overflow-anchor` | MDN — overflow-anchor (scroll anchoring) | https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-anchor |
+| `apg-tooltip` | WAI-ARIA APG — Tooltip pattern | https://www.w3.org/WAI/ARIA/apg/patterns/tooltip/ |
+| `apg-datepicker-dialog` | WAI-ARIA APG — Date Picker Dialog example | https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/examples/datepicker-dialog/ |
+| `apg-grid` | WAI-ARIA APG — Grid pattern | https://www.w3.org/WAI/ARIA/apg/patterns/grid/ |
+| `apg-feed` | WAI-ARIA APG — Feed pattern | https://www.w3.org/WAI/ARIA/apg/patterns/feed/ |
+| `webdev-virtualize` | web.dev — Virtualize large lists with react-window | https://web.dev/articles/virtualize-long-lists-react-window |
+| `webdev-sms-otp` | web.dev — SMS OTP form best practices | https://web.dev/articles/sms-otp-form |
+| `wcag-dragging` | WCAG 2.2 — Understanding 2.5.7 Dragging Movements | https://www.w3.org/WAI/WCAG22/Understanding/dragging-movements.html |
+| `wcag-hover-focus` | WCAG 2.2 — Understanding 1.4.13 Content on Hover or Focus | https://www.w3.org/WAI/WCAG22/Understanding/content-on-hover-or-focus.html |
 | `webdev-inp` | web.dev — Optimize INP | https://web.dev/articles/optimize-inp |
 
 ## Execution-environment references
