@@ -22,5 +22,5 @@ This was intentional for Phase 1: the brief asks to validate the architecture be
 - Runaway synchronous loops are interrupted by a compile-time loop guard; deep recursion surfaces as a stack-overflow error. A tight loop that the guard cannot see (e.g. inside a library) can still freeze the sandbox iframe until the run times out.
 - No visual regression or automated accessibility (axe) checks yet; accessibility is covered by role/ARIA assertions in tests plus manual checklists.
 
-## Concepts requested by the second React batch (not yet written)
-Problem authors fell back to the nearest existing concept for: controlled vs uncontrolled components, derived state ("you might not need an effect"), ARIA live regions, portals & scroll locking, roving tabindex / tabs pattern, radio-group pattern, carousel pattern & reduced motion, React context. These are the next concept pages to add.
+## Concept pages added for the second React batch
+Added: controlled vs uncontrolled, derived state, React context, portals (incl. scroll locking), ARIA live regions, modal dialog pattern, tabs pattern (roving tabindex), radio group pattern, carousel pattern (incl. reduced motion). Concept total: 42.

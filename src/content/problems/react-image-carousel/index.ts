@@ -23,7 +23,7 @@ const problem: CodingProblem = {
   seniority: ['Senior', 'SDE-2', 'SDE-3', 'MTS'],
   topics: ['carousel a11y', 'autoplay timers', 'prefers-reduced-motion', 'live regions', 'keyboard navigation', 'image loading'],
   estimatedMinutes: 60,
-  conceptIds: ['react-effects', 'fake-timers', 'closures', 'focus-management', 'keyboard-navigation', 'event-propagation'],
+  conceptIds: ['carousel-aria-pattern', 'aria-live-regions', 'react-effects', 'fake-timers', 'closures', 'focus-management', 'keyboard-navigation', 'event-propagation'],
   research: {
     provenance: 'PUBLISHED_PRACTICE_PROBLEM',
     frequencyConfidence: 'HIGH_CONFIDENCE',

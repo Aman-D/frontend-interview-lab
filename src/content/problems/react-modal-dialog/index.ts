@@ -22,7 +22,7 @@ const problem: CodingProblem = {
   seniority: ['Senior', 'SDE-2', 'SDE-3', 'MTS'],
   topics: ['portals', 'focus trap', 'focus restoration', 'dialog a11y', 'scroll lock', 'effect cleanup'],
   estimatedMinutes: 60,
-  conceptIds: ['react-portals', 'focus-management', 'keyboard-navigation', 'react-effects', 'event-propagation', 'closures', 'referential-equality'],
+  conceptIds: ['dialog-aria-pattern', 'react-portals', 'focus-management', 'keyboard-navigation', 'react-effects', 'event-propagation', 'closures', 'referential-equality'],
   research: {
     provenance: 'PUBLISHED_PRACTICE_PROBLEM',
     frequencyConfidence: 'HIGH_CONFIDENCE',

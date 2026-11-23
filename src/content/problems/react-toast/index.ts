@@ -23,7 +23,7 @@ const problem: CodingProblem = {
   seniority: ['Senior', 'SDE-2', 'SDE-3', 'MTS'],
   topics: ['context API design', 'timers', 'pause/resume', 'queueing', 'ARIA live regions', 'stable callbacks', 'effect cleanup'],
   estimatedMinutes: 60,
-  conceptIds: ['react-context', 'react-effects', 'fake-timers', 'closures', 'referential-equality', 'react-state-batching', 'immutable-updates', 'react-reconciliation-keys', 'focus-management'],
+  conceptIds: ['aria-live-regions', 'react-context', 'react-effects', 'fake-timers', 'closures', 'referential-equality', 'react-state-batching', 'immutable-updates', 'react-reconciliation-keys', 'focus-management'],
   research: {
     provenance: 'PUBLISHED_PRACTICE_PROBLEM',
     frequencyConfidence: 'HIGH_CONFIDENCE',

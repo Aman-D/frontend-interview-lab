@@ -23,7 +23,7 @@ const problem: CodingProblem = {
   seniority: ['Senior', 'SDE-2', 'SDE-3', 'MTS'],
   topics: ['debouncing', 'race conditions', 'AbortController', 'combobox a11y', 'keyboard navigation', 'async UI states'],
   estimatedMinutes: 60,
-  conceptIds: ['debouncing', 'abort-controller', 'race-conditions', 'async-ui-states', 'combobox-aria', 'keyboard-navigation', 'react-effects', 'focus-management'],
+  conceptIds: ['aria-live-regions', 'debouncing', 'abort-controller', 'race-conditions', 'async-ui-states', 'combobox-aria', 'keyboard-navigation', 'react-effects', 'focus-management'],
   research: {
     provenance: 'PUBLISHED_PRACTICE_PROBLEM',
     frequencyConfidence: 'HIGH_CONFIDENCE',

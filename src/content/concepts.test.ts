@@ -12,6 +12,8 @@ const EXPECTED_IDS = [
   'conditional-types-infer', 'mapped-types-keyof', 'discriminated-unions', 'fake-timers',
   // batch 2 (React)
   'controlled-uncontrolled', 'derived-state', 'react-context', 'react-portals',
+  // batch 2 (Accessibility)
+  'aria-live-regions', 'dialog-aria-pattern', 'tabs-aria-pattern', 'radio-group-aria', 'carousel-aria-pattern',
 ];
 
 describe('concept knowledge base', () => {

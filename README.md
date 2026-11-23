@@ -42,7 +42,7 @@ Open http://localhost:5173.
 | TypeScript | ReturnType/Parameters (`infer`), Type-safe Event Emitter | 20 |
 | Output prediction | 19 questions (event loop, hoisting/TDZ, closures, `this`, coercion, prototypes, finally, event propagation, React batching/effects/keys) | 19 implemented, 50+ targeted |
 
-Plus **33 concept pages**, each with mechanism, misconceptions, failure cases, production implications and official-doc links.
+Plus **42 concept pages**, each with mechanism, misconceptions, failure cases, production implications and official-doc links.
 
 Each coding problem has: interviewer-style description, clarification questions (why + default assumption), scope decisions, MUST/SHOULD/OPTIONAL requirements by category, acceptance criteria, public + hidden tests, progressive hints, a 12-part solution (approaches, full code, walkthrough, complexity, edge cases, alternatives, trade-offs, mistakes, testing strategy, senior follow-ups), follow-up questions from definition → architecture, MCQs with per-option explanations, and sources.
 
