@@ -22,7 +22,7 @@ const problem: CodingProblem = {
   seniority: ['Senior', 'SDE-2', 'SDE-3', 'MTS'],
   topics: ['WAI-ARIA tabs', 'roving tabindex', 'keyboard navigation', 'controlled vs uncontrolled', 'useId', 'component API design'],
   estimatedMinutes: 45,
-  conceptIds: ['keyboard-navigation', 'focus-management', 'react-reconciliation-keys', 'react-effects'],
+  conceptIds: ['controlled-uncontrolled', 'keyboard-navigation', 'focus-management', 'react-reconciliation-keys', 'react-effects'],
   research: {
     provenance: 'PUBLISHED_PRACTICE_PROBLEM',
     frequencyConfidence: 'HIGH_CONFIDENCE',

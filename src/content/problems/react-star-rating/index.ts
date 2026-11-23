@@ -21,7 +21,7 @@ const problem: CodingProblem = {
   seniority: ['Senior', 'SDE-2', 'SDE-3', 'MTS'],
   topics: ['controlled vs uncontrolled', 'radio group a11y', 'roving tabindex', 'hover preview', 'input validation'],
   estimatedMinutes: 40,
-  conceptIds: ['keyboard-navigation', 'focus-management', 'event-propagation'],
+  conceptIds: ['controlled-uncontrolled', 'keyboard-navigation', 'focus-management', 'event-propagation'],
   research: {
     provenance: 'PUBLISHED_PRACTICE_PROBLEM',
     frequencyConfidence: 'HIGH_CONFIDENCE',

@@ -24,7 +24,7 @@ const problem: CodingProblem = {
   seniority: ['Senior', 'SDE-2', 'SDE-3', 'MTS'],
   topics: ['derived state', 'stable sorting', 'Intl.Collator', 'pagination', 'generic components', 'sortable table a11y'],
   estimatedMinutes: 60,
-  conceptIds: ['generics', 'immutable-updates', 'react-effects', 'react-state-batching', 'react-reconciliation-keys', 'referential-equality'],
+  conceptIds: ['derived-state', 'generics', 'immutable-updates', 'react-effects', 'react-state-batching', 'react-reconciliation-keys', 'referential-equality'],
   research: {
     provenance: 'PUBLISHED_PRACTICE_PROBLEM',
     frequencyConfidence: 'HIGH_CONFIDENCE',

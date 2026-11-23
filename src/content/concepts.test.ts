@@ -10,6 +10,8 @@ const EXPECTED_IDS = [
   'keyboard-navigation', 'combobox-aria', 'tree-aria-pattern', 'disclosure-accordion-aria', 'react-state-batching',
   'react-effects', 'react-reconciliation-keys', 'immutable-updates', 'recursive-tree-traversal', 'generics',
   'conditional-types-infer', 'mapped-types-keyof', 'discriminated-unions', 'fake-timers',
+  // batch 2 (React)
+  'controlled-uncontrolled', 'derived-state', 'react-context', 'react-portals',
 ];
 
 describe('concept knowledge base', () => {

@@ -1,3 +1,4 @@
+import { REACT_BATCH2_CONCEPTS } from './concepts-react-batch2';
 import type { Concept } from './schema';
 
 /**
@@ -1825,5 +1826,7 @@ it('debounces calls', () => {
     related: ['debouncing', 'event-loop', 'promises'],
   },
 ];
+
+CONCEPTS.push(...REACT_BATCH2_CONCEPTS);
 
 export const CONCEPT_BY_ID: Record<string, Concept> = Object.fromEntries(CONCEPTS.map((c) => [c.id, c]));
