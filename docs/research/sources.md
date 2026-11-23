@@ -102,6 +102,16 @@ All returned HTTP 200 on 2026-11-23 (checked with `curl -L`; see methodology).
 | `webdev-sms-otp` | web.dev — SMS OTP form best practices | https://web.dev/articles/sms-otp-form |
 | `wcag-dragging` | WCAG 2.2 — Understanding 2.5.7 Dragging Movements | https://www.w3.org/WAI/WCAG22/Understanding/dragging-movements.html |
 | `wcag-hover-focus` | WCAG 2.2 — Understanding 1.4.13 Content on Hover or Focus | https://www.w3.org/WAI/WCAG22/Understanding/content-on-hover-or-focus.html |
+| `apg-listbox` | WAI-ARIA APG — Listbox pattern | https://www.w3.org/WAI/ARIA/apg/patterns/listbox/ |
+| `apg-combobox-list-example` | WAI-ARIA APG — Editable Combobox With List Autocomplete example | https://www.w3.org/WAI/ARIA/apg/patterns/combobox/examples/combobox-autocomplete-list/ |
+| `mdn-constraint-validation` | MDN — Constraint validation | https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Constraint_validation |
+| `mdn-fieldset` | MDN — <fieldset> | https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/fieldset |
+| `mdn-input-radio` | MDN — <input type="radio"> | https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input/radio |
+| `mdn-aria-invalid` | MDN — aria-invalid | https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-invalid |
+| `wai-multipage-forms` | W3C WAI Tutorials — Multi-page Forms | https://www.w3.org/WAI/tutorials/forms/multi-page/ |
+| `react-custom-hooks` | react.dev — Reusing Logic with Custom Hooks | https://react.dev/learn/reusing-logic-with-custom-hooks |
+| `react-usesyncexternalstore` | react.dev — useSyncExternalStore | https://react.dev/reference/react/useSyncExternalStore |
+| `react-refs` | react.dev — Referencing Values with Refs | https://react.dev/learn/referencing-values-with-refs |
 | `webdev-inp` | web.dev — Optimize INP | https://web.dev/articles/optimize-inp |
 | `react-19-release` | react.dev — React 19 release post | https://react.dev/blog/2024/12/05/react-19 |
 | `react-useactionstate` | react.dev — useActionState | https://react.dev/reference/react/useActionState |
