@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { QUESTION_BY_ID } from '@/content';
 import CodingWorkspace from '@/workspace/CodingWorkspace';
 import OutputWorkspace from '@/workspace/OutputWorkspace';
+import DesignWorkspace from '@/workspace/DesignWorkspace';
 import NotFound from './NotFound';
 
 export default function Workspace() {
@@ -12,5 +13,7 @@ export default function Workspace() {
     if (q) document.title = `${q.title} · Practice · Frontend Interview Lab`;
   }, [q]);
   if (!q) return <NotFound />;
-  return q.kind === 'coding' ? <CodingWorkspace key={q.id} problem={q} /> : <OutputWorkspace key={q.id} question={q} />;
+  if (q.kind === 'coding') return <CodingWorkspace key={q.id} problem={q} />;
+  if (q.kind === 'design') return <DesignWorkspace key={q.id} question={q} />;
+  return <OutputWorkspace key={q.id} question={q} />;
 }

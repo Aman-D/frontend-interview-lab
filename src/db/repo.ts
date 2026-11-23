@@ -129,6 +129,46 @@ export function createRepo(database: LabDB = db) {
     return attempt;
   }
 
+  /**
+   * Architecture/design questions: MCQs are graded, the written answer is self-assessed against the outline.
+   * Outcome: model answer viewed before submitting → assisted; all MCQs right on the first try and ≥ 70% of the
+   * outline covered (self-assessed) → independent-tested; MCQs right but less covered → independent; else incorrect.
+   */
+  async function submitQuizAttempt(
+    problemId: string,
+    input: { answer: string; mcqCorrect: number; mcqTotal: number; outlineCovered: number; outlineTotal: number; revealedBeforeSubmit: boolean; confidence: 1 | 2 | 3 | 4 | 5; startedAt: number },
+  ): Promise<Attempt> {
+    const allMcq = input.mcqTotal > 0 && input.mcqCorrect === input.mcqTotal;
+    const coverage = input.outlineTotal ? input.outlineCovered / input.outlineTotal : 0;
+    const outcome: Attempt['outcome'] = input.revealedBeforeSubmit ? 'assisted' : allMcq && coverage >= 0.7 ? 'independent-tested' : allMcq ? 'independent' : 'incorrect';
+    const nextRevisionAt = Date.now() + revisionIntervalDays(input.confidence, outcome) * DAY;
+    const attempt: Attempt = {
+      id: uid(),
+      problemId,
+      mode: 'study',
+      status: 'submitted',
+      startedAt: input.startedAt,
+      endedAt: Date.now(),
+      activeMs: Math.max(0, Date.now() - input.startedAt),
+      timer: createTimer(),
+      runCount: 0,
+      requirementsDone: [],
+      hintsRevealed: 0,
+      solutionRevealed: input.revealedBeforeSubmit,
+      answer: input.answer,
+      correct: allMcq,
+      confidence: input.confidence,
+      mistakes: `MCQs ${input.mcqCorrect}/${input.mcqTotal} on first try; outline covered ${input.outlineCovered}/${input.outlineTotal} (self-assessed)`,
+      outcome,
+      nextRevisionAt,
+    };
+    await database.transaction('rw', database.attempts, database.progress, async () => {
+      await database.attempts.add(attempt);
+      await updateProgressAfterSubmit(problemId, outcome!, input.confidence, nextRevisionAt);
+    });
+    return attempt;
+  }
+
   async function updateProgressAfterSubmit(problemId: string, outcome: Attempt['outcome'] & string, confidence: number | undefined, nextRevisionAt: number) {
     const prev = await database.progress.get(problemId);
     const needs = shouldNeedRevision(outcome, confidence);
@@ -209,7 +249,7 @@ export function createRepo(database: LabDB = db) {
 
   return {
     getActiveAttempt, startAttempt, patchAttempt, saveDraft, resetDraft, recordRun, revealHint, revealSolution,
-    toggleRequirement, addActiveTime, submitCodingAttempt, submitOutputAttempt, abandonAttempt, setNeedsRevision,
+    toggleRequirement, addActiveTime, submitCodingAttempt, submitOutputAttempt, submitQuizAttempt, abandonAttempt, setNeedsRevision,
     setInterviewReady, saveNote, deleteNote, setConceptStatus, answerMcq, saveFollowUp,
     exportAll: () => exportAll(database),
     importAll: (data: unknown, mode: 'merge' | 'replace') => importAll(database, data, mode),

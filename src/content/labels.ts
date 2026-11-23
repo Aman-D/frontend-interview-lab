@@ -6,6 +6,7 @@ export const TRACK_LABEL: Record<TrackId, string> = {
   javascript: 'JavaScript & polyfills',
   typescript: 'TypeScript',
   output: 'Output prediction',
+  architecture: 'Architecture & performance',
 };
 
 export const PROVENANCE_LABEL: Record<Provenance, string> = {
@@ -38,7 +39,8 @@ export const EXECUTION_LABEL = {
   js: 'JavaScript · unit tests',
   'ts-types': 'TypeScript compiler · type tests',
   output: 'Predict the output',
+  quiz: 'Scenario · graded MCQs · self-assessed answer',
 } as const;
 
 /** Researched candidates in docs/research/question-catalog.md (rows per track). */
-export const CATALOG_CANDIDATES: Record<TrackId, number> = { react: 30, vanilla: 20, javascript: 30, typescript: 20, output: 19 };
+export const CATALOG_CANDIDATES: Record<TrackId, number> = { react: 30, vanilla: 20, javascript: 30, typescript: 20, output: 56, architecture: 12 };

@@ -38,7 +38,7 @@ export default function OutputWorkspace({ question: q }: { question: OutputQuest
             <Link to={`/problems/${q.id}`} className="text-xl font-semibold hover:underline">{q.title}</Link>
             <div className="mt-1 flex flex-wrap gap-1.5">
               <Badge>Output prediction</Badge>
-              <Badge>{q.environment === 'node' ? 'Node.js' : q.environment === 'jsdom' ? 'DOM (jsdom)' : 'React 18'}</Badge>
+              <Badge>{q.environment === 'node' ? 'Node.js' : q.environment === 'jsdom' ? 'DOM (jsdom)' : q.environment === 'react-ssr' ? 'React 18 server rendering' : 'React 18'}</Badge>
               {q.topics.map((t) => <Badge key={t}>{t}</Badge>)}
             </div>
           </div>

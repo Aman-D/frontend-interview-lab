@@ -3,10 +3,10 @@ import { z } from 'zod';
 /** Bump when the shape of bundled content changes. */
 export const CONTENT_SCHEMA_VERSION = 1;
 
-export const TrackId = z.enum(['react', 'vanilla', 'javascript', 'typescript', 'output']);
+export const TrackId = z.enum(['react', 'vanilla', 'javascript', 'typescript', 'output', 'architecture']);
 export type TrackId = z.infer<typeof TrackId>;
 
-export const ExecutionType = z.enum(['react', 'dom', 'js', 'ts-types', 'output']);
+export const ExecutionType = z.enum(['react', 'dom', 'js', 'ts-types', 'output', 'quiz']);
 
 export const Provenance = z.enum(['VERIFIED_INTERVIEW_REPORT', 'PUBLISHED_PRACTICE_PROBLEM', 'DOCUMENTED_TECHNICAL_EXERCISE', 'ORIGINAL_VARIATION']);
 export type Provenance = z.infer<typeof Provenance>;
@@ -172,7 +172,7 @@ export type CodingProblem = z.infer<typeof CodingProblem>;
 export const OutputQuestion = BaseQuestion.extend({
   kind: z.literal('output'),
   execution: z.literal('output'),
-  environment: z.enum(['node', 'jsdom', 'react-jsdom']),
+  environment: z.enum(['node', 'jsdom', 'react-jsdom', 'react-ssr']),
   prompt: z.string(),
   code: z.string().min(1),
   /** Exact expected console output, one entry per line. Verified by executing `code` in tests. */
@@ -184,7 +184,28 @@ export const OutputQuestion = BaseQuestion.extend({
 });
 export type OutputQuestion = z.infer<typeof OutputQuestion>;
 
-export const Question = z.discriminatedUnion('kind', [CodingProblem, OutputQuestion]);
+/**
+ * Architecture / framework knowledge question (React 19, rendering patterns, performance, Next.js App Router).
+ * These cannot be executed in the browser sandbox, so they are checked with MCQs (graded) plus a free-text answer
+ * compared against an answer outline (self-assessed, never auto-graded). Framework facts are version-pinned.
+ */
+export const DesignQuestion = BaseQuestion.extend({
+  kind: z.literal('design'),
+  execution: z.literal('quiz'),
+  scenario: md,
+  constraints: z.array(z.string()).default([]),
+  answerOutline: z.array(z.string()).min(3),
+  modelAnswer: md,
+  pitfalls: z.array(z.string()).min(1),
+  /** e.g. "Checked against Next.js 16.4 and React 19.3 docs on 2026-11-23". */
+  versionNotes: z.string().min(10),
+  docSourceIds: z.array(z.string()).min(1),
+  mcqs: z.array(Mcq).min(2),
+  followUps: z.array(FollowUp).min(3),
+});
+export type DesignQuestion = z.infer<typeof DesignQuestion>;
+
+export const Question = z.discriminatedUnion('kind', [CodingProblem, OutputQuestion, DesignQuestion]);
 export type Question = z.infer<typeof Question>;
 
 export const Concept = z.object({

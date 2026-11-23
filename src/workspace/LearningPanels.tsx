@@ -6,7 +6,10 @@ import { Markdown } from '@/components/Markdown';
 import { DocLinks } from '@/components/meta';
 import { Badge, Button, Textarea, cn } from '@/components/ui';
 import { CONCEPT_BY_ID } from '@/content/concepts';
-import type { CodingProblem, FollowUp, Mcq } from '@/content/schema';
+import type { FollowUp, Mcq } from '@/content/schema';
+
+type WithMcqs = { id: string; mcqs: Mcq[] };
+type WithFollowUps = { id: string; followUps: FollowUp[] };
 import { db } from '@/db/db';
 import { repo } from '@/db/repo';
 
@@ -82,7 +85,7 @@ function McqItem({ problemId, mcq }: { problemId: string; mcq: Mcq }) {
   );
 }
 
-export function McqPanel({ problem }: { problem: CodingProblem }) {
+export function McqPanel({ problem }: { problem: WithMcqs }) {
   if (!problem.mcqs.length) return <p className="text-sm text-subtle">No MCQs for this problem.</p>;
   return (
     <div className="space-y-3">
@@ -143,7 +146,7 @@ function FollowUpItem({ problemId, f }: { problemId: string; f: FollowUp }) {
   );
 }
 
-export function FollowUpsPanel({ problem }: { problem: CodingProblem }) {
+export function FollowUpsPanel({ problem }: { problem: WithFollowUps }) {
   return (
     <ul className="space-y-3">
       {problem.followUps.map((f) => <FollowUpItem key={f.id} problemId={problem.id} f={f} />)}

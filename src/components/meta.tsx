@@ -117,11 +117,19 @@ export function SourcesPanel({ q }: { q: Question }) {
         <div>
           <h3 className="mb-1 font-medium">Answer verification</h3>
           <p className="text-subtle">
-            The expected output was produced by executing the snippet ({q.environment === 'node' ? 'Node.js vm' : q.environment === 'jsdom' ? 'jsdom' : 'React 18.3.1 in jsdom'}) in the automated test-suite (<code>npm test</code>).
+            The expected output was produced by executing the snippet ({q.environment === 'node' ? 'Node.js vm' : q.environment === 'jsdom' ? 'jsdom' : q.environment === 'react-ssr' ? 'React 18.3.1 server renderer + jsdom' : 'React 18.3.1 in jsdom'}) in the automated test-suite (<code>npm test</code>).
           </p>
         </div>
       )}
-      {q.kind === 'output' && q.docSourceIds.length > 0 && <DocLinks ids={q.docSourceIds} />}
+      {q.kind === 'design' && (
+        <div>
+          <h3 className="mb-1 font-medium">How this is checked</h3>
+          <p className="text-subtle">
+            Framework behaviour can't run in the in-browser sandbox, so this question is checked with graded MCQs and a written answer you compare against an outline yourself. Nothing here auto-grades free text. {q.versionNotes}
+          </p>
+        </div>
+      )}
+      {(q.kind === 'output' || q.kind === 'design') && q.docSourceIds.length > 0 && <DocLinks ids={q.docSourceIds} />}
     </div>
   );
 }

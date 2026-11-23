@@ -103,6 +103,46 @@ All returned HTTP 200 on 2026-11-23 (checked with `curl -L`; see methodology).
 | `wcag-dragging` | WCAG 2.2 — Understanding 2.5.7 Dragging Movements | https://www.w3.org/WAI/WCAG22/Understanding/dragging-movements.html |
 | `wcag-hover-focus` | WCAG 2.2 — Understanding 1.4.13 Content on Hover or Focus | https://www.w3.org/WAI/WCAG22/Understanding/content-on-hover-or-focus.html |
 | `webdev-inp` | web.dev — Optimize INP | https://web.dev/articles/optimize-inp |
+| `react-19-release` | react.dev — React 19 release post | https://react.dev/blog/2024/12/05/react-19 |
+| `react-useactionstate` | react.dev — useActionState | https://react.dev/reference/react/useActionState |
+| `react-useoptimistic` | react.dev — useOptimistic | https://react.dev/reference/react/useOptimistic |
+| `react-use` | react.dev — use | https://react.dev/reference/react/use |
+| `react-form` | react.dev — <form> (actions) | https://react.dev/reference/react-dom/components/form |
+| `react-server-components` | react.dev — Server Components | https://react.dev/reference/rsc/server-components |
+| `react-server-functions` | react.dev — Server Functions | https://react.dev/reference/rsc/server-functions |
+| `react-use-client` | react.dev — 'use client' directive | https://react.dev/reference/rsc/use-client |
+| `react-compiler` | react.dev — React Compiler | https://react.dev/learn/react-compiler |
+| `react-usetransition` | react.dev — useTransition | https://react.dev/reference/react/useTransition |
+| `react-usedeferredvalue` | react.dev — useDeferredValue | https://react.dev/reference/react/useDeferredValue |
+| `react-suspense` | react.dev — <Suspense> | https://react.dev/reference/react/Suspense |
+| `react-hydrateroot` | react.dev — hydrateRoot | https://react.dev/reference/react-dom/client/hydrateRoot |
+| `react-render-pipeable` | react.dev — renderToPipeableStream | https://react.dev/reference/react-dom/server/renderToPipeableStream |
+| `react-memo` | react.dev — memo | https://react.dev/reference/react/memo |
+| `react-lazy` | react.dev — lazy | https://react.dev/reference/react/lazy |
+| `react-profiler` | react.dev — <Profiler> | https://react.dev/reference/react/Profiler |
+| `next-app-router` | Next.js docs — App Router | https://nextjs.org/docs/app |
+| `next-layouts-pages` | Next.js docs — Layouts and Pages | https://nextjs.org/docs/app/getting-started/layouts-and-pages |
+| `next-server-client` | Next.js docs — Server and Client Components | https://nextjs.org/docs/app/getting-started/server-and-client-components |
+| `next-fetching-data` | Next.js docs — Fetching Data | https://nextjs.org/docs/app/getting-started/fetching-data |
+| `next-caching-revalidating` | Next.js docs — Caching and Revalidating | https://nextjs.org/docs/app/getting-started/caching-and-revalidating |
+| `next-caching-guide` | Next.js docs — Caching guide | https://nextjs.org/docs/app/guides/caching |
+| `next-error-handling` | Next.js docs — Error Handling | https://nextjs.org/docs/app/getting-started/error-handling |
+| `next-loading` | Next.js docs — loading.js | https://nextjs.org/docs/app/api-reference/file-conventions/loading |
+| `next-ppr` | Next.js docs — Partial Prerendering | https://nextjs.org/docs/app/getting-started/partial-prerendering |
+| `next-isr` | Next.js docs — Incremental Static Regeneration | https://nextjs.org/docs/app/guides/incremental-static-regeneration |
+| `next-linking` | Next.js docs — Linking and Navigating | https://nextjs.org/docs/app/getting-started/linking-and-navigating |
+| `next-use-cache` | Next.js docs — 'use cache' directive | https://nextjs.org/docs/app/api-reference/directives/use-cache |
+| `webdev-rendering` | web.dev — Rendering on the Web | https://web.dev/articles/rendering-on-the-web |
+| `webdev-vitals` | web.dev — Web Vitals | https://web.dev/articles/vitals |
+| `webdev-lcp` | web.dev — Largest Contentful Paint (LCP) | https://web.dev/articles/lcp |
+| `webdev-inp-metric` | web.dev — Interaction to Next Paint (INP) | https://web.dev/articles/inp |
+| `webdev-cls` | web.dev — Cumulative Layout Shift (CLS) | https://web.dev/articles/cls |
+| `webdev-optimize-lcp` | web.dev — Optimize LCP | https://web.dev/articles/optimize-lcp |
+| `patterns-rsc` | patterns.dev — React Server Components | https://www.patterns.dev/react/react-server-components |
+| `patterns-streaming-ssr` | patterns.dev — Streaming SSR | https://www.patterns.dev/react/streaming-ssr |
+| `patterns-progressive-hydration` | patterns.dev — Progressive Hydration | https://www.patterns.dev/react/progressive-hydration |
+
+Next.js pages were read at v16.4.6 ("Latest" on nextjs.org) and React pages at React 19.3.1 (npm latest) on 2026-11-23.
 
 ## Execution-environment references
 
