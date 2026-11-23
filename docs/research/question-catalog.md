@@ -17,7 +17,7 @@ Legend:
 | 4 | Toast Notification System | `fg-mc` → "Toast Notification"; `alla-components` → "Design a Toast / Notification System" | PPP | HIGH | ✅ Implemented (`react-toast`) |
 | 5 | Infinite Scroll | `fg-mc` → "Infinite Scroll" | PPP | MED | ✅ Implemented (`react-infinite-scroll`) |
 | 6 | Modal / Dialog | `fih-ui` → "Modal Dialog"; `fih-sd-ui` → "Modal dialog"; `alla-components` → "Design a Modal / Dialog"; `fg-mc` → "Modal Component" | PPP | HIGH | ✅ Implemented (`react-modal-dialog`) |
-| 7 | Multi-Select Dropdown | `fih-sd-ui` → "Dropdown menu"; `alla-components` → "Design a Dropdown Menu"; `fg-mc` → "Chips Input" | OV | MED | Multi-select is a variation of dropdown + chips input |
+| 7 | Multi-Select Dropdown | `fih-sd-ui` → "Dropdown menu"; `alla-components` → "Design a Dropdown Menu"; `fg-mc` → "Chips Input" | OV | MED | ✅ Implemented (`react-multi-select`) |
 | 8 | Nested Comments | `fg-mc` → "Comment View (Multi-level)" | PPP | MED | Overlaps #2 / #15 (recursive tree rendering) |
 | 9 | Virtualized List | `alla-components` → "Design a Virtualized List"; `fg-mc` Infinite Scroll description mentions "Virtualization" | PPP | MED | ✅ Implemented (`react-virtualized-list`) |
 | 10 | Drag-and-Drop Kanban | `fih-ui` → "Kanban Board"; `fg-mc` → "Kanban Board" | PPP | HIGH | ✅ Implemented (`react-kanban-board`) |
@@ -37,12 +37,12 @@ Legend:
 | 24 | Rich Text Editor | `fih-sd-ui` → "Rich text editor"; `alla-components` → "Design a Rich Text Editor" | PPP | HIGH | Sources frame it as **system design**, not 60-min machine coding |
 | 25 | JSON / Code Editor | No public source found | OV | UNK | Candidate for replacement |
 | 26 | Resizable Panels | No public source found | OV | UNK | Candidate for replacement |
-| 27 | Command Palette | `alla-components` → "Design a Command Palette (Cmd-K)" | PPP | MED | Candidate |
+| 27 | Command Palette | `alla-components` → "Design a Command Palette (Cmd-K)" | PPP | MED | ✅ Implemented (`react-command-palette`) |
 | 28 | Real-Time Notification Feed | Adjacent to #4 only | OV | LOW | Candidate |
 | 29 | Multi-Camera Dashboard | No public source found | OV | UNK | Candidate for replacement |
 | 30 | Timeline / Video Scrubber | No public source found | OV | UNK | Candidate for replacement |
 
-**Researched replacements with stronger evidence** (recommended over the `UNK` rows): Progress Bars (`fih-ui`, `fg-mc`), Tooltip/Popover (`fih-sd-ui`, `alla-components`, `fg-mc`) — ✅ implemented as `react-tooltip-popover`, Todo list (`fih-ui`, `fg-mc`), Tic-tac-toe (`fih-ui`, `fg-mc`), Transfer List (`fih-ui`), Stopwatch / Countdown (`fih-ui`, `fg-mc`), Pagination (`fg-mc`), File Uploader (`alla-components`), Poll widget (`fih-sd-ui`, `alla-components`), Seat booking (`fg-mc`), BFE React hooks such as `useDebounce()`, `usePrevious()`, `useSWR()` (`bfe-react`).
+**Researched replacements with stronger evidence** (recommended over the `UNK` rows): Progress Bars (`fih-ui`, `fg-mc`), Tooltip/Popover (`fih-sd-ui`, `alla-components`, `fg-mc`) — ✅ implemented as `react-tooltip-popover`, Todo list (`fih-ui`, `fg-mc`), Tic-tac-toe (`fih-ui`, `fg-mc`), Transfer List (`fih-ui`), Stopwatch / Countdown (`fih-ui`, `fg-mc`), Pagination (`fg-mc`), File Uploader (`alla-components`), Poll widget (`fih-sd-ui`, `alla-components`) — ✅ implemented as `react-poll-widget`, Seat booking (`fg-mc`), BFE React hooks such as `useDebounce()`, `usePrevious()`, `useSWR()` (`bfe-react`) — ✅ implemented together as `react-custom-hooks`.
 
 ## Track 2 — Vanilla JavaScript / DOM (20 candidates)
 

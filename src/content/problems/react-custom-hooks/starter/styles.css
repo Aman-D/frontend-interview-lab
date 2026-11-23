@@ -1,0 +1,14 @@
+.app { max-width: 640px; margin: 32px auto; padding: 0 16px; font-family: system-ui, sans-serif; color: #1f2937; }
+.app label { display: block; font-weight: 600; margin-bottom: 4px; }
+.app label.muted { font-weight: 400; margin: 8px 0; }
+.app input[type='text'], .app input:not([type]) { width: 100%; box-sizing: border-box; padding: 8px 10px; font-size: 16px; border: 1px solid #9ca3af; border-radius: 6px; }
+.app input:focus-visible, .app button:focus-visible { outline: 2px solid #4f46e5; outline-offset: 2px; }
+.muted { color: #6b7280; font-size: 14px; }
+.panels { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin-top: 12px; }
+.panel { border: 1px solid #d1d5db; border-radius: 8px; padding: 12px; }
+.panel h2 { font-size: 16px; margin: 0 0 8px; }
+.panel ul { margin: 0; padding-left: 18px; }
+.panel [role='alert'] { color: #b91c1c; }
+.row { display: flex; gap: 8px; margin-top: 10px; }
+.row button { padding: 4px 10px; border-radius: 6px; border: 1px solid #9ca3af; background: #f9fafb; cursor: pointer; }
+.row button:disabled { opacity: 0.5; cursor: not-allowed; }

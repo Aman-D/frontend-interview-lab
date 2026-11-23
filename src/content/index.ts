@@ -27,6 +27,10 @@ import reactInfiniteScroll from './problems/react-infinite-scroll';
 import reactVirtualizedList from './problems/react-virtualized-list';
 import reactKanbanBoard from './problems/react-kanban-board';
 import reactDatePicker from './problems/react-date-picker';
+import reactPollWidget from './problems/react-poll-widget';
+import reactCustomHooks from './problems/react-custom-hooks';
+import reactCommandPalette from './problems/react-command-palette';
+import reactMultiSelect from './problems/react-multi-select';
 
 /** Every coding problem bundled with the app. Order is the default library order. */
 export const CODING_PROBLEMS: CodingProblem[] = [
@@ -44,6 +48,10 @@ export const CODING_PROBLEMS: CodingProblem[] = [
   reactVirtualizedList,
   reactKanbanBoard,
   reactDatePicker,
+  reactPollWidget,
+  reactCustomHooks,
+  reactCommandPalette,
+  reactMultiSelect,
   vanillaAccordion,
   vanillaEventDelegation,
   jsDebounce,

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-23T11:28:17.420Z",
+  "generatedAt": "2026-11-23T11:55:19.255Z",
   "browser": "Chromium 157.0.8103.78 (Playwright)",
   "results": [
     {
@@ -235,6 +235,74 @@
       "starter": {
         "passed": 1,
         "total": 24,
+        "failsAtLeastOne": true,
+        "status": "completed"
+      },
+      "ok": true
+    },
+    {
+      "problemId": "react-poll-widget",
+      "solution": {
+        "passed": 23,
+        "total": 23,
+        "allPassed": true,
+        "status": "completed",
+        "failures": []
+      },
+      "starter": {
+        "passed": 1,
+        "total": 23,
+        "failsAtLeastOne": true,
+        "status": "completed"
+      },
+      "ok": true
+    },
+    {
+      "problemId": "react-custom-hooks",
+      "solution": {
+        "passed": 18,
+        "total": 18,
+        "allPassed": true,
+        "status": "completed",
+        "failures": []
+      },
+      "starter": {
+        "passed": 2,
+        "total": 18,
+        "failsAtLeastOne": true,
+        "status": "completed"
+      },
+      "ok": true
+    },
+    {
+      "problemId": "react-command-palette",
+      "solution": {
+        "passed": 25,
+        "total": 25,
+        "allPassed": true,
+        "status": "completed",
+        "failures": []
+      },
+      "starter": {
+        "passed": 2,
+        "total": 25,
+        "failsAtLeastOne": true,
+        "status": "completed"
+      },
+      "ok": true
+    },
+    {
+      "problemId": "react-multi-select",
+      "solution": {
+        "passed": 15,
+        "total": 15,
+        "allPassed": true,
+        "status": "completed",
+        "failures": []
+      },
+      "starter": {
+        "passed": 0,
+        "total": 15,
         "failsAtLeastOne": true,
         "status": "completed"
       },

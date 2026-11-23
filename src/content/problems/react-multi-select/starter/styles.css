@@ -1,0 +1,22 @@
+.app { max-width: 480px; margin: 32px auto; font-family: system-ui, sans-serif; color: #1f2937; }
+.hint { color: #6b7280; font-size: 14px; }
+.value { font-size: 13px; color: #4b5563; }
+
+.ms { position: relative; margin: 20px 0; }
+.ms-label { display: block; font-weight: 600; margin-bottom: 4px; }
+.ms-field { display: flex; flex-wrap: wrap; align-items: center; gap: 4px; padding: 4px 6px; border: 1px solid #9ca3af; border-radius: 6px; cursor: text; }
+.ms-field:focus-within { outline: 2px solid #4f46e5; outline-offset: 1px; }
+.ms-chips { display: contents; list-style: none; margin: 0; padding: 0; }
+.ms-chip { display: inline-flex; align-items: center; gap: 2px; padding: 2px 4px 2px 8px; background: #e0e7ff; border-radius: 999px; font-size: 14px; }
+.ms-chip-remove { border: 0; background: transparent; cursor: pointer; font-size: 16px; line-height: 1; padding: 0 4px; border-radius: 999px; }
+.ms-chip-remove:hover, .ms-chip-remove:focus-visible { background: #c7d2fe; }
+.ms-input { flex: 1; min-width: 120px; border: 0; outline: none; font-size: 16px; padding: 4px; }
+.ms-listbox { position: absolute; left: 0; right: 0; z-index: 1; list-style: none; margin: 4px 0 0; padding: 4px 0; max-height: 220px; overflow: auto; background: #fff; border: 1px solid #d1d5db; border-radius: 6px; box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12); }
+.ms-option { padding: 6px 10px 6px 28px; cursor: pointer; position: relative; }
+.ms-option.is-active { background: #eef2ff; }
+.ms-option[aria-selected='true']::before { content: '✓'; position: absolute; left: 10px; color: #4f46e5; }
+.ms-option[aria-disabled='true'] { color: #9ca3af; cursor: not-allowed; }
+.ms-limit { font-size: 13px; color: #92400e; margin-top: 4px; }
+.ms-limit:empty { margin: 0; } /* keep the live region in the tree (and visible to AT) even when empty */
+.ms-status { font-size: 13px; color: #6b7280; margin-top: 4px; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
