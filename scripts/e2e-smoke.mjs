@@ -73,6 +73,19 @@ try {
     }
   });
 
+  await check('question sidebar: lists questions on question pages and navigates within the same view', async () => {
+    await page.goto(BASE + '/');
+    assert(!(await page.getByRole('navigation', { name: 'Questions' }).count()), 'question list should not show outside question pages');
+    await page.goto(BASE + '/problems/react-autocomplete');
+    const nav = page.getByRole('navigation', { name: 'Questions' });
+    await nav.waitFor();
+    assert((await nav.locator('[aria-current="page"]').textContent()).includes('Autocomplete'), 'current question should be marked');
+    await nav.getByRole('link', { name: /File Explorer/ }).click();
+    await page.waitForURL(/\/problems\/react-file-explorer$/);
+    await nav.getByRole('button', { name: /Next question/ }).click();
+    await page.waitForURL((u) => !u.pathname.endsWith('react-file-explorer'));
+  });
+
   await check('dashboard shows zero activity on a fresh profile (no invented metrics)', async () => {
     await page.goto(BASE + '/');
     await page.getByText('Completed', { exact: true }).first().waitFor();

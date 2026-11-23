@@ -1,7 +1,9 @@
 import { BookOpen, ClipboardList, FileSearch, History, LayoutDashboard, Library, Moon, NotebookPen, PanelLeftClose, PanelLeftOpen, RotateCcw, Settings, Sun } from 'lucide-react';
 import { useEffect, useState } from 'react';
-import { NavLink, Outlet, useLocation } from 'react-router-dom';
+import { matchPath, NavLink, Outlet, useLocation } from 'react-router-dom';
+import { QUESTION_BY_ID } from '@/content';
 import { ErrorBoundary } from './ErrorBoundary';
+import { QuestionNav } from './QuestionNav';
 import { cn } from './ui';
 
 const NAV = [
@@ -31,18 +33,34 @@ export function useTheme() {
 export function Layout() {
   const location = useLocation();
   const inWorkspace = location.pathname.startsWith('/practice/');
-  const [collapsed, setCollapsed] = useState(inWorkspace);
+  const questionMatch = matchPath('/practice/:id', location.pathname) ?? matchPath('/problems/:id', location.pathname);
+  const questionId = questionMatch?.params.id && QUESTION_BY_ID[questionMatch.params.id] ? questionMatch.params.id : null;
+  // The collapse choice is remembered (per browser) instead of being forced by the route.
+  const [collapsed, setCollapsedState] = useState(() => {
+    try {
+      return localStorage.getItem('fil-sidebar-collapsed') === '1';
+    } catch {
+      return false;
+    }
+  });
+  const setCollapsed = (fn: (c: boolean) => boolean) =>
+    setCollapsedState((c) => {
+      const next = fn(c);
+      try {
+        localStorage.setItem('fil-sidebar-collapsed', next ? '1' : '0');
+      } catch {
+        /* storage unavailable */
+      }
+      return next;
+    });
   const [dark, setDark] = useTheme();
-  useEffect(() => {
-    setCollapsed(inWorkspace);
-  }, [inWorkspace]);
 
   return (
     <div className="flex h-full">
       <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:left-2 focus:top-2 focus:z-50 focus:rounded focus:bg-panel focus:p-2">
         Skip to content
       </a>
-      <nav aria-label="Main" className={cn('flex shrink-0 flex-col border-r border-border bg-panel transition-[width]', collapsed ? 'w-12' : 'w-56')}>
+      <aside className={cn('flex shrink-0 flex-col border-r border-border bg-panel transition-[width]', collapsed ? 'w-12' : 'w-56')}>
         <div className={cn('flex h-12 items-center border-b border-border', collapsed ? 'justify-center' : 'justify-between px-3')}>
           {!collapsed && (
             <span className="flex items-center gap-2 text-sm font-semibold">
@@ -53,7 +71,8 @@ export function Layout() {
             {collapsed ? <PanelLeftOpen className="h-4 w-4" /> : <PanelLeftClose className="h-4 w-4" />}
           </button>
         </div>
-        <ul className="flex-1 space-y-0.5 p-1.5">
+        <nav aria-label="Main" className={cn(!questionId && 'flex-1')}>
+        <ul className={cn('space-y-0.5 p-1.5', questionId && !collapsed && 'grid grid-cols-1')}>
           {NAV.map(({ to, label, icon: Icon, end }) => (
             <li key={to}>
               <NavLink
@@ -70,6 +89,9 @@ export function Layout() {
             </li>
           ))}
         </ul>
+        </nav>
+        {questionId && <QuestionNav currentId={questionId} view={inWorkspace ? 'practice' : 'problems'} collapsed={collapsed} />}
+        {questionId && collapsed && <div className="flex-1" />}
         <div className="border-t border-border p-1.5">
           <button
             onClick={() => setDark((d) => !d)}
@@ -80,7 +102,7 @@ export function Layout() {
             {!collapsed && <span>{dark ? 'Light mode' : 'Dark mode'}</span>}
           </button>
         </div>
-      </nav>
+      </aside>
       <main id="main" className={cn('min-w-0 flex-1', inWorkspace ? 'overflow-hidden' : 'overflow-y-auto')}>
         <ErrorBoundary label="this page" key={location.pathname}>
           <Outlet />
