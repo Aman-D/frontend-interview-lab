@@ -89,3 +89,6 @@ scripts/        verify-solutions.mjs, e2e-smoke.mjs, copy-runtime-vendor.mjs
 1. Research it first: add evidence (exact original title + URL from an inspected source) to `docs/research/question-catalog.md` and, if new, the source to `sources.md` + `src/content/sources.ts`.
 2. Create `src/content/problems/<id>/` following an existing problem (`index.ts`, `starter/`, `solution/`, `tests/`), register it in `src/content/index.ts`.
 3. `npm test` (schema + traceability) and `npm run verify:solutions` (solution passes everything, starter fails something).
+
+## Agent skills
+`.claude/skills/design-taste-frontend/` vendors [Taste Skill](https://www.tasteskill.dev/) v2.5.1 (MIT) for Claude Code UI work — see its `SOURCE.md` for the pinned commit, requirements (Node 22+, Chrome; `CHROME_PATH=/opt/pw-browsers/chromium` in cloud sessions) and how it applies to this app. Its working folder `.taste-skill/` is git-ignored.
