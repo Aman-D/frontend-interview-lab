@@ -80,11 +80,11 @@ export function ClarificationsView({ problem }: { problem: CodingProblem }) {
   );
 }
 
-export function DescriptionView({ problem }: { problem: CodingProblem }) {
+export function DescriptionView({ problem, compact }: { problem: CodingProblem; compact?: boolean }) {
   const { spec } = problem;
   return (
     <div className="space-y-4 text-sm">
-      <Markdown>{spec.description}</Markdown>
+      <Markdown className={compact ? 'prose-compact' : undefined}>{spec.description}</Markdown>
       {spec.constraints.length > 0 && (
         <section>
           <h3 className="mb-1 font-semibold">Constraints</h3>

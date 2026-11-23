@@ -27,7 +27,7 @@ export default function HistoryPage() {
   const label = (x: Attempt) => `${new Date(x.startedAt).toLocaleString()} · ${x.mode} · ${x.outcome ?? x.status}${x.lastRun ? ` · ${x.lastRun.passed}/${x.lastRun.total}` : ''}`;
 
   return (
-    <Page title="Attempt History" description="Every attempt you started, with what actually happened: mode, time, test results, hints and solution views.">
+    <Page wide title="Attempt History" description="Every attempt you started, with what actually happened: mode, time, test results, hints and solution views.">
       <Card className="mb-5">
         <CardHeader title="Compare attempts" />
         <div className="space-y-3 p-4 text-sm">

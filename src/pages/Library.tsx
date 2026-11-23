@@ -16,7 +16,7 @@ const allConcepts = [...new Set(QUESTIONS.flatMap((q) => q.conceptIds))].sort();
 function MultiFilter({ label, options, value, onChange }: { label: string; options: { id: string; label: string }[]; value: string[]; onChange: (v: string[]) => void }) {
   return (
     <fieldset className="min-w-0">
-      <legend className="mb-1 text-xs font-medium text-subtle">{label}</legend>
+      <legend className="mb-1.5 text-[13px] font-medium text-subtle">{label}</legend>
       <div className="flex flex-wrap gap-1">
         {options.map((o) => {
           const on = value.includes(o.id);
@@ -26,7 +26,7 @@ function MultiFilter({ label, options, value, onChange }: { label: string; optio
               type="button"
               aria-pressed={on}
               onClick={() => onChange(on ? value.filter((v) => v !== o.id) : [...value, o.id])}
-              className={`rounded border px-2 py-0.5 text-xs ${on ? 'border-accent bg-accent/10 text-accent' : 'border-border text-subtle hover:text-fg'}`}
+              className={`rounded border px-2 py-1 text-[13px] transition-colors duration-150 ${on ? 'border-fg bg-fg text-bg' : 'border-border text-subtle hover:border-subtle/60 hover:text-fg'}`}
             >
               {o.label}
             </button>
@@ -53,7 +53,7 @@ export default function LibraryPage() {
   };
 
   return (
-    <Page title="Problem Library" description={`${QUESTIONS.length} questions with full content. Every question links to the sources it was researched from.`}>
+    <Page wide title="Problem Library" description={`${QUESTIONS.length} questions with full content. Every question links to the sources it was researched from.`}>
       <div className="mb-4 space-y-3 rounded-lg border border-border bg-panel p-3">
         <div className="flex flex-wrap items-center gap-2">
           <label className="relative min-w-[240px] flex-1">
@@ -111,21 +111,17 @@ export default function LibraryPage() {
             </thead>
             <tbody className="divide-y divide-border">
               {visible.map(({ question: q, status, lastAttemptAt }) => (
-                <tr key={q.id} className="hover:bg-muted/50">
+                <tr key={q.id} className="transition-colors duration-150 hover:bg-muted/50">
                   <td className="px-3 py-2">
                     <Link to={`/problems/${q.id}`} className="font-medium hover:underline">{q.title}</Link>
-                    <div className="mt-0.5 flex flex-wrap gap-1">
-                      {q.conceptIds.slice(0, 4).map((c) => (
-                        <span key={c} className="text-[11px] text-subtle">#{c}</span>
-                      ))}
-                    </div>
+                    <div className="mt-0.5 max-w-[340px] truncate text-[13px] text-subtle">{q.topics.slice(0, 3).join(' · ')}</div>
                   </td>
                   <td className="whitespace-nowrap px-3 py-2 text-xs">{TRACK_LABEL[q.track]}</td>
                   <td className="px-3 py-2"><DifficultyBadge d={q.difficulty} /></td>
                   <td className="px-3 py-2"><PriorityBadge p={q.priority} /></td>
                   <td className="px-3 py-2">
                     <div className="flex flex-col items-start gap-1">
-                      <ProvenanceBadge q={q} />
+                      <ProvenanceBadge q={q} short />
                       <ConfidenceBadge q={q} />
                     </div>
                   </td>

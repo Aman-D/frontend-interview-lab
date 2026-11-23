@@ -8,11 +8,20 @@ import type { Outcome } from '@/db/types';
 import { Badge } from './ui';
 
 export function DifficultyBadge({ d }: { d: Question['difficulty'] }) {
-  return <Badge tone={d === 'easy' ? 'ok' : d === 'medium' ? 'warn' : 'bad'}>{d}</Badge>;
+  // Neutral by design: colour is reserved for status. Bars show the level.
+  const n = d === 'easy' ? 1 : d === 'medium' ? 2 : 3;
+  return (
+    <Badge title={`Difficulty: ${d}`}>
+      <span aria-hidden className="mr-1 inline-flex gap-[2px]">
+        {[1, 2, 3].map((i) => <span key={i} className={`h-2 w-[3px] rounded-sm ${i <= n ? 'bg-fg/70' : 'bg-fg/15'}`} />)}
+      </span>
+      {d}
+    </Badge>
+  );
 }
 
 export function PriorityBadge({ p }: { p: Question['priority'] }) {
-  return <Badge tone={p === 'P0' ? 'accent' : 'neutral'} title="Study priority (P0 = highest)">{p}</Badge>;
+  return <Badge className={p === 'P0' ? 'font-semibold text-fg' : undefined} title="Study priority (P0 = highest)">{p}</Badge>;
 }
 
 export function StatusBadge({ s }: { s: QuestionStatus }) {
@@ -26,11 +35,13 @@ export function OutcomeBadge({ o }: { o?: Outcome }) {
   return <Badge tone={tone}>{OUTCOME_LABEL[o]}</Badge>;
 }
 
-export function ProvenanceBadge({ q }: { q: Question }) {
+const PROVENANCE_SHORT = { VERIFIED_INTERVIEW_REPORT: 'Interview report', PUBLISHED_PRACTICE_PROBLEM: 'Practice problem', DOCUMENTED_TECHNICAL_EXERCISE: 'Docs exercise', ORIGINAL_VARIATION: 'Original variation' } as const;
+
+export function ProvenanceBadge({ q, short }: { q: Question; short?: boolean }) {
   const p = q.research.provenance;
   return (
-    <Badge tone={p === 'ORIGINAL_VARIATION' ? 'neutral' : 'accent'} title={PROVENANCE_HELP[p]}>
-      {PROVENANCE_LABEL[p]}
+    <Badge title={`${PROVENANCE_LABEL[p]}. ${PROVENANCE_HELP[p]}`}>
+      {short ? PROVENANCE_SHORT[p] : PROVENANCE_LABEL[p]}
     </Badge>
   );
 }
@@ -38,9 +49,10 @@ export function ProvenanceBadge({ q }: { q: Question }) {
 export function ConfidenceBadge({ q }: { q: Question }) {
   const c = q.research.frequencyConfidence;
   return (
-    <Badge tone={c === 'HIGH_CONFIDENCE' ? 'ok' : c === 'MEDIUM_CONFIDENCE' ? 'accent' : 'neutral'} title={CONFIDENCE_HELP}>
+    <span title={CONFIDENCE_HELP} className="inline-flex items-center whitespace-nowrap text-[12px] font-medium text-subtle">
+      <span aria-hidden className={`mr-1.5 h-1.5 w-1.5 rounded-full ${c === 'HIGH_CONFIDENCE' ? 'bg-fg/80' : c === 'MEDIUM_CONFIDENCE' ? 'bg-fg/45' : 'bg-fg/20'}`} />
       {CONFIDENCE_LABEL[c]}
-    </Badge>
+    </span>
   );
 }
 
@@ -63,7 +75,7 @@ export function SourcesPanel({ q }: { q: Question }) {
             const s = SOURCE_BY_ID[e.sourceId];
             return (
               <li key={i} className="rounded-md border border-border p-2.5">
-                <a href={e.url} target="_blank" rel="noreferrer noopener" className="inline-flex items-center gap-1 font-medium text-accent hover:underline">
+                <a href={e.url} target="_blank" rel="noreferrer noopener" className="inline-flex items-center gap-1 font-medium text-accent-text hover:underline">
                   “{e.originalTitle}” <ExternalLink className="h-3 w-3" aria-hidden />
                 </a>
                 <div className="text-xs text-subtle">
@@ -123,7 +135,7 @@ export function DocLinks({ ids, title = 'Documentation' }: { ids: string[]; titl
       <ul className="space-y-1 text-sm">
         {docs.map((d) => (
           <li key={d.id}>
-            <a href={d.url} target="_blank" rel="noreferrer noopener" className="inline-flex items-center gap-1 text-accent hover:underline">
+            <a href={d.url} target="_blank" rel="noreferrer noopener" className="inline-flex items-center gap-1 text-accent-text hover:underline">
               {d.title} <ExternalLink className="h-3 w-3" aria-hidden />
             </a>
           </li>

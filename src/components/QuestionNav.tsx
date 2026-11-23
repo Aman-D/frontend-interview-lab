@@ -75,7 +75,7 @@ export function QuestionNav({ currentId, view, collapsed }: { currentId: string;
   return (
     <nav aria-label="Questions" className="flex min-h-0 flex-1 flex-col border-t border-border">
       <div className="flex items-center justify-between gap-1 px-3 pb-1 pt-2.5">
-        <span className="text-[11px] font-semibold uppercase tracking-wide text-subtle">Questions</span>
+        <span className="text-[13px] font-medium text-subtle">Questions</span>
         <div className="flex items-center">
           <button className="rounded p-1 text-subtle hover:bg-muted disabled:opacity-40" disabled={!prev} onClick={() => go(prev)} aria-label={prev ? `Previous question: ${prev.title}` : 'No previous question'} title={prev?.title}>
             <ChevronLeft className="h-3.5 w-3.5" />
@@ -93,7 +93,7 @@ export function QuestionNav({ currentId, view, collapsed }: { currentId: string;
           value={filter}
           onChange={(e) => setFilter(e.target.value)}
           placeholder="Filter…"
-          className="h-7 w-full rounded-md border border-border bg-panel pl-7 pr-2 text-xs placeholder:text-subtle"
+          className="h-8 w-full rounded border border-border bg-bg pl-7 pr-2 text-[13px] placeholder:text-subtle/80"
         />
       </label>
       <div className="min-h-0 flex-1 overflow-y-auto px-1.5 pb-2">
@@ -129,8 +129,8 @@ export function QuestionNav({ currentId, view, collapsed }: { currentId: string;
                           aria-current={current ? 'page' : undefined}
                           title={`${q.title} — ${STATUS_LABEL[st]}`}
                           className={cn(
-                            'flex items-center gap-2 rounded py-1 pl-5 pr-1.5 text-xs',
-                            current ? 'bg-accent/10 font-medium text-accent' : 'text-fg/80 hover:bg-muted hover:text-fg',
+                            'flex items-center gap-2 rounded py-1.5 pl-5 pr-1.5 text-[13px] transition-colors duration-150',
+                            current ? 'bg-muted font-medium text-fg' : 'text-fg/75 hover:bg-muted/70 hover:text-fg',
                           )}
                         >
                           <span className={cn('h-2 w-2 shrink-0 rounded-full', DOT[st])} aria-hidden />

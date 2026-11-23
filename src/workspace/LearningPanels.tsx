@@ -16,8 +16,8 @@ export function ConceptsPanel({ conceptIds }: { conceptIds: string[] }) {
       {conceptIds.map((id) => {
         const c = CONCEPT_BY_ID[id];
         return (
-          <li key={id} className="rounded-md border border-border p-3 text-sm">
-            <Link to={`/concepts/${id}`} className="font-medium text-accent hover:underline">{c?.title ?? id}</Link>
+          <li key={id} className="card-link relative rounded-lg border border-border bg-panel p-3.5 text-sm">
+            <Link to={`/concepts/${id}`} className="font-medium after:absolute after:inset-0 after:content-['']">{c?.title ?? id}</Link>
             {c && <p className="mt-1 text-subtle">{c.summary}</p>}
           </li>
         );

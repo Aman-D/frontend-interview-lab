@@ -329,7 +329,7 @@ export default function CodingWorkspace({ problem }: { problem: CodingProblem })
                 />
               </div>
               <div className="min-h-0 flex-1 overflow-y-auto p-3">
-                {leftTab === 'description' && <DescriptionView problem={problem} />}
+                {leftTab === 'description' && <DescriptionView problem={problem} compact />}
                 {leftTab === 'clarify' && <ClarificationsView problem={problem} />}
                 {leftTab === 'requirements' && (
                   <RequirementsChecklist problem={problem} done={doneSet} onToggle={submitted ? undefined : (rid, v) => repo.toggleRequirement(attempt.id, rid, v)} />
@@ -544,7 +544,7 @@ function StartPanel({ problem, attempts, onStart }: { problem: CodingProblem; at
           </button>
         ))}
       </div>
-      <p className="mt-4 text-sm"><Link className="text-accent hover:underline" to={`/problems/${problem.id}`}>← Read the full requirement roadmap first</Link></p>
+      <p className="mt-4 text-sm"><Link className="text-accent-text hover:underline" to={`/problems/${problem.id}`}>← Read the full requirement roadmap first</Link></p>
     </div>
   );
 }
@@ -563,7 +563,7 @@ function PreviousAttempts({ attempts }: { attempts: Attempt[] }) {
           {a.mistakes && <p className="mt-1 whitespace-pre-wrap"><span className="font-medium">Mistakes:</span> {a.mistakes}</p>}
         </li>
       ))}
-      <li><Link to="/history" className="text-xs text-accent hover:underline">Compare code between attempts in Attempt History →</Link></li>
+      <li><Link to="/history" className="text-xs text-accent-text hover:underline">Compare code between attempts in Attempt History →</Link></li>
     </ul>
   );
 }

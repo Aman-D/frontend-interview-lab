@@ -1,6 +1,6 @@
-import { BookOpen, ClipboardList, FileSearch, History, LayoutDashboard, Library, Moon, NotebookPen, PanelLeftClose, PanelLeftOpen, RotateCcw, Settings, Sun } from 'lucide-react';
+import { BookOpen, FileSearch, History, LayoutDashboard, Library, Moon, NotebookPen, PanelLeftClose, PanelLeftOpen, RotateCcw, Settings, Sun } from 'lucide-react';
 import { useEffect, useState } from 'react';
-import { matchPath, NavLink, Outlet, useLocation } from 'react-router-dom';
+import { Link, matchPath, NavLink, Outlet, useLocation } from 'react-router-dom';
 import { QUESTION_BY_ID } from '@/content';
 import { ErrorBoundary } from './ErrorBoundary';
 import { QuestionNav } from './QuestionNav';
@@ -54,52 +54,79 @@ export function Layout() {
       return next;
     });
   const [dark, setDark] = useTheme();
+  // On narrow screens the sidebar is an icon rail that opens as an overlay, so content keeps the width.
+  const [narrow, setNarrow] = useState(() => window.matchMedia('(max-width: 767px)').matches);
+  const [overlayOpen, setOverlayOpen] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 767px)');
+    const on = () => setNarrow(mq.matches);
+    mq.addEventListener('change', on);
+    return () => mq.removeEventListener('change', on);
+  }, []);
+  useEffect(() => {
+    setOverlayOpen(false);
+  }, [location.pathname]);
+  const isCollapsed = narrow ? !overlayOpen : collapsed;
+  const toggle = () => (narrow ? setOverlayOpen((o) => !o) : setCollapsed((c) => !c));
 
   return (
     <div className="flex h-full">
       <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:left-2 focus:top-2 focus:z-50 focus:rounded focus:bg-panel focus:p-2">
         Skip to content
       </a>
-      <aside className={cn('flex shrink-0 flex-col border-r border-border bg-panel transition-[width]', collapsed ? 'w-12' : 'w-56')}>
-        <div className={cn('flex h-12 items-center border-b border-border', collapsed ? 'justify-center' : 'justify-between px-3')}>
-          {!collapsed && (
-            <span className="flex items-center gap-2 text-sm font-semibold">
-              <ClipboardList className="h-4 w-4 text-accent" aria-hidden /> Interview Lab
-            </span>
+      {narrow && overlayOpen && <button aria-label="Close menu" className="fixed inset-0 z-30 bg-black/50" onClick={() => setOverlayOpen(false)} />}
+      {narrow && <div className="w-12 shrink-0" aria-hidden />}
+      <aside
+        className={cn(
+          'flex shrink-0 flex-col border-r border-border bg-panel transition-[width] duration-200',
+          isCollapsed ? 'w-12' : 'w-60',
+          narrow && 'fixed inset-y-0 left-0 z-40 shadow-2xl',
+        )}
+      >
+        <div className={cn('flex h-14 items-center border-b border-border', isCollapsed ? 'justify-center' : 'justify-between px-3.5')}>
+          {!isCollapsed && (
+            <Link to="/" className="flex items-center gap-2 text-[15px] font-semibold tracking-tight">
+              <span aria-hidden className="grid h-6 w-6 place-items-center rounded bg-accent font-mono text-[13px] font-bold text-accent-ink">F</span>
+              Interview Lab
+            </Link>
           )}
-          <button className="rounded p-1 text-subtle hover:bg-muted" onClick={() => setCollapsed((c) => !c)} aria-label={collapsed ? 'Expand sidebar' : 'Collapse sidebar'}>
-            {collapsed ? <PanelLeftOpen className="h-4 w-4" /> : <PanelLeftClose className="h-4 w-4" />}
+          <button className="rounded p-1 text-subtle hover:bg-muted" onClick={toggle} aria-label={isCollapsed ? 'Expand sidebar' : 'Collapse sidebar'}>
+            {isCollapsed ? <PanelLeftOpen className="h-4 w-4" /> : <PanelLeftClose className="h-4 w-4" />}
           </button>
         </div>
         <nav aria-label="Main" className={cn(!questionId && 'flex-1')}>
-        <ul className={cn('space-y-0.5 p-1.5', questionId && !collapsed && 'grid grid-cols-1')}>
+        <ul className={cn('space-y-0.5 p-1.5', questionId && !isCollapsed && 'grid grid-cols-1')}>
           {NAV.map(({ to, label, icon: Icon, end }) => (
             <li key={to}>
               <NavLink
                 to={to}
                 end={end}
-                title={collapsed ? label : undefined}
+                title={isCollapsed ? label : undefined}
                 className={({ isActive }) =>
-                  cn('flex items-center gap-2.5 rounded-md px-2 py-1.5 text-sm', isActive ? 'bg-accent/10 font-medium text-accent' : 'text-subtle hover:bg-muted hover:text-fg', collapsed && 'justify-center')
+                  cn(
+                    'relative flex items-center gap-2.5 rounded px-2 py-1.5 text-sm transition-colors duration-150',
+                    isActive ? 'bg-muted font-medium text-fg before:absolute before:inset-y-1.5 before:left-0 before:w-0.5 before:rounded before:bg-accent' : 'text-subtle hover:bg-muted/70 hover:text-fg',
+                    isCollapsed && 'justify-center',
+                  )
                 }
               >
                 <Icon className="h-4 w-4 shrink-0" aria-hidden />
-                <span className={cn(collapsed && 'sr-only')}>{label}</span>
+                <span className={cn(isCollapsed && 'sr-only')}>{label}</span>
               </NavLink>
             </li>
           ))}
         </ul>
         </nav>
-        {questionId && <QuestionNav currentId={questionId} view={inWorkspace ? 'practice' : 'problems'} collapsed={collapsed} />}
-        {questionId && collapsed && <div className="flex-1" />}
+        {questionId && <QuestionNav currentId={questionId} view={inWorkspace ? 'practice' : 'problems'} collapsed={isCollapsed} />}
+        {questionId && isCollapsed && <div className="flex-1" />}
         <div className="border-t border-border p-1.5">
           <button
             onClick={() => setDark((d) => !d)}
-            className={cn('flex w-full items-center gap-2.5 rounded-md px-2 py-1.5 text-sm text-subtle hover:bg-muted', collapsed && 'justify-center')}
+            className={cn('flex w-full items-center gap-2.5 rounded px-2 py-1.5 text-sm text-subtle transition-colors hover:bg-muted hover:text-fg', isCollapsed && 'justify-center')}
             aria-label={dark ? 'Switch to light theme' : 'Switch to dark theme'}
           >
             {dark ? <Sun className="h-4 w-4" aria-hidden /> : <Moon className="h-4 w-4" aria-hidden />}
-            {!collapsed && <span>{dark ? 'Light mode' : 'Dark mode'}</span>}
+            {!isCollapsed && <span>{dark ? 'Light mode' : 'Dark mode'}</span>}
           </button>
         </div>
       </aside>
@@ -112,16 +139,16 @@ export function Layout() {
   );
 }
 
-export function Page({ title, description, actions, children }: { title: string; description?: React.ReactNode; actions?: React.ReactNode; children: React.ReactNode }) {
+export function Page({ title, description, actions, children, wide }: { title: string; description?: React.ReactNode; actions?: React.ReactNode; children: React.ReactNode; wide?: boolean }) {
   useEffect(() => {
     document.title = `${title} · Frontend Interview Lab`;
   }, [title]);
   return (
-    <div className="mx-auto max-w-6xl px-6 py-6">
-      <header className="mb-5 flex flex-wrap items-start justify-between gap-3">
-        <div>
-          <h1 className="text-xl font-semibold">{title}</h1>
-          {description && <p className="mt-1 max-w-3xl text-sm text-subtle">{description}</p>}
+    <div className={cn('mx-auto px-4 py-6 sm:px-6 sm:py-8 lg:px-10', wide ? 'max-w-[1400px]' : 'max-w-6xl')}>
+      <header className="mb-6 flex flex-wrap items-start justify-between gap-4">
+        <div className="min-w-0">
+          <h1 className="text-[26px] font-medium leading-tight tracking-tight">{title}</h1>
+          {description && <div className="mt-1.5 max-w-3xl text-[15px] text-subtle">{description}</div>}
         </div>
         {actions}
       </header>

@@ -55,7 +55,7 @@ export default function SourcesPage() {
               {questionSources.map((s) => (
                 <tr key={s.id}>
                   <td className="px-4 py-2">
-                    <a href={s.url} target="_blank" rel="noreferrer noopener" className="inline-flex items-center gap-1 text-accent hover:underline">{s.title} <ExternalLink className="h-3 w-3" aria-hidden /></a>
+                    <a href={s.url} target="_blank" rel="noreferrer noopener" className="inline-flex items-center gap-1 text-accent-text hover:underline">{s.title} <ExternalLink className="h-3 w-3" aria-hidden /></a>
                     {s.notes && <p className="text-xs text-subtle">{s.notes}</p>}
                   </td>
                   <td className="px-4 py-2 text-xs">{CATEGORY[s.category]}</td>
@@ -114,7 +114,7 @@ export default function SourcesPage() {
           <CardHeader title="Technical documentation used for validation" />
           <ul className="grid gap-x-6 gap-y-1 p-4 text-sm md:grid-cols-2">
             {docs.map((d) => (
-              <li key={d.id}><a href={d.url} target="_blank" rel="noreferrer noopener" className="text-accent hover:underline">{d.title}</a></li>
+              <li key={d.id}><a href={d.url} target="_blank" rel="noreferrer noopener" className="text-accent-text hover:underline">{d.title}</a></li>
             ))}
           </ul>
         </Card>

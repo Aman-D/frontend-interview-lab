@@ -17,7 +17,7 @@ export function TimerControl({ timer, onChange, disabled }: { timer: TimerState;
 
   return (
     <div className={cn('flex items-center gap-1 rounded-md border px-1.5 py-0.5', running ? 'border-accent/60 bg-accent/5' : 'border-border', expired && 'border-bad bg-bad/10')}>
-      <Timer className={cn('h-3.5 w-3.5', running ? 'text-accent' : 'text-subtle')} aria-hidden />
+      <Timer className={cn('h-3.5 w-3.5', running ? 'text-accent-text' : 'text-subtle')} aria-hidden />
       <span className="min-w-[52px] font-mono text-sm tabular-nums" role="timer" aria-label={`${timer.mode === 'countdown' ? 'Time remaining' : 'Elapsed time'} ${formatDuration(shown)}${running ? ', running' : ', paused'}`}>
         {formatDuration(shown)}
       </span>

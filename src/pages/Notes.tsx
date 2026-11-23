@@ -57,7 +57,7 @@ export default function NotesPage() {
           {visible.map((n) => (
             <li key={n.id}>
               <p className="mb-1 text-xs text-subtle">
-                {n.problemId ? <Link className="text-accent hover:underline" to={`/problems/${n.problemId}`}>{titleFor(n.problemId)}</Link> : 'General'}
+                {n.problemId ? <Link className="text-accent-text hover:underline" to={`/problems/${n.problemId}`}>{titleFor(n.problemId)}</Link> : 'General'}
                 {n.reminderAt ? ` · reminder ${new Date(n.reminderAt).toLocaleDateString()}` : ''}
               </p>
               <NoteEditor note={n} onDelete={() => repo.deleteNote(n.id)} />

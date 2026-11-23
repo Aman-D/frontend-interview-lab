@@ -10,11 +10,11 @@ export const Button = forwardRef<HTMLButtonElement, ButtonHTMLAttributes<HTMLBut
       ref={ref}
       type={type}
       className={cn(
-        'inline-flex items-center justify-center gap-1.5 rounded-md font-medium transition-colors disabled:cursor-not-allowed disabled:opacity-50',
-        size === 'sm' ? 'h-7 px-2 text-xs' : 'h-8 px-3 text-sm',
-        variant === 'primary' && 'bg-accent text-white hover:bg-accent/90',
-        variant === 'secondary' && 'border border-border bg-panel hover:bg-muted',
-        variant === 'ghost' && 'hover:bg-muted',
+        'btn inline-flex select-none items-center justify-center gap-1.5 whitespace-nowrap rounded font-medium disabled:cursor-not-allowed disabled:opacity-45',
+        size === 'sm' ? 'h-7 px-2.5 text-[13px]' : 'h-9 px-3.5 text-sm',
+        variant === 'primary' && 'btn--primary bg-accent text-accent-ink',
+        variant === 'secondary' && 'border border-border bg-panel text-fg hover:border-subtle/50 hover:bg-muted/60',
+        variant === 'ghost' && 'text-subtle hover:bg-muted hover:text-fg',
         variant === 'danger' && 'border border-bad/40 bg-panel text-bad hover:bg-bad/10',
         className,
       )}
@@ -28,9 +28,9 @@ export function Badge({ className, tone = 'neutral', ...props }: HTMLAttributes<
   return (
     <span
       className={cn(
-        'inline-flex items-center whitespace-nowrap rounded px-1.5 py-0.5 text-[11px] font-medium leading-none',
+        'inline-flex items-center whitespace-nowrap rounded px-1.5 py-[3px] text-[12px] font-medium leading-none',
         tone === 'neutral' && 'bg-muted text-subtle',
-        tone === 'accent' && 'bg-accent/15 text-accent',
+        tone === 'accent' && 'bg-accent/10 text-accent-text',
         tone === 'ok' && 'bg-ok/15 text-ok',
         tone === 'warn' && 'bg-warn/15 text-warn',
         tone === 'bad' && 'bg-bad/15 text-bad',
@@ -47,30 +47,30 @@ export function Card({ className, ...props }: HTMLAttributes<HTMLDivElement>) {
 
 export function CardHeader({ title, action, className }: { title: ReactNode; action?: ReactNode; className?: string }) {
   return (
-    <div className={cn('flex items-center justify-between gap-2 border-b border-border px-4 py-2.5', className)}>
-      <h2 className="text-sm font-semibold">{title}</h2>
+    <div className={cn('flex items-center justify-between gap-2 border-b border-border px-4 py-3', className)}>
+      <h2 className="text-[15px] font-semibold">{title}</h2>
       {action}
     </div>
   );
 }
 
 export const Input = forwardRef<HTMLInputElement, InputHTMLAttributes<HTMLInputElement>>(({ className, ...props }, ref) => (
-  <input ref={ref} className={cn('h-8 rounded-md border border-border bg-panel px-2.5 text-sm placeholder:text-subtle', className)} {...props} />
+  <input ref={ref} className={cn('h-9 rounded border border-border bg-panel px-2.5 text-sm placeholder:text-subtle/80 transition-[border-color,box-shadow] duration-150 hover:border-subtle/50 focus-visible:border-accent', className)} {...props} />
 ));
 Input.displayName = 'Input';
 
 export const Textarea = forwardRef<HTMLTextAreaElement, TextareaHTMLAttributes<HTMLTextAreaElement>>(({ className, ...props }, ref) => (
-  <textarea ref={ref} className={cn('w-full rounded-md border border-border bg-panel p-2.5 text-sm placeholder:text-subtle', className)} {...props} />
+  <textarea ref={ref} className={cn('w-full rounded border border-border bg-panel p-2.5 text-sm leading-relaxed placeholder:text-subtle/80 hover:border-subtle/50', className)} {...props} />
 ));
 Textarea.displayName = 'Textarea';
 
 export function Select({ className, ...props }: SelectHTMLAttributes<HTMLSelectElement>) {
-  return <select className={cn('h-8 rounded-md border border-border bg-panel px-2 text-sm', className)} {...props} />;
+  return <select className={cn('h-9 rounded border border-border bg-panel px-2 text-sm hover:border-subtle/50', className)} {...props} />;
 }
 
 export function EmptyState({ title, children }: { title: string; children?: ReactNode }) {
   return (
-    <div className="rounded-lg border border-dashed border-border p-6 text-center">
+    <div className="rounded-lg border border-dashed border-border p-8 text-center">
       <p className="font-medium">{title}</p>
       {children && <div className="mt-1 text-sm text-subtle">{children}</div>}
     </div>
@@ -114,9 +114,9 @@ export function Tabs<T extends string>({ tabs, value, onChange, label, className
             }
           }}
           className={cn(
-            'whitespace-nowrap rounded-md font-medium',
-            size === 'sm' ? 'px-2 py-1 text-xs' : 'px-2.5 py-1.5 text-sm',
-            value === t.id ? 'bg-muted text-fg' : 'text-subtle hover:text-fg',
+            'whitespace-nowrap rounded font-medium transition-colors duration-150',
+            size === 'sm' ? 'px-2 py-1 text-[13px]' : 'px-2.5 py-1.5 text-sm',
+            value === t.id ? 'bg-fg text-bg' : 'text-subtle hover:bg-muted hover:text-fg',
           )}
         >
           {t.label}
@@ -140,7 +140,7 @@ export function Dialog({ open, onClose, title, children, footer, wide }: { open:
       ref={ref}
       onClose={onClose}
       aria-labelledby="dialog-title"
-      className={cn('rounded-lg border border-border bg-panel p-0 text-fg shadow-xl backdrop:bg-black/40', wide ? 'w-[min(720px,95vw)]' : 'w-[min(480px,95vw)]')}
+      className={cn('rounded-lg border border-border bg-panel p-0 text-fg shadow-2xl backdrop:bg-black/50', wide ? 'w-[min(720px,95vw)]' : 'w-[min(480px,95vw)]')}
     >
       {open && (
         <div className="flex max-h-[85vh] flex-col">
@@ -157,10 +157,10 @@ export function Dialog({ open, onClose, title, children, footer, wide }: { open:
 
 export function Stat({ label, value, hint }: { label: string; value: ReactNode; hint?: string }) {
   return (
-    <div className="rounded-lg border border-border bg-panel px-4 py-3">
-      <div className="text-xs text-subtle">{label}</div>
-      <div className="mt-1 text-xl font-semibold tabular-nums">{value}</div>
-      {hint && <div className="mt-0.5 text-[11px] text-subtle">{hint}</div>}
+    <div className="px-4 py-3.5">
+      <div className="text-[13px] font-medium text-subtle">{label}</div>
+      <div className="mt-1.5 text-[26px] font-medium leading-none tracking-tight tabular-nums">{value}</div>
+      {hint && <div className="mt-1.5 text-[13px] text-subtle">{hint}</div>}
     </div>
   );
 }

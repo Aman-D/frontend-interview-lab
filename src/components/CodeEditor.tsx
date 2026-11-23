@@ -53,12 +53,16 @@ export default function CodeEditor({ modelPath, path, value, onChange, readOnly,
       language={languageFor(path)}
       value={value}
       onChange={(v) => onChange?.(v ?? '')}
-      theme={dark ? 'vs-dark' : 'light'}
+      theme={dark ? 'fil-dark' : 'fil-light'}
       height={height}
       loading={<div className="p-4 text-sm text-subtle">Loading editor…</div>}
       options={{
         readOnly,
         fontSize,
+        fontFamily: "'JetBrains Mono Variable', ui-monospace, Menlo, monospace",
+        fontLigatures: false,
+        lineHeight: 1.6,
+        padding: { top: 10 },
         minimap: { enabled: false },
         scrollBeyondLastLine: false,
         tabSize: 2,
@@ -79,7 +83,7 @@ export function CodeDiff({ original, modified, path, height = 420 }: { original:
       original={original}
       modified={modified}
       language={languageFor(path)}
-      theme={dark ? 'vs-dark' : 'light'}
+      theme={dark ? 'fil-dark' : 'fil-light'}
       height={height}
       options={{ readOnly: true, renderSideBySide: true, minimap: { enabled: false }, automaticLayout: true }}
     />

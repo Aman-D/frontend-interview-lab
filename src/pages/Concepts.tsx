@@ -49,9 +49,9 @@ export default function ConceptsPage() {
           const st = statusOf(c.id);
           const n = QUESTIONS.filter((q) => q.conceptIds.includes(c.id)).length;
           return (
-            <li key={c.id} className="rounded-lg border border-border bg-panel p-3.5">
+            <li key={c.id} className="card-link relative rounded-lg border border-border bg-panel p-4">
               <div className="flex items-start justify-between gap-2">
-                <Link to={`/concepts/${c.id}`} className="font-medium hover:underline">{c.title}</Link>
+                <Link to={`/concepts/${c.id}`} className="font-medium after:absolute after:inset-0 after:content-['']">{c.title}</Link>
                 <Badge tone={st === 'understood' ? 'ok' : st === 'needs-revision' ? 'warn' : 'neutral'}>{CONCEPT_STATUS_LABEL[st]}</Badge>
               </div>
               <p className="mt-1 text-sm text-subtle">{c.summary}</p>

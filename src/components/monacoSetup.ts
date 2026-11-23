@@ -57,6 +57,54 @@ for (const [path, content] of libs) {
   ts.javascriptDefaults.addExtraLib(content, path);
 }
 
+// Editor themes matching the app palette (graphite + orange accent used only for the cursor/selection marks).
+monaco.editor.defineTheme('fil-dark', {
+  base: 'vs-dark',
+  inherit: true,
+  rules: [
+    { token: 'comment', foreground: '8a8c91', fontStyle: 'italic' },
+    { token: 'keyword', foreground: 'ff8a66' },
+    { token: 'string', foreground: 'a8d4a0' },
+    { token: 'number', foreground: 'e5c07b' },
+    { token: 'type', foreground: '8fc6ff' },
+  ],
+  colors: {
+    'editor.background': '#1e1f22',
+    'editor.foreground': '#e6e7e9',
+    'editorLineNumber.foreground': '#5c5e63',
+    'editorLineNumber.activeForeground': '#c9cacd',
+    'editor.lineHighlightBackground': '#25272a',
+    'editor.selectionBackground': '#ff4a1f33',
+    'editor.inactiveSelectionBackground': '#ff4a1f1f',
+    'editorCursor.foreground': '#ff6a45',
+    'editorIndentGuide.background1': '#2c2e32',
+    'editorWidget.background': '#222427',
+    'editorWidget.border': '#34363a',
+    'scrollbarSlider.background': '#34363a88',
+  },
+});
+monaco.editor.defineTheme('fil-light', {
+  base: 'vs',
+  inherit: true,
+  rules: [
+    { token: 'comment', foreground: '74767b', fontStyle: 'italic' },
+    { token: 'keyword', foreground: 'b8320e' },
+    { token: 'string', foreground: '2f7a3a' },
+    { token: 'number', foreground: '8a5a00' },
+    { token: 'type', foreground: '1f5fa8' },
+  ],
+  colors: {
+    'editor.background': '#fbfbfb',
+    'editor.foreground': '#18191b',
+    'editorLineNumber.foreground': '#a3a5a9',
+    'editorLineNumber.activeForeground': '#3a3b3e',
+    'editor.lineHighlightBackground': '#f1f1f2',
+    'editor.selectionBackground': '#ff4a1f26',
+    'editorCursor.foreground': '#b8320e',
+    'editorIndentGuide.background1': '#e6e7e8',
+  },
+});
+
 loader.config({ monaco });
 
 export { monaco };
