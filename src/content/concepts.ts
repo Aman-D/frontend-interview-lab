@@ -1,4 +1,6 @@
 import { A11Y_BATCH2_CONCEPTS } from './concepts-a11y-batch2';
+import { NEXTJS_RENDERING_CONCEPTS } from './concepts-nextjs-rendering';
+import { REACT19_PERF_CONCEPTS } from './concepts-react19-perf';
 import { REACT_BATCH2_CONCEPTS } from './concepts-react-batch2';
 import type { Concept } from './schema';
 
@@ -1828,6 +1830,6 @@ it('debounces calls', () => {
   },
 ];
 
-CONCEPTS.push(...REACT_BATCH2_CONCEPTS, ...A11Y_BATCH2_CONCEPTS);
+CONCEPTS.push(...REACT_BATCH2_CONCEPTS, ...A11Y_BATCH2_CONCEPTS, ...REACT19_PERF_CONCEPTS, ...NEXTJS_RENDERING_CONCEPTS);
 
 export const CONCEPT_BY_ID: Record<string, Concept> = Object.fromEntries(CONCEPTS.map((c) => [c.id, c]));

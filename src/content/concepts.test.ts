@@ -14,6 +14,9 @@ const EXPECTED_IDS = [
   'controlled-uncontrolled', 'derived-state', 'react-context', 'react-portals',
   // batch 2 (Accessibility)
   'aria-live-regions', 'dialog-aria-pattern', 'tabs-aria-pattern', 'radio-group-aria', 'carousel-aria-pattern',
+  // React 19, performance, rendering & Next.js
+  'react-19-actions', 'react-19-apis', 'react-server-components', 'react-performance', 'code-splitting', 'core-web-vitals',
+  'rendering-strategies', 'hydration', 'streaming-ssr', 'nextjs-app-router', 'nextjs-caching',
 ];
 
 describe('concept knowledge base', () => {

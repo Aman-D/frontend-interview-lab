@@ -85,7 +85,7 @@ export default function ProblemDetail() {
                 <div className="space-y-3 text-sm">
                   <Markdown>{q.scenario}</Markdown>
                   {q.constraints.length > 0 && (
-                    <ul className="list-disc pl-5">{q.constraints.map((c) => <li key={c}>{c}</li>)}</ul>
+                    <ul className="list-disc pl-5">{q.constraints.map((c) => <li key={c}><Markdown inline>{c}</Markdown></li>)}</ul>
                   )}
                   <p className="text-subtle">Answer the MCQs, write your answer as you would say it in the interview, then compare it with the outline and model answer. {q.versionNotes}</p>
                 </div>

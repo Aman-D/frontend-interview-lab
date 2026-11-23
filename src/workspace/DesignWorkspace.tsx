@@ -125,7 +125,7 @@ export default function DesignWorkspace({ question: q }: { question: DesignQuest
           {q.constraints.length > 0 && (
             <>
               <h3 className="mb-1 mt-3 text-sm font-semibold">Constraints</h3>
-              <ul className="list-disc pl-5 text-[15px]">{q.constraints.map((c) => <li key={c}>{c}</li>)}</ul>
+              <ul className="list-disc pl-5 text-[15px]">{q.constraints.map((c) => <li key={c}><Markdown inline>{c}</Markdown></li>)}</ul>
             </>
           )}
         </section>
@@ -180,7 +180,7 @@ export default function DesignWorkspace({ question: q }: { question: DesignQuest
                       checked={covered.has(i)}
                       onChange={(e) => setCovered((s) => { const n = new Set(s); if (e.target.checked) n.add(i); else n.delete(i); return n; })}
                     />
-                    <span>{pt}</span>
+                    <Markdown inline>{pt}</Markdown>
                   </label>
                 </li>
               ))}
@@ -250,7 +250,7 @@ export default function DesignWorkspace({ question: q }: { question: DesignQuest
                 <Markdown>{q.modelAnswer}</Markdown>
                 <div>
                   <h3 className="mb-1 font-semibold">Pitfalls</h3>
-                  <ul className="list-disc space-y-1 pl-5">{q.pitfalls.map((p) => <li key={p}><Markdown>{p}</Markdown></li>)}</ul>
+                  <ul className="list-disc space-y-1 pl-5">{q.pitfalls.map((p) => <li key={p}><Markdown inline>{p}</Markdown></li>)}</ul>
                 </div>
                 <DocLinks ids={q.docSourceIds} />
               </>
