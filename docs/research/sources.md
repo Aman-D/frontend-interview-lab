@@ -134,14 +134,21 @@ All returned HTTP 200 on 2026-11-23 (checked with `curl -L`; see methodology).
 | `next-layouts-pages` | Next.js docs — Layouts and Pages | https://nextjs.org/docs/app/getting-started/layouts-and-pages |
 | `next-server-client` | Next.js docs — Server and Client Components | https://nextjs.org/docs/app/getting-started/server-and-client-components |
 | `next-fetching-data` | Next.js docs — Fetching Data | https://nextjs.org/docs/app/getting-started/fetching-data |
-| `next-caching-revalidating` | Next.js docs — Caching and Revalidating | https://nextjs.org/docs/app/getting-started/caching-and-revalidating |
-| `next-caching-guide` | Next.js docs — Caching guide | https://nextjs.org/docs/app/guides/caching |
+| `next-caching-revalidating` | Next.js docs — Caching (old URL …/caching-and-revalidating redirects here) | https://nextjs.org/docs/app/getting-started/caching |
+| `next-caching-guide` | Next.js docs — Caching and Revalidating (Previous Model) (old …/guides/caching redirects here) | https://nextjs.org/docs/app/guides/caching-without-cache-components |
 | `next-error-handling` | Next.js docs — Error Handling | https://nextjs.org/docs/app/getting-started/error-handling |
 | `next-loading` | Next.js docs — loading.js | https://nextjs.org/docs/app/api-reference/file-conventions/loading |
-| `next-ppr` | Next.js docs — Partial Prerendering | https://nextjs.org/docs/app/getting-started/partial-prerendering |
+| `next-ppr` | Next.js docs — Caching (old Partial Prerendering URL redirects here; PPR is now how Cache Components render) | https://nextjs.org/docs/app/getting-started/caching |
 | `next-isr` | Next.js docs — Incremental Static Regeneration | https://nextjs.org/docs/app/guides/incremental-static-regeneration |
 | `next-linking` | Next.js docs — Linking and Navigating | https://nextjs.org/docs/app/getting-started/linking-and-navigating |
 | `next-use-cache` | Next.js docs — 'use cache' directive | https://nextjs.org/docs/app/api-reference/directives/use-cache |
+| `next-revalidating` | Next.js docs — Revalidating | https://nextjs.org/docs/app/getting-started/revalidating |
+| `next-mutating-data` | Next.js docs — Mutating Data | https://nextjs.org/docs/app/getting-started/mutating-data |
+| `next-data-security` | Next.js docs — Data Security | https://nextjs.org/docs/app/guides/data-security |
+| `next-streaming` | Next.js docs — Streaming | https://nextjs.org/docs/app/guides/streaming |
+| `next-self-hosting` | Next.js docs — Self-hosting | https://nextjs.org/docs/app/guides/self-hosting |
+| `next-upgrade-16` | Next.js docs — Upgrading to version 16 | https://nextjs.org/docs/app/guides/upgrading/version-16 |
+| `react-19-3-release` | react.dev — React 19.3 release post | https://react.dev/blog/2026/09/09/react-19-3 |
 | `webdev-rendering` | web.dev — Rendering on the Web | https://web.dev/articles/rendering-on-the-web |
 | `webdev-vitals` | web.dev — Web Vitals | https://web.dev/articles/vitals |
 | `webdev-lcp` | web.dev — Largest Contentful Paint (LCP) | https://web.dev/articles/lcp |

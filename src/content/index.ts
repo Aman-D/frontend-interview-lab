@@ -12,6 +12,7 @@ import { OUTPUT_QUESTIONS_BATCH2_JS } from './output/questions-batch2-js';
 import { OUTPUT_QUESTIONS_BATCH2_UI } from './output/questions-batch2-ui';
 import { OUTPUT_QUESTIONS_SSR } from './output/questions-ssr';
 import { ARCH_QUESTIONS_REACT19_PERF } from './architecture/questions-react19-perf';
+import { ARCH_QUESTIONS_NEXTJS_RENDERING } from './architecture/questions-nextjs-rendering';
 import reactAutocomplete from './problems/react-autocomplete';
 import reactFileExplorer from './problems/react-file-explorer';
 import reactImageCarousel from './problems/react-image-carousel';
@@ -56,7 +57,7 @@ export const CODING_PROBLEMS: CodingProblem[] = [
 export const OUTPUT_QUESTIONS: OutputQuestion[] = [...OUTPUT_QUESTIONS_DATA, ...OUTPUT_QUESTIONS_BATCH2_JS, ...OUTPUT_QUESTIONS_BATCH2_UI, ...OUTPUT_QUESTIONS_SSR];
 
 /** Architecture & performance scenario questions (React 19, rendering patterns, Next.js App Router). */
-export const DESIGN_QUESTIONS: DesignQuestion[] = [...ARCH_QUESTIONS_REACT19_PERF];
+export const DESIGN_QUESTIONS: DesignQuestion[] = [...ARCH_QUESTIONS_REACT19_PERF, ...ARCH_QUESTIONS_NEXTJS_RENDERING];
 
 export const QUESTIONS: Question[] = [...CODING_PROBLEMS, ...OUTPUT_QUESTIONS, ...DESIGN_QUESTIONS];
 export const QUESTION_BY_ID: Record<string, Question> = Object.fromEntries(QUESTIONS.map((q) => [q.id, q]));
