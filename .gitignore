@@ -12,3 +12,4 @@ public/runner/vendor
 verify-agent-*.html
 src/verify-agent-*.tsx
 src/content/**/__scratch/
+verify-agent-*/
