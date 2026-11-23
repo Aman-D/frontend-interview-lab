@@ -18,7 +18,7 @@ Legend:
 | 5 | Infinite Scroll | `fg-mc` → "Infinite Scroll" | PPP | MED | ✅ Implemented (`react-infinite-scroll`) |
 | 6 | Modal / Dialog | `fih-ui` → "Modal Dialog"; `fih-sd-ui` → "Modal dialog"; `alla-components` → "Design a Modal / Dialog"; `fg-mc` → "Modal Component" | PPP | HIGH | ✅ Implemented (`react-modal-dialog`) |
 | 7 | Multi-Select Dropdown | `fih-sd-ui` → "Dropdown menu"; `alla-components` → "Design a Dropdown Menu"; `fg-mc` → "Chips Input" | OV | MED | ✅ Implemented (`react-multi-select`) |
-| 8 | Nested Comments | `fg-mc` → "Comment View (Multi-level)" | PPP | MED | Overlaps #2 / #15 (recursive tree rendering) |
+| 8 | Nested Comments | `fg-mc` → "Comment View (Multi-level)" | PPP | MED | ✅ Implemented (`react-nested-comments`) |
 | 9 | Virtualized List | `alla-components` → "Design a Virtualized List"; `fg-mc` Infinite Scroll description mentions "Virtualization" | PPP | MED | ✅ Implemented (`react-virtualized-list`) |
 | 10 | Drag-and-Drop Kanban | `fih-ui` → "Kanban Board"; `fg-mc` → "Kanban Board" | PPP | HIGH | ✅ Implemented (`react-kanban-board`) |
 | 11 | OTP Input | `fg-mc` → "OTP Input Design" | PPP | MED | ✅ Implemented (`react-otp-input`) |
@@ -26,7 +26,7 @@ Legend:
 | 13 | Accordion | `fih-ui` → "Accordion"; `fg-mc` → "Accordion"; `alla-components` → "Design an Accordion" | PPP | HIGH | Implemented in Vanilla track; React version is a duplicate → deprioritised |
 | 14 | Tabs | `fih-ui` → "Tabs"; `fg-mc` → "Tab bar"; `alla-components` → "Design a Tabs Component" | PPP | HIGH | ✅ Implemented (`react-tabs`) |
 | 15 | Tree View | `fg-mc` → "Tree View / Folder View" | PPP | MED | **Duplicate of #2** — merge as File Explorer follow-up (keyboard tree nav) |
-| 16 | Multi-Step Form | `fg-mc` → "Step Form", "Multi-Step Form" | PPP | MED | Candidate (one source, two entries) |
+| 16 | Multi-Step Form | `fg-mc` → "Step Form", "Multi-Step Form" | PPP | MED | ✅ Implemented (`react-multi-step-form`) |
 | 17 | Image Carousel | `fih-ui` → "Image Carousel"; `fih-sd-ui` → "Image carousel"; `alla-components` → "Design an Image Carousel"; `fg-mc` → "Image Carousel" | PPP | HIGH | ✅ Implemented (`react-image-carousel`) |
 | 18 | Star Rating | `fih-ui` → "Star Rating"; `fg-mc` → "Star Component" | PPP | HIGH | ✅ Implemented (`react-star-rating`) |
 | 19 | Calendar / Date Picker | `alla-components` → "Design a Date Picker"; `fg-mc` → "Calendar View" | PPP | HIGH | ✅ Implemented (`react-date-picker`) |

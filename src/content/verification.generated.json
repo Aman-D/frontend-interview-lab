@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-23T11:55:19.255Z",
+  "generatedAt": "2026-11-23T12:01:37.505Z",
   "browser": "Chromium 157.0.8103.78 (Playwright)",
   "results": [
     {
@@ -303,6 +303,40 @@
       "starter": {
         "passed": 0,
         "total": 15,
+        "failsAtLeastOne": true,
+        "status": "completed"
+      },
+      "ok": true
+    },
+    {
+      "problemId": "react-nested-comments",
+      "solution": {
+        "passed": 29,
+        "total": 29,
+        "allPassed": true,
+        "status": "completed",
+        "failures": []
+      },
+      "starter": {
+        "passed": 2,
+        "total": 29,
+        "failsAtLeastOne": true,
+        "status": "completed"
+      },
+      "ok": true
+    },
+    {
+      "problemId": "react-multi-step-form",
+      "solution": {
+        "passed": 23,
+        "total": 23,
+        "allPassed": true,
+        "status": "completed",
+        "failures": []
+      },
+      "starter": {
+        "passed": 0,
+        "total": 23,
         "failsAtLeastOne": true,
         "status": "completed"
       },

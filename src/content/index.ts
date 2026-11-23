@@ -31,6 +31,8 @@ import reactPollWidget from './problems/react-poll-widget';
 import reactCustomHooks from './problems/react-custom-hooks';
 import reactCommandPalette from './problems/react-command-palette';
 import reactMultiSelect from './problems/react-multi-select';
+import reactNestedComments from './problems/react-nested-comments';
+import reactMultiStepForm from './problems/react-multi-step-form';
 
 /** Every coding problem bundled with the app. Order is the default library order. */
 export const CODING_PROBLEMS: CodingProblem[] = [
@@ -52,6 +54,8 @@ export const CODING_PROBLEMS: CodingProblem[] = [
   reactCustomHooks,
   reactCommandPalette,
   reactMultiSelect,
+  reactNestedComments,
+  reactMultiStepForm,
   vanillaAccordion,
   vanillaEventDelegation,
   jsDebounce,
