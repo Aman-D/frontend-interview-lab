@@ -1,0 +1,13 @@
+.app { max-width: 560px; margin: 32px auto; font-family: system-ui, sans-serif; }
+.app h2 { font-size: 16px; margin-top: 28px; }
+.hint { color: #555; font-size: 14px; }
+.tabs__list { display: flex; gap: 2px; border-bottom: 1px solid #ccc; }
+.tabs__tab { padding: 8px 14px; border: 1px solid transparent; border-bottom: none; border-radius: 6px 6px 0 0; background: none; font: inherit; cursor: pointer; color: #333; }
+.tabs__tab:hover:not(:disabled) { background: #f3f4f6; }
+.tabs__tab[aria-selected='true'] { border-color: #ccc; background: #fff; margin-bottom: -1px; font-weight: 600; color: #3730a3; }
+.tabs__tab:disabled { color: #9ca3af; cursor: not-allowed; }
+.tabs__tab:focus-visible, .tabs__panel:focus-visible { outline: 2px solid #4f46e5; outline-offset: 2px; }
+/* Note: no `display` rule on panels, so the `hidden` attribute keeps working. */
+.tabs__panel { padding: 12px 4px; }
+.tabs__panel label { display: grid; gap: 4px; font-size: 14px; }
+.tabs__panel textarea { font: inherit; }

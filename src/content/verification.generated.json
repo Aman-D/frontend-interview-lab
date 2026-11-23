@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-23T09:04:02.008Z",
+  "generatedAt": "2026-11-23T09:45:44.233Z",
   "browser": "Chromium 157.0.8103.78 (Playwright)",
   "results": [
     {
@@ -31,6 +31,108 @@
       "starter": {
         "passed": 2,
         "total": 18,
+        "failsAtLeastOne": true,
+        "status": "completed"
+      },
+      "ok": true
+    },
+    {
+      "problemId": "react-data-table",
+      "solution": {
+        "passed": 13,
+        "total": 13,
+        "allPassed": true,
+        "status": "completed",
+        "failures": []
+      },
+      "starter": {
+        "passed": 0,
+        "total": 13,
+        "failsAtLeastOne": true,
+        "status": "completed"
+      },
+      "ok": true
+    },
+    {
+      "problemId": "react-modal-dialog",
+      "solution": {
+        "passed": 15,
+        "total": 15,
+        "allPassed": true,
+        "status": "completed",
+        "failures": []
+      },
+      "starter": {
+        "passed": 0,
+        "total": 15,
+        "failsAtLeastOne": true,
+        "status": "completed"
+      },
+      "ok": true
+    },
+    {
+      "problemId": "react-tabs",
+      "solution": {
+        "passed": 14,
+        "total": 14,
+        "allPassed": true,
+        "status": "completed",
+        "failures": []
+      },
+      "starter": {
+        "passed": 0,
+        "total": 14,
+        "failsAtLeastOne": true,
+        "status": "completed"
+      },
+      "ok": true
+    },
+    {
+      "problemId": "react-toast",
+      "solution": {
+        "passed": 14,
+        "total": 14,
+        "allPassed": true,
+        "status": "completed",
+        "failures": []
+      },
+      "starter": {
+        "passed": 1,
+        "total": 14,
+        "failsAtLeastOne": true,
+        "status": "completed"
+      },
+      "ok": true
+    },
+    {
+      "problemId": "react-image-carousel",
+      "solution": {
+        "passed": 15,
+        "total": 15,
+        "allPassed": true,
+        "status": "completed",
+        "failures": []
+      },
+      "starter": {
+        "passed": 0,
+        "total": 15,
+        "failsAtLeastOne": true,
+        "status": "completed"
+      },
+      "ok": true
+    },
+    {
+      "problemId": "react-star-rating",
+      "solution": {
+        "passed": 15,
+        "total": 15,
+        "allPassed": true,
+        "status": "completed",
+        "failures": []
+      },
+      "starter": {
+        "passed": 0,
+        "total": 15,
         "failsAtLeastOne": true,
         "status": "completed"
       },

@@ -13,10 +13,10 @@ Legend:
 |---|---|---|---|---|---|
 | 1 | Autocomplete / Typeahead | `fih-sd-ui` → "Autocomplete"; `alla-components` → "Design an Autocomplete"; `fg-mc` → "Auto Complete Search \| Typeahead Search" | PPP | HIGH | ✅ Implemented (`react-autocomplete`) |
 | 2 | File Explorer | `fih-ui` → "File Explorer"; `fg-mc` → "Tree View / Folder View" | PPP | HIGH | ✅ Implemented (`react-file-explorer`) |
-| 3 | Data Table (sort/filter/paginate) | `fih-ui` → "Data Table (with extensions for sorting and filtering)"; `fih-sd-ui` → "Data table"; `alla-components` → "Design a Data Table" | PPP | HIGH | Candidate — next batch |
-| 4 | Toast Notification System | `fg-mc` → "Toast Notification"; `alla-components` → "Design a Toast / Notification System" | PPP | HIGH | Candidate |
+| 3 | Data Table (sort/filter/paginate) | `fih-ui` → "Data Table (with extensions for sorting and filtering)"; `fih-sd-ui` → "Data table"; `alla-components` → "Design a Data Table" | PPP | HIGH | ✅ Implemented (`react-data-table`) |
+| 4 | Toast Notification System | `fg-mc` → "Toast Notification"; `alla-components` → "Design a Toast / Notification System" | PPP | HIGH | ✅ Implemented (`react-toast`) |
 | 5 | Infinite Scroll | `fg-mc` → "Infinite Scroll" | PPP | MED | Candidate |
-| 6 | Modal / Dialog | `fih-ui` → "Modal Dialog"; `fih-sd-ui` → "Modal dialog"; `alla-components` → "Design a Modal / Dialog"; `fg-mc` → "Modal Component" | PPP | HIGH | Candidate — next batch |
+| 6 | Modal / Dialog | `fih-ui` → "Modal Dialog"; `fih-sd-ui` → "Modal dialog"; `alla-components` → "Design a Modal / Dialog"; `fg-mc` → "Modal Component" | PPP | HIGH | ✅ Implemented (`react-modal-dialog`) |
 | 7 | Multi-Select Dropdown | `fih-sd-ui` → "Dropdown menu"; `alla-components` → "Design a Dropdown Menu"; `fg-mc` → "Chips Input" | OV | MED | Multi-select is a variation of dropdown + chips input |
 | 8 | Nested Comments | `fg-mc` → "Comment View (Multi-level)" | PPP | MED | Overlaps #2 / #15 (recursive tree rendering) |
 | 9 | Virtualized List | `alla-components` → "Design a Virtualized List"; `fg-mc` Infinite Scroll description mentions "Virtualization" | PPP | MED | Candidate |
@@ -24,11 +24,11 @@ Legend:
 | 11 | OTP Input | `fg-mc` → "OTP Input Design" | PPP | MED | Candidate |
 | 12 | Dynamic Form Builder | `alla-components` → "Design a Config-Driven UI" (adjacent) | OV | LOW | Candidate |
 | 13 | Accordion | `fih-ui` → "Accordion"; `fg-mc` → "Accordion"; `alla-components` → "Design an Accordion" | PPP | HIGH | Implemented in Vanilla track; React version is a duplicate → deprioritised |
-| 14 | Tabs | `fih-ui` → "Tabs"; `fg-mc` → "Tab bar"; `alla-components` → "Design a Tabs Component" | PPP | HIGH | Candidate — next batch |
+| 14 | Tabs | `fih-ui` → "Tabs"; `fg-mc` → "Tab bar"; `alla-components` → "Design a Tabs Component" | PPP | HIGH | ✅ Implemented (`react-tabs`) |
 | 15 | Tree View | `fg-mc` → "Tree View / Folder View" | PPP | MED | **Duplicate of #2** — merge as File Explorer follow-up (keyboard tree nav) |
 | 16 | Multi-Step Form | `fg-mc` → "Step Form", "Multi-Step Form" | PPP | MED | Candidate (one source, two entries) |
-| 17 | Image Carousel | `fih-ui` → "Image Carousel"; `fih-sd-ui` → "Image carousel"; `alla-components` → "Design an Image Carousel"; `fg-mc` → "Image Carousel" | PPP | HIGH | Candidate |
-| 18 | Star Rating | `fih-ui` → "Star Rating"; `fg-mc` → "Star Component" | PPP | HIGH | Candidate |
+| 17 | Image Carousel | `fih-ui` → "Image Carousel"; `fih-sd-ui` → "Image carousel"; `alla-components` → "Design an Image Carousel"; `fg-mc` → "Image Carousel" | PPP | HIGH | ✅ Implemented (`react-image-carousel`) |
+| 18 | Star Rating | `fih-ui` → "Star Rating"; `fg-mc` → "Star Component" | PPP | HIGH | ✅ Implemented (`react-star-rating`) |
 | 19 | Calendar / Date Picker | `alla-components` → "Design a Date Picker"; `fg-mc` → "Calendar View" | PPP | HIGH | Candidate |
 | 20 | Editable Data Grid | Variation of #3 | OV | LOW | Candidate |
 | 21 | Search with Filters | Variation of #3 (filtering) | OV | LOW | Candidate |

@@ -10,11 +10,23 @@ import tsTypedEmitter from './problems/ts-typed-event-emitter';
 import { OUTPUT_QUESTIONS_DATA } from './output/questions';
 import reactAutocomplete from './problems/react-autocomplete';
 import reactFileExplorer from './problems/react-file-explorer';
+import reactImageCarousel from './problems/react-image-carousel';
+import reactStarRating from './problems/react-star-rating';
+import reactDataTable from './problems/react-data-table';
+import reactModalDialog from './problems/react-modal-dialog';
+import reactTabs from './problems/react-tabs';
+import reactToast from './problems/react-toast';
 
 /** Every coding problem bundled with the app. Order is the default library order. */
 export const CODING_PROBLEMS: CodingProblem[] = [
   reactAutocomplete,
   reactFileExplorer,
+  reactDataTable,
+  reactModalDialog,
+  reactTabs,
+  reactToast,
+  reactImageCarousel,
+  reactStarRating,
   vanillaAccordion,
   vanillaEventDelegation,
   jsDebounce,

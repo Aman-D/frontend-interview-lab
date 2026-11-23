@@ -36,7 +36,7 @@ Open http://localhost:5173.
 
 | Track | Implemented (full content + verified) | Researched candidates |
 |---|---|---|
-| React machine coding | Autocomplete / Typeahead, File Explorer | 30 |
+| React machine coding | Autocomplete / Typeahead, File Explorer, Data Table, Modal Dialog, Tabs, Toast, Image Carousel, Star Rating | 30 |
 | Vanilla JS / DOM | Accessible Accordion, Event Delegation | 20 |
 | JavaScript & polyfills | debounce, Promise.all, curry, Event Emitter | 30 |
 | TypeScript | ReturnType/Parameters (`infer`), Type-safe Event Emitter | 20 |

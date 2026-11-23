@@ -9,7 +9,7 @@
 ## Content gaps (implemented vs. targets)
 | Track | Target | Implemented (full content + verified solution) |
 |---|---|---|
-| React machine coding | 30 | 2 |
+| React machine coding | 30 | 8 |
 | Vanilla JS / DOM | 20 | 2 |
 | JS coding & polyfills | 30 | 4 |
 | TypeScript | 20 | 2 |
@@ -21,3 +21,6 @@ This was intentional for Phase 1: the brief asks to validate the architecture be
 - React runner supports TSX/JSX/TS/JS files and CSS files; npm packages other than `react`/`react-dom` are not available offline.
 - Runaway synchronous loops are interrupted by a compile-time loop guard; deep recursion surfaces as a stack-overflow error. A tight loop that the guard cannot see (e.g. inside a library) can still freeze the sandbox iframe until the run times out.
 - No visual regression or automated accessibility (axe) checks yet; accessibility is covered by role/ARIA assertions in tests plus manual checklists.
+
+## Concepts requested by the second React batch (not yet written)
+Problem authors fell back to the nearest existing concept for: controlled vs uncontrolled components, derived state ("you might not need an effect"), ARIA live regions, portals & scroll locking, roving tabindex / tabs pattern, radio-group pattern, carousel pattern & reduced motion, React context. These are the next concept pages to add.

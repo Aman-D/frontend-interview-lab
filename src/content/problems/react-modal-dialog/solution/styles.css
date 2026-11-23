@@ -1,0 +1,14 @@
+.app { max-width: 640px; margin: 24px auto; padding: 0 16px; font-family: system-ui, sans-serif; color: #1f2937; }
+.actions, .modal-actions { display: flex; gap: 8px; }
+.modal-actions { justify-content: flex-end; margin-top: 16px; }
+button { font: inherit; padding: 6px 12px; border-radius: 6px; border: 1px solid #cbd5e1; background: #fff; cursor: pointer; }
+button.danger { background: #b91c1c; border-color: #b91c1c; color: #fff; }
+button:focus-visible, input:focus-visible { outline: 2px solid #4f46e5; outline-offset: 2px; }
+.filler { color: #6b7280; font-size: 14px; }
+.modal-backdrop { position: fixed; inset: 0; background: rgb(15 23 42 / 0.55); display: grid; place-items: center; padding: 16px; z-index: 10; }
+.modal { background: #fff; border-radius: 10px; padding: 20px 24px; width: min(440px, 100%); max-height: calc(100vh - 32px); overflow: auto; box-shadow: 0 20px 50px rgb(0 0 0 / 0.25); }
+.modal:focus { outline: none; }
+.modal h2 { margin: 0 0 8px; font-size: 18px; }
+.modal p { margin: 0; color: #4b5563; }
+.profile-form label { display: grid; gap: 4px; font-size: 14px; }
+.profile-form input { font: inherit; padding: 6px 8px; border: 1px solid #cbd5e1; border-radius: 6px; }
