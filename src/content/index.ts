@@ -33,6 +33,7 @@ import reactCommandPalette from './problems/react-command-palette';
 import reactMultiSelect from './problems/react-multi-select';
 import reactNestedComments from './problems/react-nested-comments';
 import reactMultiStepForm from './problems/react-multi-step-form';
+import reactRichTextEditor from './problems/react-rich-text-editor';
 
 /** Every coding problem bundled with the app. Order is the default library order. */
 export const CODING_PROBLEMS: CodingProblem[] = [
@@ -56,6 +57,7 @@ export const CODING_PROBLEMS: CodingProblem[] = [
   reactMultiSelect,
   reactNestedComments,
   reactMultiStepForm,
+  reactRichTextEditor,
   vanillaAccordion,
   vanillaEventDelegation,
   jsDebounce,

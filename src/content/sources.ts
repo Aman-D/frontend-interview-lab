@@ -147,6 +147,13 @@ export const SOURCES: Source[] = [
   { id: 'react-19-3-release', title: "react.dev — React 19.3 release post", url: 'https://react.dev/blog/2026/09/09/react-19-3', category: 'official-docs', accessedOn: '2026-11-23', accessible: true },
   { id: 'sandpack-docs', title: 'Sandpack docs', url: 'https://sandpack.codesandbox.io/docs', category: 'tooling-docs', accessedOn: '2026-11-23', accessible: true },
   { id: 'sandpack-client', title: 'Sandpack client (advanced usage)', url: 'https://sandpack.codesandbox.io/docs/advanced-usage/client', category: 'tooling-docs', accessedOn: '2026-11-23', accessible: true },
+  { id: 'mdn-contenteditable', title: 'MDN — contenteditable global attribute', url: 'https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/contenteditable', category: 'official-docs', accessedOn: '2026-11-26', accessible: true },
+  { id: 'mdn-beforeinput', title: 'MDN — Element: beforeinput event', url: 'https://developer.mozilla.org/en-US/docs/Web/API/Element/beforeinput_event', category: 'official-docs', accessedOn: '2026-11-26', accessible: true },
+  { id: 'mdn-inputtype', title: 'MDN — InputEvent: inputType property', url: 'https://developer.mozilla.org/en-US/docs/Web/API/InputEvent/inputType', category: 'official-docs', accessedOn: '2026-11-26', accessible: true },
+  { id: 'w3c-input-events', title: "W3C — Input Events Level 2 (editor's draft)", url: 'https://w3c.github.io/input-events/', category: 'official-docs', accessedOn: '2026-11-26', accessible: true },
+  { id: 'mdn-selection', title: 'MDN — Selection', url: 'https://developer.mozilla.org/en-US/docs/Web/API/Selection', category: 'official-docs', accessedOn: '2026-11-26', accessible: true },
+  { id: 'mdn-execcommand', title: 'MDN — Document: execCommand() method (deprecated)', url: 'https://developer.mozilla.org/en-US/docs/Web/API/Document/execCommand', category: 'official-docs', accessedOn: '2026-11-26', accessible: true },
+  { id: 'apg-toolbar', title: 'WAI-ARIA APG — Toolbar pattern', url: 'https://www.w3.org/WAI/ARIA/apg/patterns/toolbar/', category: 'official-docs', accessedOn: '2026-11-26', accessible: true },
   { id: 'monaco', title: 'Monaco Editor', url: 'https://microsoft.github.io/monaco-editor/', category: 'tooling-docs', accessedOn: '2026-11-23', accessible: true },
 ];
 

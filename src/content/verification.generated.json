@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-11-23T12:01:37.505Z",
-  "browser": "Chromium 157.0.8103.78 (Playwright)",
+  "generatedAt": "2026-11-26T07:54:58.639Z",
+  "browser": "Chromium 158.0.8127.36 (Playwright)",
   "results": [
     {
       "problemId": "react-autocomplete",
@@ -337,6 +337,23 @@
       "starter": {
         "passed": 0,
         "total": 23,
+        "failsAtLeastOne": true,
+        "status": "completed"
+      },
+      "ok": true
+    },
+    {
+      "problemId": "react-rich-text-editor",
+      "solution": {
+        "passed": 30,
+        "total": 30,
+        "allPassed": true,
+        "status": "completed",
+        "failures": []
+      },
+      "starter": {
+        "passed": 1,
+        "total": 30,
         "failsAtLeastOne": true,
         "status": "completed"
       },
