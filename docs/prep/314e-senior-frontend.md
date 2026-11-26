@@ -2,6 +2,8 @@
 
 A study guide for a Senior/Lead Frontend Engineer loop at 314e. It maps the prep plan to practice items in this lab and gives a short, interview-length answer to every theory question. Each answer is built so you can say **what it is, how it works, when to use it, when not to, and a production example**.
 
+> All of the items below are grouped on the **Companies → 314e** page in the app, with your progress on each.
+>
 > **Honesty note.** The question list is a *predicted* set. It is based on a referral contact's unpublished recollection of their October 2026 loop (memoization, closures, callbacks, recruitment portal HLD, job listing, rich text editor, security) and the public job description. None of it is a verified list of questions 314e asks. Lab items carry their own provenance labels, and none of them claim to be company questions.
 
 ---
@@ -29,7 +31,7 @@ A study guide for a Senior/Lead Frontend Engineer loop at 314e. It maps the prep
 | Virtualization, infinite scroll (P1) | `react-virtualized-list` · `react-infinite-scroll` | Coding |
 | HLD: recruitment portal (P0) | `arch-sd-recruitment-portal` · `react-kanban-board` (pipeline board) · `react-multi-step-form` (apply flow) | System design · coding |
 | HLD: job listing (P0) | `arch-sd-job-listing` · `react-autocomplete` · `react-data-table` | System design · coding |
-| Rich text editor (P0) | Being added in a separate change to this lab. Until then, see §5 below. | — |
+| Rich text editor (P0) | `react-rich-text-editor` | Coding |
 | Testing (P1) | Every coding problem's "Testing strategy" section, and concept **Fake timers** | — |
 
 In the app, open **Architecture & performance** for the scenarios and **JavaScript & polyfills** for the coding problems. Use **Interview mode** with a 45-minute timer for the two system design questions.
@@ -202,7 +204,7 @@ Practise `arch-sd-recruitment-portal` and `arch-sd-job-listing` in Interview mod
 | 2 | React rendering, hooks, reconciliation | `arch-memo-child-still-rerenders`, `arch-stale-closures-hooks`, `arch-render-commit-pipeline`, `arch-react-rerender-diagnosis`; React output questions |
 | 3 | Recruitment portal HLD | `arch-sd-recruitment-portal` in Interview mode (45 min); then `react-kanban-board` |
 | 4 | Job listing HLD + machine coding | `arch-sd-job-listing`, `arch-search-race-conditions`; build `react-autocomplete` and `react-infinite-scroll` |
-| 5 | Rich text editor | The editor question when it lands; meanwhile §6 notes plus `arch-xss-job-description` |
+| 5 | Rich text editor | `react-rich-text-editor`, then `arch-xss-job-description` |
 | 6 | Security, browser internals, performance | `arch-auth-tokens-csrf`, `arch-csp-rollout`, `arch-secure-resume-upload`, `arch-memory-leak-hunt`, `arch-web-worker-offload` |
 | 7 | Mocks and project deep dives | Re-attempt weak items in Revision mode; `js-concurrency-limit` under a 25-minute timer; rehearse your design-system, Next.js migration and AI copilot stories |
 

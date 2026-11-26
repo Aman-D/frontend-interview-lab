@@ -7,6 +7,7 @@ import { DifficultyBadge, OutcomeBadge, PriorityBadge, SourcesPanel, StatusBadge
 import { ClarificationsView, DescriptionView, RequirementsChecklist, TestingPlanView } from '@/components/ProblemSpec';
 import { Badge, Button, Card, CardHeader, Tabs } from '@/components/ui';
 import { QUESTION_BY_ID } from '@/content';
+import { companiesForQuestion } from '@/content/companies';
 import { CONCEPT_BY_ID } from '@/content/concepts';
 import { EXECUTION_LABEL, TRACK_LABEL } from '@/content/labels';
 import { repo } from '@/db/repo';
@@ -158,6 +159,18 @@ export default function ProblemDetail() {
               {!attempts?.length && <li className="px-4 py-3 text-xs text-subtle">No attempts yet.</li>}
             </ul>
           </Card>
+          {companiesForQuestion(q.id).length > 0 && (
+            <Card>
+              <CardHeader title="Company prep sets" />
+              <ul className="flex flex-wrap gap-1.5 p-4">
+                {companiesForQuestion(q.id).map((c) => (
+                  <li key={c.id}>
+                    <Link to={`/companies/${c.id}`} className="rounded bg-muted px-2 py-0.5 text-xs hover:underline">{c.name}</Link>
+                  </li>
+                ))}
+              </ul>
+            </Card>
+          )}
           <Card>
             <CardHeader title="Concepts" />
             <ul className="flex flex-wrap gap-1.5 p-4">

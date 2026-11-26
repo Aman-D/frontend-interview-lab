@@ -6,6 +6,7 @@ import { Layout } from './components/Layout';
 import Dashboard from './pages/Dashboard';
 import LibraryPage from './pages/Library';
 import ProblemDetail from './pages/ProblemDetail';
+import CompaniesPage, { CompanyDetailPage } from './pages/Companies';
 import ConceptsPage from './pages/Concepts';
 import ConceptDetail from './pages/ConceptDetail';
 import RevisionPage from './pages/Revision';
@@ -31,6 +32,8 @@ const router = createBrowserRouter([
       { path: 'library', element: <LibraryPage /> },
       { path: 'problems/:id', element: <ProblemDetail /> },
       { path: 'practice/:id', element: <Suspense fallback={fallback}><Workspace /></Suspense> },
+      { path: 'companies', element: <CompaniesPage /> },
+      { path: 'companies/:id', element: <CompanyDetailPage /> },
       { path: 'concepts', element: <ConceptsPage /> },
       { path: 'concepts/:id', element: <ConceptDetail /> },
       { path: 'revision', element: <RevisionPage /> },
