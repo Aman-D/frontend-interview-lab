@@ -17,6 +17,8 @@ const EXPECTED_IDS = [
   // React 19, performance, rendering & Next.js
   'react-19-actions', 'react-19-apis', 'react-server-components', 'react-performance', 'code-splitting', 'core-web-vitals',
   'rendering-strategies', 'hydration', 'streaming-ssr', 'nextjs-app-router', 'nextjs-caching',
+  // memoization, throttling, security & browser internals
+  'memoization', 'throttling', 'xss-prevention', 'csrf-cookies', 'content-security-policy', 'memory-leaks', 'web-workers',
 ];
 
 describe('concept knowledge base', () => {

@@ -38,12 +38,12 @@ Open http://localhost:5173.
 |---|---|---|
 | React machine coding | Autocomplete / Typeahead, File Explorer, Data Table, Modal Dialog, Tabs, Toast, Image Carousel, Star Rating, Tooltip & Popover, OTP Input, Infinite Scroll, Virtualized List, Kanban Board, Date Picker, Command Palette, Multi-select, Poll Widget, Custom Hooks, Nested Comments, Multi-step Form | 30 |
 | Vanilla JS / DOM | Accessible Accordion, Event Delegation | 20 |
-| JavaScript & polyfills | debounce, Promise.all, curry, Event Emitter | 30 |
+| JavaScript & polyfills | debounce, throttle, memoize, Promise.all, promise concurrency limiter, curry, Event Emitter | 30 |
 | TypeScript | ReturnType/Parameters (`infer`), Type-safe Event Emitter | 20 |
 | Output prediction | 56 questions: JavaScript (event loop, async ordering, generators, Proxy, coercion, classes…), DOM events, React rendering/effects, and server rendering (renderToString, hydration, useId) — every answer executed | 50+ targeted |
-| Architecture & performance | 12 scenarios — React 19 Actions, `use()` + Suspense, re-render diagnosis, React Compiler, Core Web Vitals, code splitting, rendering strategy per route, hydration mismatches, streaming/Suspense boundaries, Server/Client Component boundary, Next.js 16 caching, App Router mutations (graded MCQs + self-assessed answer; version-pinned to React 19.3 / Next.js 16.4) | 12 |
+| Architecture & performance | 25 scenarios — React 19 Actions, `use()` + Suspense, re-render diagnosis, React Compiler, Core Web Vitals, code splitting, rendering strategy per route, hydration mismatches, streaming/Suspense boundaries, Server/Client Component boundary, Next.js 16 caching, App Router mutations; React internals (memo/useMemo/useCallback, stale closures, render → commit, search race conditions, state placement & context); frontend security (XSS, auth tokens & CSRF, CSP & clickjacking, secure file upload); browser internals (memory leaks, Web Workers); and two 45-minute system designs (recruitment portal, job listing). Graded MCQs + self-assessed answer; version-pinned to React 19.3 / Next.js 16.4 | 12 |
 
-Plus **53 concept pages** (incl. React 19, Server Components, performance, Core Web Vitals, rendering strategies, hydration, streaming SSR, Next.js App Router and caching), each with mechanism, misconceptions, failure cases, production implications and official-doc links.
+Plus **60 concept pages** (incl. React 19, Server Components, performance, Core Web Vitals, rendering strategies, hydration, streaming SSR, Next.js App Router and caching, memoization, throttling, XSS, CSRF and cookies, CSP, memory leaks and Web Workers), each with mechanism, misconceptions, failure cases, production implications and official-doc links.
 
 Each coding problem has: interviewer-style description, clarification questions (why + default assumption), scope decisions, MUST/SHOULD/OPTIONAL requirements by category, acceptance criteria, public + hidden tests, progressive hints, a 12-part solution (approaches, full code, walkthrough, complexity, edge cases, alternatives, trade-offs, mistakes, testing strategy, senior follow-ups), follow-up questions from definition → architecture, MCQs with per-option explanations, and sources.
 
@@ -60,6 +60,9 @@ Each coding problem has: interviewer-style description, clarification questions 
 
 ### Keyboard shortcuts (workspace)
 `Ctrl/⌘+Enter` run tests · `Ctrl/⌘+Shift+Enter` run/refresh preview · `Ctrl/⌘+S` save · `Ctrl/⌘+Shift+M` maximise editor.
+
+## Interview prep guides
+- [`docs/prep/314e-senior-frontend.md`](docs/prep/314e-senior-frontend.md) — Senior Frontend prep set for a 314e loop: maps a predicted question list to lab items and gives interview-length theory answers (React, JavaScript, security, browser/performance), a system design structure and a 7-day plan. The question list is a prediction, not a verified company question list.
 
 ## Research & sourcing
 See [`docs/research/`](docs/research):

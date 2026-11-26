@@ -211,7 +211,7 @@ export type Question = z.infer<typeof Question>;
 export const Concept = z.object({
   id: z.string().regex(/^[a-z0-9-]+$/),
   title: z.string(),
-  area: z.enum(['JavaScript', 'TypeScript', 'React', 'DOM & Browser', 'Accessibility', 'Async', 'Data structures', 'Testing', 'Performance']),
+  area: z.enum(['JavaScript', 'TypeScript', 'React', 'DOM & Browser', 'Accessibility', 'Async', 'Data structures', 'Testing', 'Performance', 'Security']),
   summary: z.string().min(10),
   definition: md,
   whyItExists: md,
