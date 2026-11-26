@@ -160,6 +160,15 @@ All returned HTTP 200 on 2026-11-23 (checked with `curl -L`; see methodology).
 | `patterns-progressive-hydration` | patterns.dev — Progressive Hydration | https://www.patterns.dev/react/progressive-hydration |
 
 Next.js pages were read at v16.4.6 ("Latest" on nextjs.org) and React pages at React 19.3.1 (npm latest) on 2026-11-23.
+| `mdn-contenteditable` | MDN — contenteditable global attribute | https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/contenteditable |
+| `mdn-beforeinput` | MDN — Element: beforeinput event | https://developer.mozilla.org/en-US/docs/Web/API/Element/beforeinput_event |
+| `mdn-inputtype` | MDN — InputEvent: inputType property | https://developer.mozilla.org/en-US/docs/Web/API/InputEvent/inputType |
+| `w3c-input-events` | W3C — Input Events Level 2 (editor's draft) | https://w3c.github.io/input-events/ |
+| `mdn-selection` | MDN — Selection | https://developer.mozilla.org/en-US/docs/Web/API/Selection |
+| `mdn-execcommand` | MDN — Document: execCommand() method (deprecated) | https://developer.mozilla.org/en-US/docs/Web/API/Document/execCommand |
+| `apg-toolbar` | WAI-ARIA APG — Toolbar pattern | https://www.w3.org/WAI/ARIA/apg/patterns/toolbar/ |
+
+Sources above from `mdn-contenteditable` to `apg-toolbar` were accessed on **2026-11-26** (HTTP 200, content inspected) for the Rich Text Editor problem.
 
 ## Execution-environment references
 

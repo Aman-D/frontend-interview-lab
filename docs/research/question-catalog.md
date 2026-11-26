@@ -34,7 +34,7 @@ Legend:
 | 21 | Search with Filters | Variation of #3 (filtering) | OV | LOW | Candidate |
 | 22 | Chat Interface | `fg-mc` → "Messaging Interface" | PPP | MED | Candidate |
 | 23 | Spreadsheet Grid | No public source found | OV | UNK | Keep only as advanced original variation |
-| 24 | Rich Text Editor | `fih-sd-ui` → "Rich text editor"; `alla-components` → "Design a Rich Text Editor" | PPP | HIGH | Sources frame it as **system design**, not 60-min machine coding |
+| 24 | Rich Text Editor | `fih-sd-ui` → "Rich text editor"; `alla-components` → "Design a Rich Text Editor" | OV | HIGH | ✅ Implemented (`react-rich-text-editor`) as an inline-marks machine-coding cut of the system-design prompt |
 | 25 | JSON / Code Editor | No public source found | OV | UNK | Candidate for replacement |
 | 26 | Resizable Panels | No public source found | OV | UNK | Candidate for replacement |
 | 27 | Command Palette | `alla-components` → "Design a Command Palette (Cmd-K)" | PPP | MED | ✅ Implemented (`react-command-palette`) |

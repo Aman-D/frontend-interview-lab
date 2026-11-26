@@ -1,0 +1,17 @@
+.app { max-width: 640px; margin: 32px auto; font-family: system-ui, sans-serif; color: #1f2937; }
+h2 { font-size: 14px; text-transform: uppercase; letter-spacing: 0.04em; color: #6b7280; margin-top: 24px; }
+.rte-label { display: block; font-weight: 600; margin-bottom: 4px; }
+.rte { border: 1px solid #9ca3af; border-radius: 8px; }
+.rte:focus-within { outline: 2px solid #4f46e5; outline-offset: 1px; }
+.rte-toolbar { display: flex; gap: 4px; padding: 4px; border-bottom: 1px solid #e5e7eb; background: #f9fafb; border-radius: 8px 8px 0 0; }
+.rte-btn { min-width: 32px; height: 32px; border: 1px solid transparent; border-radius: 6px; background: transparent; cursor: pointer; font-size: 15px; }
+.rte-btn:hover { background: #e5e7eb; }
+.rte-btn[aria-pressed='true'] { background: #e0e7ff; border-color: #a5b4fc; color: #3730a3; }
+.rte-btn:focus-visible { outline: 2px solid #4f46e5; }
+.rte-content { min-height: 120px; padding: 10px 12px; white-space: pre-wrap; overflow-wrap: anywhere; outline: none; line-height: 1.5; }
+.rte-content.is-empty::before { content: attr(data-placeholder); color: #9ca3af; pointer-events: none; }
+.html-out { background: #111827; color: #e5e7eb; padding: 12px; border-radius: 6px; white-space: pre-wrap; font-size: 13px; }
+.html-preview { border: 1px dashed #d1d5db; padding: 10px 12px; border-radius: 6px; }
+.rte-glyph-bold { font-weight: 700; }
+.rte-glyph-italic { font-style: italic; font-family: Georgia, serif; }
+.rte-glyph-underline { text-decoration: underline; }

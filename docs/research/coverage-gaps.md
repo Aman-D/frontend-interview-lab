@@ -9,7 +9,7 @@
 ## Content gaps (implemented vs. targets)
 | Track | Target | Implemented (full content + verified solution) |
 |---|---|---|
-| React machine coding | 30 | 20 |
+| React machine coding | 30 | 21 |
 | Vanilla JS / DOM | 20 | 2 |
 | JS coding & polyfills | 30 | 4 |
 | TypeScript | 20 | 2 |

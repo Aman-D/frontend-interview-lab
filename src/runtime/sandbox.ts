@@ -41,6 +41,9 @@ export function createSandboxFrame(container: HTMLElement, visible: boolean): HT
   iframe.setAttribute('sandbox', 'allow-scripts allow-forms');
   iframe.setAttribute('title', visible ? 'Preview' : 'Test sandbox');
   iframe.setAttribute('referrerpolicy', 'no-referrer');
+  // Chromium 158+ blocks element.focus() inside a cross-origin (sandboxed, opaque-origin) frame unless the
+  // frame has user activation. Focus-management tests call focus() programmatically, so allow it explicitly.
+  iframe.setAttribute('allow', 'focus-without-user-activation *');
   iframe.src = SANDBOX_URL;
   if (visible) {
     iframe.className = 'h-full w-full border-0 bg-white';
