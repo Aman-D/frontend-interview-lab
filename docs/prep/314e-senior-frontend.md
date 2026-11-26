@@ -2,6 +2,8 @@
 
 A study guide for a Senior/Lead Frontend Engineer loop at 314e. It maps the prep plan to practice items in this lab and gives a short, interview-length answer to every theory question. Each answer is built so you can say **what it is, how it works, when to use it, when not to, and a production example**.
 
+> All of the items below are grouped on the **Companies → 314e** page in the app, with your progress on each.
+>
 > **Honesty note.** The question list is a *predicted* set. It is based on a referral contact's unpublished recollection of their October 2026 loop (memoization, closures, callbacks, recruitment portal HLD, job listing, rich text editor, security) and the public job description. None of it is a verified list of questions 314e asks. Lab items carry their own provenance labels, and none of them claim to be company questions.
 
 ---

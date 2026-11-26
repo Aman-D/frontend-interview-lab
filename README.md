@@ -43,6 +43,8 @@ Open http://localhost:5173.
 | Output prediction | 56 questions: JavaScript (event loop, async ordering, generators, Proxy, coercion, classes…), DOM events, React rendering/effects, and server rendering (renderToString, hydration, useId) — every answer executed | 50+ targeted |
 | Architecture & performance | 25 scenarios — React 19 Actions, `use()` + Suspense, re-render diagnosis, React Compiler, Core Web Vitals, code splitting, rendering strategy per route, hydration mismatches, streaming/Suspense boundaries, Server/Client Component boundary, Next.js 16 caching, App Router mutations; React internals (memo/useMemo/useCallback, stale closures, render → commit, search race conditions, state placement & context); frontend security (XSS, auth tokens & CSRF, CSP & clickjacking, secure file upload); browser internals (memory leaks, Web Workers); and two 45-minute system designs (recruitment portal, job listing). Graded MCQs + self-assessed answer; version-pinned to React 19.3 / Next.js 16.4 | 12 |
 
+**Companies** groups questions from the bank by the company you are preparing for (first set: 314e). Sets only reference existing question ids in [`src/content/companies.ts`](src/content/companies.ts), so progress is shared with the library, and each set states where its grouping came from.
+
 Plus **60 concept pages** (incl. React 19, Server Components, performance, Core Web Vitals, rendering strategies, hydration, streaming SSR, Next.js App Router and caching, memoization, throttling, XSS, CSRF and cookies, CSP, memory leaks and Web Workers), each with mechanism, misconceptions, failure cases, production implications and official-doc links.
 
 Each coding problem has: interviewer-style description, clarification questions (why + default assumption), scope decisions, MUST/SHOULD/OPTIONAL requirements by category, acceptance criteria, public + hidden tests, progressive hints, a 12-part solution (approaches, full code, walkthrough, complexity, edge cases, alternatives, trade-offs, mistakes, testing strategy, senior follow-ups), follow-up questions from definition → architecture, MCQs with per-option explanations, and sources.
@@ -72,7 +74,7 @@ See [`docs/research/`](docs/research):
 - [`coverage-gaps.md`](docs/research/coverage-gaps.md) — what is missing and why
 - [`raw/`](docs/research/raw) — title/URL extractions from the inspected pages
 
-Practice-platform listings show that a topic appears in interview *preparation*; they are not evidence that any particular company asks it. No company attributions are made.
+Practice-platform listings show that a topic appears in interview *preparation*; they are not evidence that any particular company asks it. No company attributions are made on questions; company prep sets on the Companies page are groupings for preparation and say what they are based on.
 
 ## Architecture
 See [`docs/architecture.md`](docs/architecture.md) (runtime evaluation incl. why Sandpack was not used, data model, outcome rules, verification pipeline, limitations).

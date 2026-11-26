@@ -1,4 +1,4 @@
-import { BookOpen, FileSearch, History, LayoutDashboard, Library, Moon, NotebookPen, PanelLeftClose, PanelLeftOpen, RotateCcw, Settings, Sun } from 'lucide-react';
+import { BookOpen, Building2, FileSearch, History, LayoutDashboard, Library, Moon, NotebookPen, PanelLeftClose, PanelLeftOpen, RotateCcw, Settings, Sun } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { Link, matchPath, NavLink, Outlet, useLocation } from 'react-router-dom';
 import { QUESTION_BY_ID } from '@/content';
@@ -9,6 +9,7 @@ import { cn } from './ui';
 const NAV = [
   { to: '/', label: 'Dashboard', icon: LayoutDashboard, end: true },
   { to: '/library', label: 'Problem Library', icon: Library },
+  { to: '/companies', label: 'Companies', icon: Building2 },
   { to: '/concepts', label: 'Concepts', icon: BookOpen },
   { to: '/revision', label: 'Revision Queue', icon: RotateCcw },
   { to: '/history', label: 'Attempt History', icon: History },

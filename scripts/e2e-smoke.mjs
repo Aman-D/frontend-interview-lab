@@ -57,6 +57,8 @@ try {
       ['/', 'Dashboard'],
       ['/library', 'Problem Library'],
       ['/problems/react-autocomplete', 'Autocomplete / Typeahead'],
+      ['/companies', 'Companies'],
+      ['/companies/314e', '314e'],
       ['/concepts', 'Concepts'],
       ['/concepts/abort-controller', null],
       ['/revision', 'Revision Queue'],
