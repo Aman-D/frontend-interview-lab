@@ -170,6 +170,28 @@ Next.js pages were read at v16.4.6 ("Latest" on nextjs.org) and React pages at R
 
 Sources above from `mdn-contenteditable` to `apg-toolbar` were accessed on **2026-11-26** (HTTP 200, content inspected) for the Rich Text Editor problem.
 
+## Security, browser internals and React hooks (added 2026-11-26)
+
+Read on 2026-11-26 through a page fetcher, because the sandbox could not reach these hosts directly. Where only part of a page could be read, the note says so, and the content does not quote the unread part.
+
+| ID | Title | URL | Accessible | Notes |
+|---|---|---|---|---|
+| `owasp-xss` | OWASP — Cross Site Scripting Prevention Cheat Sheet | https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html | Yes | dangerouslySetInnerHTML escape hatch, javascript: URL note, DOMPurify |
+| `owasp-csrf` | OWASP — CSRF Prevention Cheat Sheet | https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html | Yes (SameSite section partly read) | Tokens, signed double-submit, custom headers, Fetch Metadata |
+| `owasp-file-upload` | OWASP — File Upload Cheat Sheet | https://cheatsheetseries.owasp.org/cheatsheets/File_Upload_Cheat_Sheet.html | Yes | Does not mention Content-Disposition |
+| `webdev-strict-csp` | web.dev — Strict CSP | https://web.dev/articles/strict-csp | Yes | |
+| `mdn-csp` | MDN — Content Security Policy | https://developer.mozilla.org/docs/Web/Security/CSP | Yes | frame-ancestors |
+| `mdn-set-cookie` | MDN — Set-Cookie | https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Set-Cookie | Yes | |
+| `mdn-trusted-types` | MDN — Trusted Types API | https://developer.mozilla.org/docs/Web/API/Trusted_Types_API | Yes | Baseline 2026 |
+| `mdn-transferable` | MDN — Transferable objects | https://developer.mozilla.org/docs/Web/API/Web_Workers_API/Transferable_objects | Yes | |
+| `chrome-memory-problems` | Chrome DevTools — Fix memory problems | https://developer.chrome.com/docs/devtools/memory-problems | Yes | |
+| `react-usecallback` | react.dev — useCallback | https://react.dev/reference/react/useCallback | Yes | |
+| `react-usememo` | react.dev — useMemo | https://react.dev/reference/react/useMemo | Yes (read via .md export; final section summarised) | |
+| `react-uselayouteffect` | react.dev — useLayoutEffect | https://react.dev/reference/react/useLayoutEffect | Yes (.md export) | |
+| `react-useeffectevent` | react.dev — useEffectEvent | https://react.dev/reference/react/useEffectEvent | Yes (.md export) | No experimental banner; no version stated |
+| `react-separating-events` | react.dev — Separating Events from Effects | https://react.dev/learn/separating-events-from-effects | Yes (.md export) | |
+| `react-dom-common` | react.dev — Common components | https://react.dev/reference/react-dom/components/common | Yes (.md export) | dangerouslySetInnerHTML |
+
 ## Execution-environment references
 
 | ID | Title | URL | Accessible |

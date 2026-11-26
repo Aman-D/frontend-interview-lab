@@ -462,6 +462,57 @@
       "ok": true
     },
     {
+      "problemId": "js-memoize",
+      "solution": {
+        "passed": 15,
+        "total": 15,
+        "allPassed": true,
+        "status": "completed",
+        "failures": []
+      },
+      "starter": {
+        "passed": 0,
+        "total": 15,
+        "failsAtLeastOne": true,
+        "status": "completed"
+      },
+      "ok": true
+    },
+    {
+      "problemId": "js-throttle",
+      "solution": {
+        "passed": 13,
+        "total": 13,
+        "allPassed": true,
+        "status": "completed",
+        "failures": []
+      },
+      "starter": {
+        "passed": 1,
+        "total": 13,
+        "failsAtLeastOne": true,
+        "status": "completed"
+      },
+      "ok": true
+    },
+    {
+      "problemId": "js-concurrency-limit",
+      "solution": {
+        "passed": 14,
+        "total": 14,
+        "allPassed": true,
+        "status": "completed",
+        "failures": []
+      },
+      "starter": {
+        "passed": 3,
+        "total": 14,
+        "failsAtLeastOne": true,
+        "status": "completed"
+      },
+      "ok": true
+    },
+    {
       "problemId": "ts-return-type-parameters",
       "solution": {
         "passed": 15,

@@ -75,7 +75,7 @@ Legend:
 |---|---|---|---|---|---|
 | 1 | debounce (trailing) | `bfe-problems` "6. implement basic debounce()"; `fih-js` "Debounce" | PPP | HIGH | ✅ Implemented (`js-debounce`) |
 | 2 | debounce leading/trailing | `bfe-problems` "7." | PPP | MED | Follow-up of #1 |
-| 3 | throttle | `bfe-problems` "4.", "5."; `fih-js` "throttle()" | PPP | HIGH | Candidate |
+| 3 | throttle | `bfe-problems` "4.", "5."; `fih-js` "throttle()" | PPP | HIGH | ✅ Implemented (`js-throttle`) |
 | 4 | Promise.all | `bfe-problems` "32."; `fih-js` "Promise.all" | PPP | HIGH | ✅ Implemented (`js-promise-all`) |
 | 5 | Promise.allSettled | `bfe-problems` "33." | PPP | MED | Candidate |
 | 6 | Promise.any | `bfe-problems` "34."; `fih-js` "Promise.any" | PPP | HIGH | Candidate |
@@ -85,7 +85,7 @@ Legend:
 | 10 | Array.prototype.flat | `bfe-problems` "3."; `fih-js` "Flatten" | PPP | HIGH | Candidate |
 | 11 | Object flatten | No direct source; `fih-js` key conversion is adjacent | OV | LOW | Candidate |
 | 12 | curry | `bfe-problems` "1. implement curry()" | PPP | MED | ✅ Implemented (`js-curry`) |
-| 13 | memoize | `bfe-problems` "14.", "122. memoizeOne()" | PPP | MED | Candidate |
+| 13 | memoize | `bfe-problems` "14.", "122. memoizeOne()" | PPP | MED | ✅ Implemented (`js-memoize`) |
 | 14 | Function.prototype.call | `bfe-problems` "61." | PPP | MED | Candidate |
 | 15 | Function.prototype.bind | No direct listing found | OV | LOW | Candidate (variation of #14) |
 | 16 | Function.prototype.apply | No direct listing found | OV | LOW | Merge with #14 |
@@ -94,7 +94,7 @@ Legend:
 | 19 | Array.prototype.filter | `fih-js` "Array.prototype.filter()" | PPP | MED | Candidate |
 | 20 | Event emitter | `bfe-problems` "16."; `fih-js` "Event Emitter", "Observer pattern" | PPP | HIGH | ✅ Implemented (`js-event-emitter`) |
 | 21 | Retry with backoff | `bfe-problems` "64. auto-retry Promise on rejection" | PPP | MED | Candidate (backoff is an original extension) |
-| 22 | Concurrency limiter | `bfe-problems` "92. throttle Promises" | PPP | MED | Candidate |
+| 22 | Concurrency limiter | `bfe-problems` "92. throttle Promises" | PPP | MED | ✅ Implemented (`js-concurrency-limit`) |
 | 23 | Async task queue / scheduler | `bfe-problems` "179. Implement AsyncTaskQueue" | PPP | MED | Candidate |
 | 24 | LRU cache | `bfe-problems` "169. LRU - Chrome storage automatic eviction" | PPP | MED | Candidate |
 | 25 | `_.get` / `_.set` | `bfe-problems` "85.", "156." | PPP | MED | Candidate |

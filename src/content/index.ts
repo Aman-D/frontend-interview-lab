@@ -3,6 +3,9 @@ import jsDebounce from './problems/js-debounce';
 import jsPromiseAll from './problems/js-promise-all';
 import jsCurry from './problems/js-curry';
 import jsEventEmitter from './problems/js-event-emitter';
+import jsMemoize from './problems/js-memoize';
+import jsThrottle from './problems/js-throttle';
+import jsConcurrencyLimit from './problems/js-concurrency-limit';
 import vanillaAccordion from './problems/vanilla-accordion';
 import vanillaEventDelegation from './problems/vanilla-event-delegation';
 import tsReturnType from './problems/ts-return-type-parameters';
@@ -13,6 +16,9 @@ import { OUTPUT_QUESTIONS_BATCH2_UI } from './output/questions-batch2-ui';
 import { OUTPUT_QUESTIONS_SSR } from './output/questions-ssr';
 import { ARCH_QUESTIONS_REACT19_PERF } from './architecture/questions-react19-perf';
 import { ARCH_QUESTIONS_NEXTJS_RENDERING } from './architecture/questions-nextjs-rendering';
+import { ARCH_QUESTIONS_REACT_INTERNALS } from './architecture/questions-react-internals';
+import { ARCH_QUESTIONS_SECURITY_BROWSER } from './architecture/questions-security-browser';
+import { ARCH_QUESTIONS_SYSTEM_DESIGN } from './architecture/questions-system-design';
 import reactAutocomplete from './problems/react-autocomplete';
 import reactFileExplorer from './problems/react-file-explorer';
 import reactImageCarousel from './problems/react-image-carousel';
@@ -64,14 +70,23 @@ export const CODING_PROBLEMS: CodingProblem[] = [
   jsPromiseAll,
   jsCurry,
   jsEventEmitter,
+  jsMemoize,
+  jsThrottle,
+  jsConcurrencyLimit,
   tsReturnType,
   tsTypedEmitter,
 ];
 
 export const OUTPUT_QUESTIONS: OutputQuestion[] = [...OUTPUT_QUESTIONS_DATA, ...OUTPUT_QUESTIONS_BATCH2_JS, ...OUTPUT_QUESTIONS_BATCH2_UI, ...OUTPUT_QUESTIONS_SSR];
 
-/** Architecture & performance scenario questions (React 19, rendering patterns, Next.js App Router). */
-export const DESIGN_QUESTIONS: DesignQuestion[] = [...ARCH_QUESTIONS_REACT19_PERF, ...ARCH_QUESTIONS_NEXTJS_RENDERING];
+/** Architecture & performance scenario questions (React 19, rendering, Next.js, React internals, security, browser, system design). */
+export const DESIGN_QUESTIONS: DesignQuestion[] = [
+  ...ARCH_QUESTIONS_REACT19_PERF,
+  ...ARCH_QUESTIONS_NEXTJS_RENDERING,
+  ...ARCH_QUESTIONS_REACT_INTERNALS,
+  ...ARCH_QUESTIONS_SECURITY_BROWSER,
+  ...ARCH_QUESTIONS_SYSTEM_DESIGN,
+];
 
 export const QUESTIONS: Question[] = [...CODING_PROBLEMS, ...OUTPUT_QUESTIONS, ...DESIGN_QUESTIONS];
 export const QUESTION_BY_ID: Record<string, Question> = Object.fromEntries(QUESTIONS.map((q) => [q.id, q]));
