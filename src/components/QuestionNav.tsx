@@ -2,10 +2,12 @@ import { ChevronDown, ChevronLeft, ChevronRight, Search } from 'lucide-react';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { QUESTIONS } from '@/content';
+import { companyQuestionIds } from '@/content/companies';
 import { TRACK_LABEL } from '@/content/labels';
 import type { Question, TrackId } from '@/content/schema';
 import { useQuestionRows } from '@/hooks/useData';
 import { STATUS_LABEL, type QuestionStatus } from '@/lib/progress';
+import { setHref, useCompanyContext } from './CompanySetNav';
 import { cn } from './ui';
 
 const TRACKS = Object.keys(TRACK_LABEL) as TrackId[];
@@ -36,7 +38,13 @@ export function QuestionNav({ currentId, view, collapsed }: { currentId: string;
   const currentTrack = ORDERED.find((q) => q.id === currentId)?.track;
   const [open, setOpen] = useState<Set<TrackId>>(() => new Set(currentTrack ? [currentTrack] : []));
   const activeRef = useRef<HTMLAnchorElement>(null);
-  const { prev, next, index, total } = useAdjacentQuestions(currentId);
+  const library = useAdjacentQuestions(currentId);
+  // Opened from a company set: the arrows follow the set's order, like the bar above the question.
+  const { position } = useCompanyContext(currentId);
+  const { prev, next, index, total } = position ?? library;
+  const setId = position?.set.id;
+  const inSet = useMemo(() => new Set(position ? companyQuestionIds(position.set) : []), [position?.set]);
+  const href = (id: string) => setHref(questionHref(id, view), inSet.has(id) ? setId : null);
 
   // Open the current question's track when navigating to it, and keep it in view.
   useEffect(() => {
@@ -56,7 +64,7 @@ export function QuestionNav({ currentId, view, collapsed }: { currentId: string;
     [f],
   );
 
-  const go = (q?: Question) => q && navigate(questionHref(q.id, view));
+  const go = (q?: Question) => q && navigate(href(q.id));
 
   if (collapsed) {
     return (
@@ -125,7 +133,7 @@ export function QuestionNav({ currentId, view, collapsed }: { currentId: string;
                       <li key={q.id}>
                         <Link
                           ref={current ? activeRef : undefined}
-                          to={questionHref(q.id, view)}
+                          to={href(q.id)}
                           aria-current={current ? 'page' : undefined}
                           title={`${q.title} — ${STATUS_LABEL[st]}`}
                           className={cn(

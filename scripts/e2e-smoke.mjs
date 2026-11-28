@@ -96,6 +96,27 @@ try {
     assert(/Time practising\s*0 min/.test(text), 'expected 0 min practice time');
   });
 
+  await check('company set: next / previous stay in the set, survive starting practice, and stop at the ends', async () => {
+    await page.goto(BASE + '/companies/314e');
+    await page.getByRole('link', { name: 'Implement memoize() with a resolver and async eviction' }).click();
+    const bar = page.getByRole('navigation', { name: '314e prep set' });
+    await bar.waitFor();
+    assert((await bar.innerText()).includes('1 of 38'), 'position should show 1 of 38');
+    assert(!(await bar.getByRole('link', { name: /Previous question/ }).count()), 'first question has no previous');
+    await bar.getByRole('link', { name: /Next question/ }).click();
+    await page.waitForURL(/\/problems\/arch-memo-child-still-rerenders\?set=314e$/);
+    await page.keyboard.press('[');
+    await page.waitForURL(/\/problems\/js-memoize\?set=314e$/);
+    await page.goto(BASE + '/practice/js-memoize?set=314e&mode=study');
+    await page.waitForURL((u) => !u.search.includes('mode='));
+    assert(new URL(page.url()).searchParams.get('set') === '314e', 'starting an attempt keeps the set');
+    await bar.getByRole('link', { name: /Next question/ }).click();
+    await page.waitForURL(/\/practice\/arch-memo-child-still-rerenders\?set=314e$/);
+    await page.goto(BASE + '/problems/react-infinite-scroll?set=314e');
+    assert(!(await bar.getByRole('link', { name: /Next question/ }).count()), 'last question has no next');
+    await page.goto(BASE + '/problems/js-memoize');
+    assert(!(await bar.count()), 'no set bar without a set');
+  });
   await check('library filters by category and search', async () => {
     await page.goto(BASE + '/library');
     await page.getByRole('button', { name: 'TypeScript', exact: true }).click();

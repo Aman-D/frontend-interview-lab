@@ -2,6 +2,7 @@ import { BookOpen, Building2, FileSearch, History, LayoutDashboard, Library, Moo
 import { useEffect, useState } from 'react';
 import { Link, matchPath, NavLink, Outlet, useLocation } from 'react-router-dom';
 import { QUESTION_BY_ID } from '@/content';
+import { CompanySetBar } from './CompanySetNav';
 import { ErrorBoundary } from './ErrorBoundary';
 import { QuestionNav } from './QuestionNav';
 import { cn } from './ui';
@@ -131,10 +132,13 @@ export function Layout() {
           </button>
         </div>
       </aside>
-      <main id="main" className={cn('min-w-0 flex-1', inWorkspace ? 'overflow-hidden' : 'overflow-y-auto')}>
-        <ErrorBoundary label="this page" key={location.pathname}>
-          <Outlet />
-        </ErrorBoundary>
+      <main id="main" className="flex min-w-0 flex-1 flex-col overflow-hidden">
+        {questionId && <CompanySetBar questionId={questionId} view={inWorkspace ? 'practice' : 'problems'} />}
+        <div className={cn('min-h-0 flex-1', inWorkspace ? 'overflow-hidden' : 'overflow-y-auto')}>
+          <ErrorBoundary label="this page" key={location.pathname}>
+            <Outlet />
+          </ErrorBoundary>
+        </div>
       </main>
     </div>
   );

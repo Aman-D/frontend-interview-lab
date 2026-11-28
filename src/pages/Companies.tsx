@@ -1,5 +1,6 @@
 import { Info } from 'lucide-react';
 import { Link, useParams } from 'react-router-dom';
+import { setHref } from '@/components/CompanySetNav';
 import { Page } from '@/components/Layout';
 import { DifficultyBadge, StatusBadge } from '@/components/meta';
 import { Badge, Card, CardHeader, ProgressBar } from '@/components/ui';
@@ -116,7 +117,7 @@ export function CompanyDetailPage() {
                 return (
                   <li key={qid} className="flex flex-wrap items-center gap-x-3 gap-y-1 px-4 py-2.5 text-sm transition-colors duration-150 hover:bg-muted/50">
                     <div className="min-w-[14rem] flex-1">
-                      <Link to={`/problems/${q.id}`} className="font-medium hover:underline">{q.title}</Link>
+                      <Link to={setHref(`/problems/${q.id}`, c.id)} className="font-medium hover:underline">{q.title}</Link>
                       <div className="text-[13px] text-subtle">{TRACK_LABEL[q.track]}</div>
                     </div>
                     <DifficultyBadge d={q.difficulty} />

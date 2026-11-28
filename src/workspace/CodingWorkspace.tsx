@@ -2,6 +2,7 @@ import { AlertTriangle, CheckCircle2, CircleSlash, FileCode2, FlaskConical, Lock
 import { lazy, Suspense, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Panel, PanelGroup, PanelResizeHandle, type ImperativePanelHandle } from 'react-resizable-panels';
 import { Link, useSearchParams } from 'react-router-dom';
+import { useCompanyContext } from '@/components/CompanySetNav';
 import { OutcomeBadge, SourcesPanel } from '@/components/meta';
 import { ClarificationsView, DescriptionView, RequirementsChecklist, TestingPlanView } from '@/components/ProblemSpec';
 import { Badge, Button, Dialog, Select, Tabs, Textarea, cn } from '@/components/ui';
@@ -40,6 +41,7 @@ function entryFor(problem: CodingProblem, files: FileMap) {
 }
 
 export default function CodingWorkspace({ problem }: { problem: CodingProblem }) {
+  const { withSet } = useCompanyContext(problem.id);
   const [params, setParams] = useSearchParams();
   const attempts = useAttempts(problem.id);
   const active = attempts?.find((a) => a.status === 'active');
@@ -56,7 +58,14 @@ export default function CodingWorkspace({ problem }: { problem: CodingProblem })
     starting.current = true;
     repo.startAttempt(problem.id, requestedMode).finally(() => {
       starting.current = false;
-      setParams({}, { replace: true });
+      setParams(
+        (p) => {
+          const n = new URLSearchParams(p);
+          n.delete('mode');
+          return n;
+        },
+        { replace: true },
+      );
     });
   }, [attempts, active, review, requestedMode, problem.id, setParams]);
 
@@ -271,7 +280,7 @@ export default function CodingWorkspace({ problem }: { problem: CodingProblem })
     <div className="flex h-full flex-col">
       {/* Header */}
       <div className="flex flex-wrap items-center gap-2 border-b border-border bg-panel px-3 py-1.5">
-        <Link to={`/problems/${problem.id}`} className="mr-1 truncate text-sm font-semibold hover:underline">{problem.title}</Link>
+        <Link to={withSet(`/problems/${problem.id}`)} className="mr-1 truncate text-sm font-semibold hover:underline">{problem.title}</Link>
         <Badge tone={mode === 'interview' ? 'warn' : mode === 'revision' ? 'accent' : 'neutral'} title={MODE_INFO[mode].description}>{MODE_INFO[mode].label} mode</Badge>
         {submitted ? <OutcomeBadge o={attempt.outcome} /> : !independent && <Badge tone="warn" data-testid="assisted-badge">assisted</Badge>}
         <Badge className="hidden md:inline-flex">{EXECUTION_LABEL[problem.execution]}</Badge>
@@ -525,6 +534,7 @@ export default function CodingWorkspace({ problem }: { problem: CodingProblem })
 }
 
 function StartPanel({ problem, attempts, onStart }: { problem: CodingProblem; attempts: Attempt[]; onStart: (m: PracticeMode) => void }) {
+  const { withSet } = useCompanyContext(problem.id);
   const hasHistory = attempts.some((a) => a.status === 'submitted');
   return (
     <div className="mx-auto max-w-2xl px-6 py-10">
@@ -544,7 +554,7 @@ function StartPanel({ problem, attempts, onStart }: { problem: CodingProblem; at
           </button>
         ))}
       </div>
-      <p className="mt-4 text-sm"><Link className="text-accent-text hover:underline" to={`/problems/${problem.id}`}>← Read the full requirement roadmap first</Link></p>
+      <p className="mt-4 text-sm"><Link className="text-accent-text hover:underline" to={withSet(`/problems/${problem.id}`)}>← Read the full requirement roadmap first</Link></p>
     </div>
   );
 }
