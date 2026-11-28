@@ -78,3 +78,33 @@ export function companyQuestions(c: CompanySet): Question[] {
 export function companiesForQuestion(questionId: string): CompanySet[] {
   return COMPANIES.filter((c) => c.sections.some((s) => s.questionIds.includes(questionId)));
 }
+
+export interface CompanyPosition {
+  set: CompanySet;
+  section?: CompanySection;
+  /** 0-based position in the set's order. */
+  index: number;
+  total: number;
+  prev?: Question;
+  next?: Question;
+}
+
+/**
+ * Where a question sits in a company set's order (sections top to bottom), with its neighbours.
+ * Undefined when the set does not exist or does not contain the question.
+ */
+export function companyPosition(setId: string | null | undefined, questionId: string): CompanyPosition | undefined {
+  const set = setId ? COMPANY_BY_ID[setId] : undefined;
+  if (!set) return undefined;
+  const qs = companyQuestions(set);
+  const index = qs.findIndex((q) => q.id === questionId);
+  if (index < 0) return undefined;
+  return {
+    set,
+    section: set.sections.find((s) => s.questionIds.includes(questionId)),
+    index,
+    total: qs.length,
+    prev: qs[index - 1],
+    next: qs[index + 1],
+  };
+}

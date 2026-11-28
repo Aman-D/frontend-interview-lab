@@ -1,6 +1,7 @@
 import { CheckCircle2, XCircle } from 'lucide-react';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useCompanyContext } from '@/components/CompanySetNav';
 import { Markdown } from '@/components/Markdown';
 import { DocLinks, OutcomeBadge, SourcesPanel } from '@/components/meta';
 import { Badge, Button, Card, CardHeader, Dialog, Tabs, Textarea, cn } from '@/components/ui';
@@ -68,6 +69,7 @@ function QuizMcq({ q, mcq, index, locked, onFirstAnswer }: { q: DesignQuestion; 
 }
 
 export default function DesignWorkspace({ question: q }: { question: DesignQuestion }) {
+  const { withSet } = useCompanyContext(q.id);
   const attempts = useAttempts(q.id);
   const [startedAt] = useState(() => Date.now());
   const [answer, setAnswer] = useState('');
@@ -109,7 +111,7 @@ export default function DesignWorkspace({ question: q }: { question: DesignQuest
     <div className="h-full overflow-y-auto">
       <div className="mx-auto max-w-5xl px-4 py-6 sm:px-6 lg:px-10">
         <header className="mb-5">
-          <Link to={`/problems/${q.id}`} className="text-[26px] font-medium leading-tight tracking-tight hover:underline">{q.title}</Link>
+          <Link to={withSet(`/problems/${q.id}`)} className="text-[26px] font-medium leading-tight tracking-tight hover:underline">{q.title}</Link>
           <div className="mt-2 flex flex-wrap gap-1.5">
             <Badge>{TRACK_LABEL[q.track]}</Badge>
             <Badge>{EXECUTION_LABEL[q.execution]}</Badge>

@@ -1,4 +1,4 @@
-import { COMPANIES, companiesForQuestion, companyQuestionIds } from './companies';
+import { COMPANIES, companiesForQuestion, companyPosition, companyQuestionIds } from './companies';
 import { QUESTION_BY_ID } from './index';
 
 describe('company prep sets', () => {
@@ -24,5 +24,26 @@ describe('company prep sets', () => {
   });
   it('314e includes the rich text editor and both system designs', () => {
     for (const id of ['react-rich-text-editor', 'arch-sd-recruitment-portal', 'arch-sd-job-listing']) expect(companiesForQuestion(id).map((c) => c.id)).toContain('314e');
+  });
+  it('give the previous and next question in set order, with none past either end', () => {
+    for (const c of COMPANIES) {
+      const ids = companyQuestionIds(c);
+      const first = companyPosition(c.id, ids[0])!;
+      expect(first.prev).toBeUndefined();
+      expect(first.next?.id).toBe(ids[1]);
+      expect(first.index).toBe(0);
+      expect(first.total).toBe(ids.length);
+      const last = companyPosition(c.id, ids[ids.length - 1])!;
+      expect(last.next).toBeUndefined();
+      expect(last.prev?.id).toBe(ids[ids.length - 2]);
+      const mid = companyPosition(c.id, ids[2])!;
+      expect([mid.prev?.id, mid.next?.id]).toEqual([ids[1], ids[3]]);
+      expect(mid.section?.questionIds).toContain(ids[2]);
+    }
+  });
+  it('have no position for an unknown set or a question outside the set', () => {
+    expect(companyPosition('no-such-company', 'js-memoize')).toBeUndefined();
+    expect(companyPosition(null, 'js-memoize')).toBeUndefined();
+    expect(companyPosition('314e', 'not-a-question')).toBeUndefined();
   });
 });

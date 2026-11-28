@@ -1,6 +1,7 @@
 import { Play } from 'lucide-react';
 import { useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
+import { useCompanyContext } from '@/components/CompanySetNav';
 import { Page } from '@/components/Layout';
 import { Markdown } from '@/components/Markdown';
 import { DifficultyBadge, OutcomeBadge, PriorityBadge, SourcesPanel, StatusBadge } from '@/components/meta';
@@ -26,6 +27,7 @@ export default function ProblemDetail() {
   const navigate = useNavigate();
   const [tab, setTab] = useState<Tab>('overview');
   const [readyError, setReadyError] = useState<string | null>(null);
+  const { withSet } = useCompanyContext(q ? id : null);
   if (!q) return <NotFound />;
 
   const status = deriveStatus(attempts ?? [], progress);
@@ -49,14 +51,14 @@ export default function ProblemDetail() {
       actions={
         <div className="flex flex-wrap gap-2">
           {active ? (
-            <Button variant="primary" onClick={() => navigate(`/practice/${q.id}`)}>
+            <Button variant="primary" onClick={() => navigate(withSet(`/practice/${q.id}`))}>
               <Play className="h-4 w-4" aria-hidden /> Resume {active.mode} attempt
             </Button>
           ) : (
             <>
-              <Button variant="primary" onClick={() => navigate(`/practice/${q.id}?mode=study`)}><Play className="h-4 w-4" aria-hidden /> Study mode</Button>
-              <Button onClick={() => navigate(`/practice/${q.id}?mode=interview`)}>Interview mode</Button>
-              {status !== 'not-started' && <Button onClick={() => navigate(`/practice/${q.id}?mode=revision`)}>Revision mode</Button>}
+              <Button variant="primary" onClick={() => navigate(withSet(`/practice/${q.id}?mode=study`))}><Play className="h-4 w-4" aria-hidden /> Study mode</Button>
+              <Button onClick={() => navigate(withSet(`/practice/${q.id}?mode=interview`))}>Interview mode</Button>
+              {status !== 'not-started' && <Button onClick={() => navigate(withSet(`/practice/${q.id}?mode=revision`))}>Revision mode</Button>}
             </>
           )}
         </div>
